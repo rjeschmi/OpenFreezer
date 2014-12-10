@@ -1,0 +1,372 @@
+ 	body
+	{
+		font: 13px Arial;
+		/*background: #FFFFFF url("../pictures/page_bg_temp.jpg") repeat-x fixed bottom;*/
+		
+/* 		width:1075px; */
+		width:98%;
+		height: 82%;
+	} 
+	
+	table, td { font: 13px Arial; color: #000000 }
+	div { text-align: justify }
+	
+	body.gradient { font: 13px Arial; background: #FFFFFF url("../pictures/page_bg_temp.jpg") repeat-x fixed bottom }
+	
+	table.preview 
+	{ 
+		font: 8pt Arial; 
+		color: #000000;
+	}
+	
+	table.tableView { font: 8px Arial; }
+	
+	th.searchHeader
+	{
+		font: 10px Helvetica; 
+		text-align:center;
+		font-variant: small-caps;
+		font-weight: bold;
+		white-space: nowrap;
+		background-color: #F5F5DC;
+	}
+	
+	th.searchHeader:hover
+	{
+		cursor:pointer;
+	}
+	
+	
+	a.search
+	{
+		font: 8pt Helvetica; 
+		text-align: left;
+		white-space: nowrap;
+	}
+	
+	td.searchCheckbox
+	{
+		font: 10px Helvetica; 
+		text-align:center;
+		font-variant: small-caps;
+		font-weight: bold;
+		white-space: nowrap;
+		background-color: #F5F5DC;
+	}
+	
+	td.preview 
+	{ 
+		font: 10px Arial; 
+		color: #000000; 
+		text-align:left;
+		background-color:#8CC07A;
+	}
+	
+	
+	th.title
+	{
+		color: #0000FF;
+		font-size: 10pt;
+	}
+
+	td.detailedView { font: 10px Arial; color:#000000; text-align:left; background-color: #8CC07A; border-color:#FFFFFF; border-style:groove; border-width:1px }
+
+	td.navHeader { color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none; }
+	td.warning { color:#FF0000; font-family: "Times New Roman", Times, serif; font-weight:bolder;}
+	
+	td.detailedView_colName 
+	{ 
+		font: 11px Arial, Helvetica, sans-serif; 
+		font-weight:bold; 
+		color:#000000; 
+		padding-left:5px; 
+		padding-right:3px; 
+		text-align:left; 
+		border: 1px groove #698B69;
+		background-color:#C1FFC1;
+		white-space:nowrap;
+		width:180px;		/* restored April 28/09 */
+	}
+
+	td.projectDetailedViewName
+	{ 
+		font: 11px Arial, Helvetica, sans-serif; 
+		font-weight:bold; 
+		color:#000000; 
+		padding-left:5px; 
+		padding-right:3px; 
+		text-align:left; 
+		border: 1px groove #698B69;
+		background-color:#C1FFC1;
+		width:100px;
+	}
+
+	th.detailedView_heading
+	{
+		padding:8px;
+		color:#0000CD;
+		vertical-align:middle;
+		font-size:10pt;
+		font-weight:bold; 
+		text-align:center;
+	}
+	
+	td.detailedView_heading
+	{
+		padding:8px;
+		vertical-align:middle;
+		font-size:10pt;
+		font-weight:bold; 
+		text-align:center;
+	}
+
+	td.detailedView_BlankTitle { width:90px; font-weight:bolder; }
+	th.detailedView_BlankTitle { width:90px; font-weight:bolder; color:#0000CD; text-align:left;}
+
+	table.detailedView_buttons
+	{
+		vertical-align: middle;
+		border-style:dashed;
+		border-color: black;
+		text-align: center;
+	}
+
+	td.sequenceView_value 
+	{ 
+		font: 11px Arial, Helvetica, sans-serif; 
+		font-weight:bold; 
+		color:#000000; 
+		text-align:left; 
+		background-color:#98FB98;
+		border-color:#FFFFFF; 
+		border-width:1px; 
+		border-style:inset; 
+		overflow:auto; 
+		vertical-align:middle;
+	}
+
+	td.detailedView_value
+	{
+		font: 11px Arial, Helvetica, sans-serif; 
+		color:#000000; 
+		text-align:left; 
+		font-weight:bold;
+		white-space:nowrap; 
+/* 		width:auto; */
+	}
+	
+	/* Dec. 23/09, Marina: for preloading properties at cell line parent update */
+	td.detailedView_value_load select
+	{
+		color:#0000FF;
+	}
+
+	/* Dec. 23/09, Marina: for preloading properties at cell line parent update */
+	td.detailedView_value_load input
+	{
+		color:#0000FF;
+	}
+
+	table.detailedView_parents
+	{
+		width:600px;
+		padding:5px;
+	}
+
+	table.searchOutput {border-bottom-color:#33FF33; border-style:solid; float:left; }
+
+	.largest 	{ font: 22px Geneva, Arial; font-weight:bold; }
+   	.larger  	{ font: 17px Geneva, Arial; font-weight:bold; }
+   	.large  	{ font: 15px Geneva, Arial; font-weight:bold; }
+   	.normal 	{ font: 13px Geneva,Arial; }
+  	.small  	{ font: 10px Geneva,Arial; }
+  	.small2, .BoldRed 	{ font: 10px Verdana, MS Sans Serif; }
+
+        a   	{ color: rgb(0,0,255); text-decoration: underline; }
+        a:hover { color: #333; }
+
+        a.footer { color: #fff; font: 10px Verdana; font-weight: bold; text-decoration: none; }
+        a.footer:hover	{ color: #fff; text-decoration: underline; }
+
+        a.nav, .nav 	{ color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none; }
+        a.nav:hover 	{ color: #EEBB00; text-decoration: underline; }
+
+        a.nav-active 	{ color: #333333; font: 10px Verdana; font-weight: bold; text-decoration: none; }
+        a.nav-active:hover	{ color: #666666; text-decoration: underline; }
+
+        a.invert:hover 	{ color: #FFF; text-decoration: none; }
+
+        .title, h2, h1 	{ font: 16px Arial; font-weight: bold; width:90px; white-space:nowrap;}
+
+
+        /* Added Feb. 2/07 by Marina */
+	div.sequence
+        {
+            	width:770px;
+            	height:180px;
+            	overflow:auto;
+		background-color:#C1FFC1;
+	}
+
+        /* Feb. 12/08, Marina */
+	div.sequence_edit
+        {
+            	width:770px;
+            	height:180px;
+            	overflow:auto;
+		background-color:#FFFFFF;
+	}
+
+        span.linkShow
+        {
+            color:blue;
+            cursor:pointer;
+            text-decoration:underline;
+            display: inline;
+        }
+
+        span.linkHide
+        {
+            color:blue;
+            cursor:pointer;
+            text-decoration:underline;
+            display: none;
+        }
+
+        table.children
+        {
+            padding:5px;
+            text-align: justify;
+        }
+
+
+        tr.children
+        {
+            display: none;
+        }
+
+
+        td.children
+        {
+            display: none;
+        }
+
+        div.children
+        {
+            	width:690px;
+            	height:180px;
+            	overflow:auto;
+            	padding:3px;
+/*          	background: #FFFFFF url("../pictures/yellow_bg.jpg") repeat;*/
+		background-color: #C1FFC1;
+		border-color:#E6E6FA; 
+		border-width:1px; 
+		border-style:inset;
+        }
+
+	/* Container styles */
+	td.locationHeading
+	{
+		text-align:center;
+		color: #0000FF;
+		font-size: 9pt;
+		text-decoration: underline;
+		white-space: nowrap;
+		padding: 5px;
+	}
+
+
+	td.locationHeading:hover
+	{
+		cursor:pointer;
+	}
+
+	td.locationHeadingNonLink
+	{
+		/* For columns that are not sorted by clicking*/
+		text-align:center;
+		color: #0000F9;
+		font-size: 9pt;
+		text-decoration: none;
+		white-space: nowrap;
+		padding-bottom: 4px;
+		vertical-align: bottom;
+	}
+
+	td.plateNameValue
+	{
+		/* Used only for 'Name' column.  Don't wrap and use left alignment */
+		
+		font-size:9pt;
+		white-space: nowrap;
+		padding-left: 3px;
+	}
+
+
+	td.descriptionValue
+	{
+		/* Used for 'Description' column only.  Allow wrapping to avoid infinite column stretch */
+		
+		font-size:9pt;
+		padding-left: 3px;
+	}
+
+
+	td.locationOtherValue
+	{
+		/* All other columns in container list view */
+		
+		text-align:center;
+		font-size:9pt;
+		white-space: nowrap;
+		padding: 3px;
+	}
+
+	td.adminDisabled
+	{
+		/* For 'Admin' cols, such as 'View' or 'Modify' */
+		text-align:center;
+		font-size:9pt;
+		white-space: nowrap;
+		padding: 3px;
+		color: #6C7B8B;
+		text-decoration: underline;
+	}
+	
+	/* May 28/07, Marina */
+	td.createViewColName
+	{
+		width: 100px;
+	}
+	
+	td.createViewColValue
+	{
+		font-weight: bold;
+	}
+
+
+        span.linkExportSequence
+        {
+            	color: blue;
+            	cursor: pointer;
+            	text-decoration: underline;
+            	display: inline;
+		font-size: 8pt;
+        }
+
+	/* mimic a disabled link */
+	span.linkDisabled
+	{
+		color: #6C7B8B;
+            	text-decoration: underline;
+		font-size:10pt;
+	}
+
+
+	/* Jan. 23/08: Mark clones that are ordered */
+	span.linkOrdered
+	{
+		color: #FF0000;
+            	text-decoration: none;
+		font-size:10pt;
+	}

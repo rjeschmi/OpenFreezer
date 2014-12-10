@@ -1,0 +1,238 @@
+			td.corner  	{background-color : #00BB55;
+					 border-right 	:  1px solid  #FFFFFF; 
+					 border-bottom 	: 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 text-align : left;}
+
+			td.cornerBlue  	{background-color : #00BB55;
+					 border-right 	:  1px solid #FFFFFF; 
+					 border-bottom 	: 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 text-align : left;
+					 vertical-align : bottom
+					}
+
+			td.value_i_marked
+			{
+					border-right:  3px solid #FF0000; 
+					 border-bottom 	: 1px solid #FF0000; 
+					 border-top 	: 1px solid #FF0000; 
+					 border-left 	: 1px solid #FF0000; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 text-align : right;
+					 background-color:  #FFFF00
+					}
+			tr.v_marked		{background-color : #EEEE00;}
+			tr.v_marked_Incl	{color : #00CE00;}
+			tr.v_marked_Excl	{color : #EE0000;}
+			tr.v_marked_InclExcl	{color : #804000;}
+			td.smallFont	{
+					 font-family : arial;
+					 font-size : 6pt;
+					}
+
+
+
+			td.colrMgmt_Fg	{border-style: solid; border-width: 1; 
+					 background-color : #FFFFFF; 
+					 color: #000000;
+					 font-family : verdana ;
+					 font-size : 8pt;
+					 font-weight: bold;
+					 }
+			td.colrMgmt_Bg	{border-style: solid; border-width: 1; 
+					 background-color : #AAAAAA; 
+					 color: #FFFFFF;
+					 font-family : verdana ;
+					 font-size : 8pt;
+					 font-weight: bold;
+					 }
+			td.colrMgmt_Undo{border-style: solid; border-width: 1; 
+					 background-color : #FFFFFF; 
+					 color: #000000;
+					 font-family : verdana ;
+					 font-size : 8pt;
+					 }
+
+			table.inline		{background-color : #CCCCCC;}
+			td.inlineMinus	{background-color : #DDDDDD;}
+
+			table.v		{background-color : #FFFFFF;}
+			tr.v_1		{background-color : #EEEEEE;}
+			tr.v_0		{background-color : #DDDDDD;}
+			textarea.v_1	{background-color : #EEEEEE;
+					 border-bottom 	: 0px; 
+					 border-top 	: 0px; 
+					 border-left 	: 0px; 
+					 border-right 	: 0px; 
+					 font-family : arial;
+					 font-size : 8pt;}
+			textarea.v_0	{background-color : #DDDDDD;
+					 border-bottom 	: 0px; 
+					 border-top 	: 0px; 
+					 border-left 	: 0px; 
+					 border-right 	: 0px; 
+					 font-family : arial;
+					 font-size : 8pt;}
+			
+			tr.v_header	{background-color : #00B3F9;}
+			tr.v_header_sorter	{background-color : #4FCAFF;}
+			td.non_header 	{border-bottom : 1px solid #FFFFFF; 
+					 border-right :  1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 }
+					 
+			td.header 	{background-color : #00B3F9; border-bottom : 0 solid #FFFFFF;}
+			th.header 	{background-color : #00B3F9;
+					 border-right :  1px solid #FFFFFF; 
+					 border-bottom : 0px solid #FFFFFF; 
+					 color :#FFFFFF; 
+					 font-family : verdana ; 
+					 font-size : 7pt;}
+			th.header_sorter {border-right :  1px solid #FFFFFF; 
+					 border-bottom : 0px solid #FFFFFF; 
+					 color :#FFFFFF; 
+					 font-family : verdana ; 
+					 font-size : 7pt;
+					 }
+			td.header_sorter {border-right :  1px solid #FFFFFF; 
+					 border-bottom : 0px solid #FFFFFF; 
+					 color :#FFFFFF; 
+					 font-family : verdana ; 
+					 font-size : 7pt;
+					 }
+
+
+			tr.spacer	{background-color : #006399}
+			td.spacer 	{background-color : #006399; border-bottom: 1px solid #FFFFFF;}
+			th.column 	{border-right :  1px solid #FFFFFF; 
+					 border-bottom : 1px solid #FFFFFF;}
+
+
+			td.value_i  	{border-right 	:  1px solid #FFFFFF; 
+					 border-bottom 	: 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 text-align : right;}
+
+
+					 
+			td.value_n  	{border-right :  1px solid #FFFFFF; 
+					 border-bottom : 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 text-align : right;}
+					 
+			td.value_d  	{border-right :  1px solid #FFFFFF; 
+					 border-bottom : 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 text-align : center;}
+					 
+			td.value_c  	{border-right :  1px solid #FFFFFF; 
+					 border-bottom : 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 8pt;
+					 }
+
+
+			td.index	{border-right :  1px solid #FFFFFF; 
+					 border-bottom : 1px solid #FFFFFF; 
+					 border-top 	: 1px solid #FFFFFF; 
+					 border-left 	: 1px solid #FFFFFF; 
+					 font-family : arial;
+					 font-size : 7pt;}		               
+					 
+			img		{cursor : pointer; border-width: 0}
+			
+			span.col_number	{font-family : verdana ; 
+					 font-size : 5pt;}
+
+		       div.tooltip 	{font-family : Verdana; 
+		                          font-size : 11px; 
+		                          color : #0000FF; 
+		                          position : absolute; 
+		                          visibility : hidden; 
+		                          background : #FFFFCC; 
+		                          border-style : solid; 
+		                          border-color : #000000; 
+		                          border-width : 1px;
+		                          z-index: 999}
+
+			span.step_number {font-family : verdana ;
+					  font-size : 11px; 
+					  cursor : pointer;
+					 }
+
+			
+			a.cellValue:link {
+				color: #000000;
+				text-decoration: none;
+			}
+
+			/* This style is how your link will look when the visitor has already been to that page. 
+			/ Here, dark grey text. This must be placed ahead of the mouseover style in your style sheet to work properly.*/
+			
+			a.cellValue:visited {
+				color: #111111;
+				text-decoration: none;
+			}
+
+			/*This is how the mouseover will look. Here I have specified no underline, 
+			 with a light grey background. When the visitor moves their mouse over the link, only the background and underline will change.*/
+			
+			a.cellValue:hover {
+				text-decoration: underline;
+				background-color: #CCCCCC;
+			}
+
+			/*This is mostly useless, as it is what the visitor sees when they are actually clicking the link.*/
+
+			a.cellValue:active {
+				text-decoration: none;
+			}
+			
+
+			td.headerList 	{background-color : #009933; border-bottom : 0px solid #FFFFFF;}
+			th.headerList 	{background-color : #009933;
+					 border-right :  1px solid #FFFFFF; 
+					 border-bottom : 0px solid #FFFFFF; 
+					 color :#FFFFFF; 
+					 font-family : verdana ; 
+					 font-size : 7pt;}
+			input.smallFont	{
+					 font-family : arial;
+					 font-size : 10pt;
+					}
+			span.smallDetails{
+					 font-family : arial;
+					 font-size : 8pt;
+					}
+			span.theName {
+					 font-family : tahoma;
+					 font-weight: bold;
+					}
+			a.theName:link	{
+					text-decoration: none;
+					}
+			a.theName:visited	{
+					text-decoration: none;
+					}

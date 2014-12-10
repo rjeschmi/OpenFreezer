@@ -1,0 +1,102 @@
+<style type="text/css">
+<!--
+	body		{ font: 13px Geneva,Arial; background: #000000 url(../pictures/page_bg.gif) repeat-x fixed bottom; }
+	table, td	{ font: 13px Geneva,Arial; color: #000000 }
+	div			{ text-align: justify; }
+	
+	table.preview { font: 10px Geneva,Arial; color: #000}
+	td.preview { font: 10px Geneva,Arial; color: #000; text-align:left;  background-color:#8CC07A }
+	
+	td.navHeader { color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none }
+	
+	table.searchOutput {border-bottom-color:#33FF33; border-style:solid; float:left; }
+
+	.largest 	{ font: 22px Geneva, Arial; font-weight:bold }
+   	.larger  	{ font: 17px Geneva, Arial; font-weight:bold }
+   	.large  	{ font: 15px Geneva, Arial; font-weight:bold }
+   	.normal 	{ font: 13px Geneva,Arial; }
+  	.small  	{ font: 10px Geneva,Arial }
+  	.small2, .BoldRed 	{ font: 10px Verdana, MS Sans Serif }
+
+        a   	{ color: #004891 }
+        a:hover { color: #333 }
+
+        a.footer 		{ color: #fff; font: 10px Verdana; font-weight: bold; text-decoration: none }
+        a.footer:hover	{ color: #fff; text-decoration: underline }
+
+        a.nav, .nav 	{ color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none }
+        a.nav:hover 	{ color: #EEBB00; text-decoration: underline }
+
+        a.nav-active 	{ color: #333333; font: 10px Verdana; font-weight: bold; text-decoration: none }
+        a.nav-active:hover	{ color: #666666; text-decoration: underline }
+
+        a.invert:hover 	{ color: #FFF; text-decoration: none }
+
+        a.comments  	{ color: #ff0000; font: 10px Verdana; font-weight: plain; text-decoration: none }
+
+        .title, h2, h1 	{ font: 16px Arial; font-weight: bold }
+        .toc_title                      { font: 20px Arial; font-weight: bold }
+        .subTitle  		{ font: 12px Verdana; font-weight: bold; color: #fff }
+        .invert                         { color: #fff }
+        .yellowdiv                      { color: #F9CE00; font: 13px Verdana; font-weight: bold }
+        .radio                          { background-color: #F7F7F6; }
+        .error                          { color: #C00 }
+        .BoldRed                        { color: #C00; font-weight: bold; }
+        .radioPoll,.searchCheckbox      { background-color: #F7F7F8; }
+        input                           { font-family: monospace }
+        .ilink                          { border-color: #000 }
+        .glink                          { border-color: #FFCC00 }
+
+        .media-thumbnail                { border-color: #265FA4 }
+        .media-caption-link             { color: #AAAAAA; font: 10px Verdana; font-weight: bold; text-decoration: none }
+        .media-caption-link:hover       { color: #265FA4; }
+
+        .media-caption                  { color: #FFFFFF; font: 12px Verdana; font-weight: bold; text-decoration: none }   
+
+        .ticker-headline                { font: 13px arial; color: #FFFFFF; text-decoration: none; }
+        .ticker-headline:hover          { font: 13px arial; color: #CCCCFF; }
+        .ticker-link                    { font: 12px arial; font-weight: bold; color: #CCAA00; }
+        .ticker-link:hover              { font: 12px arial; font-weight: bold; color: #FFCC00; }
+
+	.news-link			{ font: 11px Geneva,Arial; text-decoration: none }
+	.news-link:hover		{ font: 11px Geneva,Arial; text-decoration: underline; color: #34A1DE }
+
+a.td.thumbnail, a.td.thumbnail:link, a.td.thumbnail:visited, a.td.thumbnail:active {
+        border: rgb(0, 0, 0) 1px solid;
+        margin-bottom: -45px;
+        padding-top: 5px;
+        width: 172px;
+        display: block;
+        background: rgb(35, 35, 35);
+        height: 197px;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+}
+a.td.thumbnail:hover            {
+        border: rgb(95, 121, 216) 1px solid;
+        margin-bottom: -45px;
+        padding-top: 5px;
+        width: 172px;
+        display: block;
+        background: rgb(32, 32, 32);
+        height: 197px;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+
+.gn_T5 			{ 	color: #FFFFFF; }
+.gn_pkTitle		{	font : 10px Verdana, Geneva, Arial, Helvetica, sans-serif;	}
+.gn_pkRank		{	font : 10px Verdana, Geneva, Arial, Helvetica, sans-serif;	}
+.gn_pkPlatform	{	font : 10px Verdana, Geneva, Arial, Helvetica, sans-serif;	}
+.gn_tbl			{		}
+
+
+        .sponsor-highlight       { color: #0088AF; font: 16px Arial; font-weight: bold; text-decoration: none; }
+        .sponsor-highlight:hover { color: #66AAFF; text-decoration: underline }
+
+        .sponsor-link            { color: #0088AF; font: 12px Arial; font-weight: bold; text-decoration: none; }
+        .sponsor-link:hover { color: #66AAFF; text-decoration: underline }
+
+        .sponsor-teaser          { color: #666666; font: 12px Arial; }
+
+
+-->
+</style>

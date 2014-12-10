@@ -1,0 +1,785 @@
+	html,body
+	{
+/* Apr. 8/09 - don't know if this is needed		height:100%; */
+	}
+
+	body.cursor_wait
+	{
+		cursor:wait;
+	}
+
+	body.cursor_auto
+	{
+		cursor:auto;
+	}
+
+	.title, h2, h1 	{ font: 16px Arial; font-weight: bold }
+	.sidebar {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-weight:bolder;
+	line-height: 18px;
+	padding: 3px;
+	background-color: #FFFF99;
+	}
+	table.navHeader { color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none  }
+	
+	td.navHeader { color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none }
+
+	td.nav 	{ color: #FFFFFF; font: 9px Verdana; font-weight: bold; text-decoration: none }
+
+	/* April 3/07, Marina => Removed June 10/08, replaced by 2 divs below */
+	div.header
+	{
+		font-weight:bold;
+		text-align: left;
+		font-variant:small-caps;
+		font-family: Helvetica, sans-serif;
+		font-size:12pt;
+/* 		width: 986px; */
+		width: 100%;
+
+		/* Replaced March 12/09 */
+		height: 85px;
+	}
+
+	table.detailedView_tbl
+	{
+		background-color: #FFFFE5;
+	}
+	
+	table.header
+	{
+		width: 100%;
+		/*background-color: black;*/
+		/*background: url("../pictures/background.png") repeat;*/
+		/*border-bottom: 2px solid black;*/
+	}
+	
+	option.menu_subcat_default
+	{
+/* 		background-image:url('../pictures/goldbg.png'); */	/* no, works only in FF and even then not 100% */
+/* 		background-position:relative; */
+
+		background-color:#FFF8DC;
+		padding-left:7px;
+		font-weight:bold;
+		color:#555;
+		font-size:8pt;
+	
+		border-top:1px solid gold;
+		border-bottom:1px solid gold;
+
+		text-decoration:none;
+	
+		margin-left:2px;
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+	
+/*	option.menu_subcat_default:hover
+	{
+		background:url('');
+	}*/
+	
+	option.menu_sub_default
+	{
+		background-color:#EFEFEF;
+
+		border-top: 1px solid silver;
+		border-bottom: 1px solid silver;
+
+		padding-left:10px;
+		font-weight:bold;
+		color:#555;
+		padding-top:2px;
+		padding-bottom:2px;
+		font-size:8pt;
+/* 		background:url('../pictures/graybg.png'); */	/* no, works only in FF and even then not 100% */
+		margin-top:3px;
+		margin-bottom:3px;
+		margin-left:3px;
+	}
+	
+/*	option.menu_sub_default:hover
+	{
+		background:url('');
+	}*/
+
+	td.header
+	{
+		font-family: Helvetica, sans-serif;
+		font-variant: small-caps;
+		font-size:x-large;
+		width: 100%;
+		height: 40px;
+		vertical-align: bottom;
+		background: url("../pictures/background.png");
+	}
+	
+	td.logo
+	{
+		padding-left:12px;
+		text-align:left;
+		width: 80px;
+	}
+
+	div.caption
+	{
+		font-size:7pt;
+		padding-top: 2px;
+		white-space: nowrap;
+		font-family: Helvetica, sans-serif;
+	}
+	
+	div.subtitle
+	{
+		font-size: large;
+		text-align: center;
+	}
+
+	sup.title
+	{
+		font-size:x-small;
+	}
+
+	div.notice
+	{
+		font-size: 10pt;
+		font-family: Helvetica, sans-serif;
+/* 		text-align: center; */
+		background-color:#EEDFA1;
+		font-weight:bold;
+		padding-top:2px;
+		padding-bottom: 2px;
+		vertical-align: middle;
+		margin-top:0.5em;
+		width:100%;
+
+		/*margin-left: 10px;
+		margin-right: 10px;*/
+	}
+
+	div.footer_container
+	{
+		padding-bottom:6px;
+/* 		width:986px; */
+		width:100%;
+	}
+
+	div.footer
+	{
+		margin-top:0.3cm;
+/* 		position:absolute; */		/* NO!!!!!  This does not stretch bottom to the entire page width */
+		padding-top:0.5em;		/* update Sept. 10, 2010 */
+		padding-bottom:0.3em;	/* update Sept. 10, 2010, changed 0.5 to 0.3 */
+		text-transform: uppercase;
+		font-family: Helvetica, sans-serif;
+		font-size:8pt;	/* update Sept. 10, 2010 */
+		clear:none;
+		text-align: center;
+		font-weight: bold;
+		background-color: #FCE074;
+
+		/* line-height:125%;*/   /* keep, determines footer stripe width */
+	}
+
+	p.notice
+	{
+		font-size:8pt;
+		font-family: Helvetica;
+		font-weight:normal;
+		color: #FF0000;
+	}
+	
+	div.warning
+	{
+		font-size:8pt;
+		font-family: Helvetica;
+		font-weight:normal;
+		color: #FF0000;
+		display: none;
+	}
+	
+
+	a.header
+	{
+		color: #0000FF;
+		text-decoration: underline;
+	}
+	
+	a.header:hover
+	{
+		color: #00AE00;
+	}
+	
+	a.footer
+	{
+		font-weight: normal;
+		font-size: 8pt;
+		text-transform: none;
+		color: #0000FF;
+		text-decoration: underline;
+	}
+	
+	a.footer:hover
+	{
+		color: #00AE00;
+	}
+
+	a.menu
+	{
+		font-size:9pt;
+	}
+
+	/* July 19, 2010 */
+	ul.menu
+	{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		white-space:nowrap;
+		width: 150px;
+		z-index:2;
+	}
+
+	ul.menu li
+	{
+		position: relative;
+		margin-left:0;
+		padding-left:0;
+		list-style: none;
+		white-space:nowrap;
+		width: 150px;
+		z-index:3;
+	}
+
+	ul.menu li ul
+	{
+		list-style: none;
+		position: relative;
+		left:0;
+		z-index:1;
+		width: 150px;
+		padding:0;
+		padding-bottom:5px;
+		white-space:nowrap;
+		top: 0;
+		display: none;
+		z-index:4;
+	}
+
+	a.top_title
+	{
+		white-space:nowrap;
+		display: block;	/* keep this, don't change to 'inline'!! */
+		text-decoration: none;
+		color: #777;
+		background:url('../pictures/background-gray.png');
+		padding: 5px;
+		border: 1px solid #ccc;
+		font-size:9pt;
+		z-index:5;
+	}
+
+	table.top_2
+	{
+		white-space:nowrap;
+		background-color:white;
+		z-index:6;
+	}
+
+	li.top:hover ul
+	{
+		white-space:nowrap;
+		display: inline;
+		z-index:7;
+	}
+
+	li.top_1:hover ul
+	{
+		white-space:nowrap;
+		display: inline;
+		padding-top:5px;
+		z-index:8;
+	}
+
+	/* Sept. 10, 2010: Try for a tabbed layout - will be of use */
+	div.topmenu
+	{
+ 		position:relative;
+/* 		padding-top:10px; */
+	}
+
+	td.topmenulink:hover
+	{
+		cursor:pointer;
+	}
+
+	
+	td.topmenulink_docs:hover
+	{
+		cursor:pointer;
+	}
+
+	div.sidemenu
+	{
+ 		position:absolute;
+		text-align: left;
+		min-height:500mm;
+		height:100%;
+		width:auto;
+		padding-bottom:18px;
+	}
+	
+	div.menu-content
+	{
+/* 	 	border: 2px groove #EEDFA1; */
+
+		min-height:500mm;
+		height:100%; 
+
+		/* the following 2 statements are for the border */
+/* 		margin-top:5px; */
+/* 		padding-right:10px; */
+
+		/* move footer down */
+		padding-bottom:4px;
+
+		position:relative;
+		float:left;
+		margin-left: 2px;
+/* 		margin-right: 0.5em; */
+		vertical-align:top;
+  	}
+	
+	div.login
+	{
+		height:auto;
+		margin-left: 0.1em;
+		margin-right: 0.5em;
+		color:black;
+		margin-top:10px;
+		padding-top: 3px;
+  	}
+
+	div.main
+	{
+		margin-top:8px;
+		margin-left:2px;
+		width:100%;
+/* 		padding-top:3px; */
+
+		/* April 8/09: This is the only way to prevent content-footer overlap.  Keep min-height and nothing else!!!!!!!!!!!!!!!! */
+		min-height:500mm;
+
+
+/* Removed April 8/09 */
+/* 		height:100%; */
+/* 		height:500mm; */
+/* 		height:auto; */		/* don't EVER use this!!!!!!!!  This prevents the menu border line from stretching down to the entire page height */
+/* 		min-height:100%; */	/* don't use this either!!!!!!!! This does not place the footer at the bottom of the page */
+	}
+
+	div.main_content
+	{
+		background:white;
+		position:relative;
+
+		/* April 8/09: This is the only way to prevent content-footer overlap.  Keep min-height and nothing else!!!!!!!!!!!!!!!! */
+		min-height:500mm;
+		width:auto;	/* keep! */
+
+/* Removed April 8/09 */
+/* 		height:100%; */
+/* 		height:auto; */		/* don't EVER use this!!!!!!!! This prevents the menu border line from stretching down to the entire page height */
+/* 		min-height:100%; */	/* don't use this either!!!!!!!!  This does not place the footer at the bottom of the page */
+/* 		min-height:auto; */	/* can use this if needed */
+
+		margin-bottom:0.5em;
+		margin-left:178px;	/* keep this, looks good on laptop */
+
+		border-left:2px groove black;
+		padding-left:15px;
+		vertical-align:top;
+		cursor:auto;	/* keep for later, when div resizeable is added, to override its cursor resize */
+	}
+
+
+	td.submenu
+	{
+	    padding-left:10px;
+	    white-space:nowrap;
+	}
+	
+	a.submenu
+	{
+	    width: auto;
+	    color: #0000FF;
+	    font-variant: normal;
+	    font-weight:normal;
+	    text-decoration:underline;
+	    font-size:9pt;
+	}
+
+	a.submenu:hover
+	{
+	    color:#002053;
+	    font-weight:normal;
+	    white-space: normal;
+	}
+
+	ul.menulist     /* good!! keep */
+	{
+	    list-style: none;
+	    padding-left: 0;
+	}
+
+	
+	li.menulist
+	{
+		padding-bottom: 5px;
+		padding-left:0px;
+		margin-top:3px;
+	    	margin-bottom: 3px;
+		font-size:10pt;
+	}
+
+	img.menu-expanded
+	{
+		vertical-align: middle;
+	}
+
+	img.menu-expanded:hover
+	{
+		cursor:pointer;
+	}
+
+	/* initially start with all menus expanded */
+	img.menu-collapsed
+	{
+		margin-right:-21px;
+		vertical-align: top;
+	}
+
+	img.menu-collapsed:hover
+	{
+		cursor:pointer;
+	}
+
+	ul.submenu
+	{
+		padding-left: 0;
+		padding-top: 2px;
+		list-style: none;
+		display: none;
+	}
+
+	li.submenu
+	{
+		padding-left: 20px;
+		padding-top: 3px;
+		background-repeat: no-repeat;
+		background-position: center left;
+	}
+
+	img.menutop
+	{
+		padding-right: 12px;
+		padding-left: 2px;
+	}
+
+	img.menu-leaf
+	{
+		padding-right: 4px;
+		vertical-align: middle;
+	}
+
+	li.menutop
+	{
+		padding-left: 0px;
+		padding-top: 3px;
+		margin-top:3px;
+		margin-bottom:3px;
+		white-space: nowrap;
+	}
+	
+	
+	span.login
+	{
+		text-align:left; 
+		font-size:9pt; 
+		color:navy;
+/* 		font-weight:bold; */
+	}
+
+
+	/*
+		Feb. 16/08: Location tabbed pane representation - option to view locations grouped by container or by isolate
+	*/
+	td.currentView
+	{
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+
+	td.switchTo
+	{
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+	
+	table.locationContent
+	{
+		width:100%;
+		border:1px solid black;
+	}
+
+	td.locationContent
+	{
+		border:1px solid black;
+		padding-top:10px;
+		padding-left:15px;
+		padding-bottom:15px;
+		background-color:#FFFFF0;
+	}
+
+	span.tabLinkActive
+	{
+		padding-top:5px;
+		padding-bottom:10px;	/* or make identical to tabLinkInactive */
+		padding-left:25px;
+		padding-right:25px;
+		border-top:1px solid black;
+		border-left:1px solid black;
+		border-right:1px solid black;
+		background-color:/*#FFFACD*/#FFFFF0;
+		color:#8B6508;
+		font-weight:bold;
+		cursor:pointer;
+		text-decoration:none;
+		font-size:9pt;
+	}
+
+	span.tabLinkInactive
+	{
+		padding-top:5px;
+		padding-bottom:6px;
+		padding-left:25px;
+		padding-right:25px;
+		border-top:1px solid #000000;
+		border-left:1px solid #000000;
+		border-right:1px solid #000000;
+		cursor:pointer;
+		background-color:#FFFACD;
+		color:#8B6508;
+		text-decoration:none;
+		font-size:9pt;
+		font-weight:bold;
+	}
+
+	span.tabLinkInactive:hover
+	{
+		padding-bottom:6px;
+		color:#000000;
+	}
+
+	span.tabLinkActive:hover
+	{
+		color:#000000;
+	}
+
+
+	/*
+		Feb. 19/08: Sequence tabbed pane representation - very similar to location
+	*/
+	td.sequenceContent
+	{
+/* 		border:1px solid black; */
+		border-top: 1px inset #F08080;
+		border-right: 1px outset #F08080;
+		border-bottom: 1px outset #F08080;
+		border-left:1px inset #F08080;
+ 
+		padding-top:6px;
+		padding-left:6px;
+		padding-right:5px;
+		padding-bottom:15px;
+/* 		background-color:#FFFFF0; */
+		background-color:#FFF8DC; 
+/* padding:6px; */
+	}
+
+	span.seqTabLinkActive
+	{
+		padding-top:5px;
+		padding-bottom:9px;
+		padding-left:25px;
+		padding-right:25px;
+		border-top:1px inset #F08080;
+		border-left:1px inset #F08080;
+		border-right:1px outset #F08080;
+		background-color:#FFF8DC;
+		color:#00008B;
+		font-weight:bold;
+		cursor:pointer;
+		text-decoration:none;
+		font-size:9pt;
+	}
+
+
+	span.seqTabLinkInactive
+	{
+		padding-top:5px;
+		padding-bottom:6px;
+		padding-left:25px;
+		padding-right:25px;
+		border-top:1px inset #F08080;
+		border-left:1px outset #F08080;
+		border-right:1px outset #F08080;
+		cursor:pointer;
+		background-color:#FFF8DC;
+		color:#36648B;
+		text-decoration:none;
+		font-size:9pt;
+		font-weight:bold;
+	}
+
+	span.seqTabLinkInactive:hover
+	{
+/* 		color:#00008B; */
+	}
+
+	div.tabSequence
+	{
+		width:670px;
+		padding-left:10px;
+		padding-right:10px;
+		height:185px;
+		overflow:auto;
+		background-color:#C1FEC1/*#FFFFE2*/;
+		border-top:1px solid #708090;
+		border-left:1px solid #708090;
+	}
+
+	/* Added Jan. 8/09 */
+	div.vectorSequence
+	{
+		width:680px;
+		padding-left:10px;
+		padding-right:10px;
+		height:185px;
+		overflow:auto;
+		background-color:#C1FEC1/*#FFFFE2*/;
+		border-top:1px solid #708090;
+		border-left:1px solid #708090;
+	}
+
+	/* March 4/08, Marina: Added to make sections resizeable */
+	div.resizeableRight
+	{
+		position:absolute;
+		
+		left:16em;
+		height:58em;
+
+		width:2px;
+		margin-top:1.2em;
+		cursor:col-resize;
+/* 		border-right:3px groove black; */
+	}
+
+	td.creation_readonly
+	{
+		background-color:#D1D1D1;
+		white-space:nowrap;
+		padding-right:25px;
+	}
+
+	td.creation_normal
+	{
+		white-space:nowrap;
+		padding-right:25px;
+	}
+
+	input.input_disabled
+	{
+		background-color:#E8E8E8;
+	}
+
+	input.input_normal
+	{
+		background-color:#FFFFFF;
+	}
+
+	/* Tooltip styles - Dec. 21/09 - adapted from http://psacake.com/web/jl.asp */
+	a.tooltip
+	{
+		position:relative; /*this is the key*/
+		z-index:24;
+		color:#0000FF;
+		font-size:10pt;
+		text-decoration:none;
+	}
+
+	span.tt_show
+	{
+		padding: 30px 8px 0;
+		font-weight:bold;
+		font-family:Helvetica;
+		font-size:9pt;
+		text-align:left;
+		padding-left:15px;
+		padding-bottom:18px;
+		padding-top:24px;
+		width:220px;
+		height:85px;
+		position: absolute;
+		right:0;
+		left:0;
+		background: url('../pictures/bubble.gif') no-repeat;
+	}
+
+	/**
+		May 27, 2011: The following four classes were added to enable selection of entire rows/columns on a plate (written to address Nature Methods reviewers' comments)
+	*/
+	td.plateColumn_hdr
+	{
+		text-align:center; 
+		background-color:#0000CD;
+		color:#FFFFFF;
+		font-weight:bold;
+		font-size:11pt;
+		border-left:2px outset lightgrey;
+		border-right:2px outset lightgrey;
+		border-top:1px solid grey;
+		border-bottom:3px outset lightgrey;
+	}
+
+	td.plateColumn_hdr:hover
+	{
+		cursor:pointer;
+	}
+
+	td.plateRow_hdr
+	{
+		text-align:center; 
+		background-color:#0000CD;
+		color:#FFFFFF;
+		font-weight:bold;
+		font-size:11pt;
+		border:1px solid gray;
+		vertical-align:middle;
+		padding-left:4px;
+		padding-right:4px;
+	}
+	
+	td.plateRow_hdr:hover
+	{
+		cursor:pointer;
+	}
+
+	input.locationText
+	{
+		font-size:7.5pt;
+	}
