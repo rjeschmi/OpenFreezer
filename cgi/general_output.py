@@ -35,8 +35,8 @@ class GeneralOutputClass:
 
 					<table cellpadding="0" cellspacing="0" style="width:100%%; background:black;">
 						<tr>
-							<td colspan="3"><img src="../pictures/oftmp.png"></td>
-                                                        <td style="padding-right:2px; background-color:black; padding-top:3px; padding-bottom:2px;"><img src="../pictures/marina1.png" height="68" ALT="logo"></td>
+							<td colspan="3"><img src="../pictures/hdr.png"></td>
+                                                        <td style="padding-right:2px; background-color:black; padding-top:3px; padding-bottom:2px;"><img src="../pictures/tux.PNG" height="68" ALT="logo"></td>
 					
 						</tr>
 					</table>

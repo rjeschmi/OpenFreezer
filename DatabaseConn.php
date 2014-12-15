@@ -1,20 +1,20 @@
 <?php
 // CHANGE THE FOLLOWING VARIABLE VALUES TO YOUR DATABASE CONNECTION PARAMETERS
-$databaseip = "Your MySQL server IP";
+$databaseip = "mariadb";
 $databasename = "my_openfreezer_db";
 $name = "openfreezer_www";
-$pw = "MySQL password for openfreezer_www";
+$pw = "UrojVifreg";
 
 // September 11, 2007, Marina:
 global $hostname;
-$hostname = "Your OpenFreezer URL, e.g. http://www.my_openfreezer.org/";
+$hostname = "http://192.168.59.103:81/";
 
 // added email addresses on June 3, 2010 - easy to change
 global $mail_programmer;
-$mail_programmer = "olhovsky@lunenfeld.ca";
+$mail_programmer = "rjeschmi@gmail.com";
 
 global $mail_biologist;
-$mail_biologist = "colwill@lunenfeld.ca";
+$mail_biologist = "rjeschmi@gmail.com";
 
 global $conn;
 

@@ -1116,7 +1116,7 @@ class ColFunctOutputer_Class
 						// Sept 7/06, Marina -- Passing arguments by reference is deprecated, get warnings - but removing the '&' breaks the code, get incorrect sequence translation.  Keep it for now and investigate, perhaps change later
 
 // aug. 30, 2010: if using this code, uncomment outputProteinSeq() function
-						$proteinSpotCount = $this->outputProteinSeq($protein_sequence, $proteinStartSpot_tmp, $setProteinStart_tmp, &$proteinSeqCount, $proteinSpotCount);
+						$proteinSpotCount = $this->outputProteinSeq($protein_sequence, $proteinStartSpot_tmp, $setProteinStart_tmp, $proteinSeqCount, $proteinSpotCount);
 
 						$setProteinStart_tmp = 0;
 						$proteinStartSpot_tmp = 0;
