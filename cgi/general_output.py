@@ -41,7 +41,6 @@ class GeneralOutputClass:
 						</tr>
 					</table>
 				
-	                                <div class="notice" style="font-size:9pt; width:100%%; text-align:center;">Best viewed in <a href="http://www.mozilla.com/en-US/firefox/">Mozilla Firefox&#174;</a> version 2 or later</div>
 	
 					'''
 		

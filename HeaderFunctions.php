@@ -47,7 +47,6 @@ function outputMainHeader()
 				<tr><td style="padding:0;"><img src="pictures/hdr.png"></td><td><img src="pictures/tux.PNG" style="margin-left:2%;"></td></tr>
 			</table>
 
-            <div style="margin-top:5px; height:20px; padding-top:3px; background:maroon; color: white; font-weight:bold; font-size:9pt; width:100%; text-align:center;">Best viewed in <a href="http://www.mozilla.com/en-US/firefox/" style="color:yellow;">Mozilla Firefox&#174;</a> prior to version 4</div>
 			<?php
 				// moved here Aug. 6/08
 				outputNavBar();
