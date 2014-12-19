@@ -1,2 +1,4 @@
 *.pyc
 *.swp
+DatabaseConn.php
+cgi/database_conn.py
