@@ -2,7 +2,7 @@
 
 # python modules
 import cgi
-import cgitb; cgitb.enable()
+import cgitb; cgitb.enable
 
 import SocketServer
 from SocketServer import BaseRequestHandler
@@ -181,7 +181,6 @@ class LocationRequestHandler:
 		db = self.__db
 		cursor = self.__cursor
 		hostname = self.__hostname
-	
 		lHandler = LocationHandler(db, cursor)
 		
 		contID = int(form.getvalue("cont_id_hidden"))
@@ -213,7 +212,6 @@ class LocationRequestHandler:
 		storage_address = form.getvalue("storage_address")
 		
 		lHandler.updateContainerInfo(contID, contType, contSize, contName, contDesc, contLab, storage_type, storage_name, storage_address, cont_shelf, cont_rack, cont_row, cont_col)
-		
 		utils.redirect(hostname + "Location.php?View=6&Sub=3&Mod=" + `contID`)
 	
 	
@@ -262,8 +260,7 @@ class LocationRequestHandler:
 		prepPropMapper = PrepPropertyMapper(db, cursor)
 		prepProp_Name_ID_Map = prepPropMapper.mapPrepPropNameToID()
 		
-		print "Content-type:text/html"
-		print
+		#print "Content-type:text/html"
 		
 		# Update the given attribute for each well selected
 		wells_str = form.getvalue("wells")	# it's a comma-delimited string, count as one value

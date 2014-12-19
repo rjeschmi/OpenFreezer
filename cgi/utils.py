@@ -3,6 +3,7 @@ import types
 import re
 import string
 
+
 #############################################################################################
 # Module utils
 # Contains miscellaneous utility functions utilized by various modules throughout the code
@@ -176,7 +177,7 @@ def numOccurs(seq, pat):
 # Redirect to the given url
 #####################################################################################################
 def redirect(url):
-	print 'Location:' + url
+	print 'Location: ' + url
 	print
 
 
