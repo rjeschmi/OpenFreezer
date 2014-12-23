@@ -24,7 +24,7 @@ function outputMainHeader()
 		<HEAD>
 			<link href="styles/SearchStyle.css" rel="stylesheet" type="text/css">
 			<link href="styles/Header_styles.css" rel="stylesheet" type="text/css">
-			
+			<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 			<!-- August 14/07, Marina: For MS-Map - copied from Nexus -->
 			<LINK REL="stylesheet" HREF="styles/generic.css" type="text/css"/>
 			<!-- <script src="scripts/generic.js" language="javascript" type="text/javascript"></script>-->
@@ -42,11 +42,9 @@ function outputMainHeader()
 
 			<!-- this is for infopops -->
 			<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
-
-			<table id="header_table" cellpadding="0" cellspacing="0" style="background:#000000; width:100%;">
-				<tr><td style="padding:0;"><img src="pictures/hdr.png"></td><td><img src="pictures/tux.PNG" style="margin-left:2%;"></td></tr>
-			</table>
-
+                <div id="logo" >
+                    OpenFreezer@OHRI
+                </div>
 			<?php
 				// moved here Aug. 6/08
 				outputNavBar();

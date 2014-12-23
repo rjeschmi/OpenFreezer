@@ -236,3 +236,12 @@
 			a.theName:visited	{
 					text-decoration: none;
 					}
+
+
+div#logo
+    { 
+        Font-family: 'Permanent Marker', cursive;
+        text-align: right;
+        font-size: 5em;
+        color: #224f8b;
+    }

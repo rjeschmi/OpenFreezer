@@ -182,17 +182,17 @@
   	.small  	{ font: 10px Geneva,Arial; }
   	.small2, .BoldRed 	{ font: 10px Verdana, MS Sans Serif; }
 
-        a   	{ color: rgb(0,0,255); text-decoration: underline; }
+        a   	{ color: rgb(0,0,255); text-decoration: none;}
         a:hover { color: #333; }
 
         a.footer { color: #fff; font: 10px Verdana; font-weight: bold; text-decoration: none; }
-        a.footer:hover	{ color: #fff; text-decoration: underline; }
+        a.footer:hover	{ color: #fff; }
 
         a.nav, .nav 	{ color: #FFFFFF; font: 10px Verdana; font-weight: bold; text-decoration: none; }
-        a.nav:hover 	{ color: #EEBB00; text-decoration: underline; }
+        a.nav:hover 	{ color: #EEBB00; }
 
         a.nav-active 	{ color: #333333; font: 10px Verdana; font-weight: bold; text-decoration: none; }
-        a.nav-active:hover	{ color: #666666; text-decoration: underline; }
+        a.nav-active:hover	{ color: #666666; }
 
         a.invert:hover 	{ color: #FFF; text-decoration: none; }
 

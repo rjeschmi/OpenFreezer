@@ -90,7 +90,7 @@
 
 						<P style="padding-left:10px;"><SPAN style="border: 1px solid black; width:850px; padding:10px; font-weight:bold; font-size:9pt;">Dedicated in loving memory of <a href="dedication.php">Larisa Olhovsky</a></SPAN><BR><BR>
 						
-						<P style="padding-left:10px; padding-top:5px;">Please report any errors with the source code through the Bug Tracker at <a href="http://openfreezer.org/bugreport.html">http://openfreezer.org/bugreport.html</a>.  All other questions should be reported to the local administrator.
+						<P style="padding-left:10px; padding-top:5px;">Please report any errors with the source code through the Bug Tracker at <a href="https://github.com/rjeschmi/OpenFreezer/issues">GitHub Issues Page</a>.  All other questions should be reported to the local administrator.
 				</td>
 			</TR>
 		</TABLE>
