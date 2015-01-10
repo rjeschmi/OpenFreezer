@@ -1373,6 +1373,7 @@ foreach ($mandatoryGeneral as $p_k => $p_nm)
 		}
 
 		$this->printForm_Insert_Insert($rID, $iShow);
+        error_log ("am i here?");
 		
 		// Other
 		foreach ($_SESSION["ReagentType_Name_ID"] as $r_type => $rTypeID)
@@ -1386,6 +1387,7 @@ foreach ($mandatoryGeneral as $p_k => $p_nm)
 				break;
 
 				case 'CellLine':	// update Jan. 19, 2010
+                    error_log ("cellline: or here");
 					?>
 					<!-- CELL LINE -->
 					<FORM method="POST" NAME="createReagentForm" action="<?php echo $cgi_path . "preload.py"; ?>" onsubmit="return verifyParents('<?php echo $rType; ?>', '<?php echo $subtype; ?>');">
