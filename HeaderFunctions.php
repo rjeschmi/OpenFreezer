@@ -33,7 +33,10 @@ function outputMainHeader()
 
 			<!-- March 29, 2010: Incorporate overlib for sticky popups and tooltips -->
 			<script type='text/javascript' src='overlib/overlib.js'></script>
-			<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000"></div>
+            <div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000"></div>
+            <link href="css/bootstrap.css" rel="stylesheet">
+            <script src="js/jquery.js" ></script>
+            <script src="js/bootstrap.js"></script>
 		</HEAD>
 
 <!-- removed Oct. 3/07 - doesn't work on Mac OS X	<BODY onLoad="initAll()"> -->
