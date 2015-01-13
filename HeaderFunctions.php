@@ -25,9 +25,7 @@ function outputMainHeader()
 			<link href="styles/SearchStyle.css" rel="stylesheet" type="text/css">
 			<link href="styles/Header_styles.css" rel="stylesheet" type="text/css">
 			<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
-			<!-- August 14/07, Marina: For MS-Map - copied from Nexus -->
 			<LINK REL="stylesheet" HREF="styles/generic.css" type="text/css"/>
-			<!-- <script src="scripts/generic.js" language="javascript" type="text/javascript"></script>-->
 
 			<script type="text/javascript" src="scripts/menu.js"></script>
 

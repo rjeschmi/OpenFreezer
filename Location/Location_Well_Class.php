@@ -175,9 +175,7 @@ class Location_Well_Class
 							</td>
 
 							<td name="limsID_td[]">
-							<?php 
-								// LIMS ID
-								?><input type="text" size="8" class="locationText" name="well_LIMSID_field[]" value="<?php echo strtoupper($_POST["well_LIMSID_field"][$key]); ?>" onKeyPress="return disableEnterKey(event);">
+                                <input type="text" size="8" class="locationText typeahead" name="well_LIMSID_field[]" value="<?php echo strtoupper($_POST["well_LIMSID_field"][$key]); ?>" onKeyPress="return disableEnterKey(event);" data-provide="typeahead" / >
 							</td>
 
 							<?php 
@@ -566,7 +564,8 @@ class Location_Well_Class
 						<td style="display:none"><input type="checkbox" name="wells_release_checkbox[]" id="well_release_checkbox[]" value="NO"></td>
 						<td style="font-weight:bold; color:#104E8B; width:50px; font-size:8pt; text-align:center;"><?php echo $lfunc_obj->getLetterRow($rowvalue) . ":" . $wellCol_ar[$key]?></td>
 
-						<td name="limsID_td[]" style="padding-left:7px;"><input type="text" size="7" class="locationText" name="well_LIMSID_field[]" value="" onKeyPress="return disableEnterKey(event);"></td><?php
+                        <td name="limsID_td[]" style="padding-left:7px;"><input type="text" size="7" class="locationText typeahead" name="well_LIMSID_field[]" value="" onKeyPress="return disableEnterKey(event);" data-provide="typeahead"></td>
+                        <?php
 
 						if ($isIsolate_container)
 						{
@@ -663,6 +662,8 @@ class Location_Well_Class
 				</tr>
 				</table>
 				</form>
+                <script src="js/openfreezer-typeahead.js">
+                </script>
 				<?php
 			}
 			else
@@ -674,7 +675,7 @@ class Location_Well_Class
 					<td colspan="100%"><FONT SIZE="4"><B><CENTER><input type="submit" name="mod_empty_well_cancel" value="OK"></CENTER></B></FONT></td>
 				</tr>
 				</table>
-				</form>
+                </form>
 				<?php
 			}
 		}	// end if isset wells_checkbox
