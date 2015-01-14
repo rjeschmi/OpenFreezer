@@ -1,17 +1,7 @@
- 	body
-	{
-		font: 13px Arial;
-		/*background: #FFFFFF url("../pictures/page_bg_temp.jpg") repeat-x fixed bottom;*/
-		
-/* 		width:1075px; */
-		width:98%;
-		height: 82%;
-	} 
 	
-	table, td { font: 13px Arial; color: #000000 }
 	div { text-align: justify }
 	
-	body.gradient { font: 13px Arial; background: #FFFFFF url("../pictures/page_bg_temp.jpg") repeat-x fixed bottom }
+	body.gradient { font: 13px Arial; }
 	
 	table.preview 
 	{ 
@@ -257,7 +247,6 @@
             	height:180px;
             	overflow:auto;
             	padding:3px;
-/*          	background: #FFFFFF url("../pictures/yellow_bg.jpg") repeat;*/
 		background-color: #C1FFC1;
 		border-color:#E6E6FA; 
 		border-width:1px; 

@@ -1,7 +1,7 @@
 //CHANGE THIS TO YOUR OPENFREEZER URL (NOTE THE TRAILING SLASH)
 var hostName = "Your OpenFreezer URL, e.g. http://www.my_openfreezer.org/";
 
-var cgiPath = hostName + "cgi/";
+var cgiPath = "/cgi/";
 var parentsValid = true;
 var currReagentType;
 var wellResult = true;
@@ -535,97 +535,6 @@ function verifySitesAtCreation()
 	return verifyHybridSites('fpcs', 'fpcs_list') && verifyHybridSites('tpcs', 'fpcs_list');
 }
 
-/*
-// April 30/08: Validate proper format of HYBRID sites
-function verifyHybridSites(inputID, enzListID)
-{
-// alert(enzListID);
-	// May 29/08
-	var gatewayLoxPNoneSites = ['attB1', 'attB2', 'attP1', 'attP2', 'attL1', 'attL2', 'attR1', 'attR2', 'LoxP', 'None'];
-	var enzymeList = document.getElementById(enzListID);
-
-	var siteField = document.getElementById(inputID);
-	var site = siteField.value;	// always a text field
-
-	var digits = "0123456789";
-
-	if (!inArray(site, gatewayLoxPNoneSites))
-	{
-		for (d in digits)
-		{
-			if (site.indexOf(d) >= 0)
-			{
-				alert("Site names may contain Roman numerals only.  Please verify your input.");
-				siteField.focus();
-				return false;
-			}
-	
-			if (site.indexOf('/') >= 0)
-			{
-				alert("Hybrid site names must be hyphen-delimited. Please verify your input");
-				siteField.focus();
-				return false;
-			}
-	
-			// Make sure the hybrid restriction site provided is of the form EnzI-EnzII, where EnzI and EnzII both match a REBASE enzyme value and are separated by hyphen, no spaces
-			var hyphenIndex = site.indexOf('-');
-	
-	// Removed April 30/08 - both sites don't need to be hybrid at creation, one can contain a single enzyme name
-	// 
-	// 		if (hyphenIndex < 0)
-	// 		{
-	// 			alert("Hybrid restriction site must be of the form 'SiteI-SiteII', where SiteI and SiteII both match REBASE enzyme names and are separated by a hyphen.  Please verify your input.");
-	// 			siteField.focus();
-	// 			return false;
-	// 		}
-	
-			if (hyphenIndex > 0)
-			{
-				var h1 = trimAll(site.substring(0, hyphenIndex));
-				var h2 = trimAll(site.substring(hyphenIndex+1));
-
-				var h1_matches = 0;
-				var h2_matches = 0;
-			
-				for (i = 0; i < enzymeList.options.length; i++)
-				{
-					enz = enzymeList.options[i].value;
-			
-					if (enz == h1)
-					{
-						h1_matches++;
-						break;
-					}
-				}
-			
-				for (i = 0; i < enzymeList.options.length; i++)
-				{
-					enz = enzymeList.options[i].value;
-			
-					if (enz == h2)
-					{
-						h2_matches++;
-						break;
-					}
-				}
-			
-				if ((h1_matches > 0) && (h2_matches > 0))
-				{
-					break;		// feb. 7/08
-				}
-				else
-				{
-					alert("Hybrid restriction site names are CASE-SENSITIVE, of the form 'SiteI-SiteII', where SiteI and SiteII both match REBASE enzyme names, SEPARATED BY A HYPHEN.  Please verify your input.");
-					siteField.focus();
-					return false;
-				}
-			}
-		}
-	}
-
-	return true;
-}*/
-
 
 function verifySites(sitesWarningsArray)
 {
@@ -690,66 +599,6 @@ function verifySites(sitesWarningsArray)
 	return true;
 
 
-// 	fpcsListID = "fpcs_list_" + rType;
-// 	tpcsListID = "tpcs_list_" + rType;
-// 
-// 	fp_warn_name = "fpcs_warning_" + rType;
-// 	tp_warn_name = "tpcs_warning_" + rType;
-// 
-// 	fp_warning = document.getElementById(fp_warn_name);
-// 	tp_warning = document.getElementById(tp_warn_name);
-// 
-// 	radios = document.getElementsByName("warning_change_input");
-// 
-// 	for (i = 0; i < radios.length; i++)
-// 	{
-// 		if (radios[i].checked)
-// 		{
-// 			if (radios[i].value == "restart")
-// 				return true;
-// 		}
-// 	}
-// 
-// 	if (document.getElementById(fpcsListID))
-// 	{
-// 		fpcsList = document.getElementById(fpcsListID);
-// 
-// 		fpSelected = fpcsList[fpcsList.selectedIndex].value;
-// 
-// 		if ((fpSelected.toLowerCase() == 'other') || (fpSelected == ''))
-// 		{
-// 			alert("Please provide a specific value for the 5' cloning site.");
-// 			fpcsList.focus();
-// 
-// 			if (tp_warning)
-// 				tp_warning.style.display = "none";
-// 
-// 			if (fp_warning)
-// 				fp_warning.style.display = "inline";
-// 
-// 			return false;
-// 		}
-// 	}
-// 
-// 	if (document.getElementById(tpcsListID))
-// 	{
-// 		tpcsList = document.getElementById(tpcsListID);
-// 		tpSelected = tpcsList[tpcsList.selectedIndex].value;
-// 
-// 		if ((tpSelected.toLowerCase() == 'other') || (tpSelected == ''))
-// 		{
-// 			if (fp_warning)
-// 				fp_warning.style.display = "none";
-// 
-// 			if (tp_warning)
-// 				tp_warning.style.display = "inline";
-// 
-// 			alert("Please provide a specific value for the 3' cloning site.");
-// 			return false;
-// 		}
-// 	}
-// 
-// 	return true;
 }
 
 // Oct. 15/07: Verify restriction enzyme input format - make sure it contains no digits or slashes
@@ -7269,8 +7118,6 @@ function getEnzymes(scriptPath)
 {
 	xmlhttp = createXML();
 	url = scriptPath + "restriction_sites.py";
-// 	xmlhttp.open("GET", url, false);
-// 	xmlhttp.send('');
 
 	xmlhttp.open("POST", url, false);
 	xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
@@ -17491,19 +17338,12 @@ function checkPrepType()
 	// find all prefixes
 	for (i = 0; i < allInputs.length; i++)
 	{
-/*		if ((allInputs[i].type == "text") && (allInputs[i].name == "well_LIMSID_field[]"))
-		{
-			all_LIMS_IDs.push(allInputs[i].value);
-		}
-		else */
 		if ((allInputs[i].type == "hidden") && (allInputs[i].name == "allowed_prep_prefixes[]"))
 		{
-// alert("allowed " + allInputs[i].value);
 			allowed_prefixes.push(allInputs[i].value);
 		}
 		else if ((allInputs[i].type == "hidden") && (allInputs[i].name == "all_prefixes[]"))
 		{
-// alert("ALL " + allInputs[i].value);
 			all_prefixes.push(allInputs[i].value);
 		}
 	}
@@ -17516,7 +17356,6 @@ function checkPrepType()
 			// Empty wells are allowed
 			if (allInputs[i].value.length > 0)
 			{
-// alert(allInputs[i].value.search(reg));
 
 				if (allInputs[i].value.search(reg) < 0)
 				{
@@ -17526,14 +17365,10 @@ function checkPrepType()
 				}
 				else
 				{
-	// alert(allInputs[i].value);
 					alpha_prefix = allInputs[i].value.search(reg_alpha);
 					num_prefix = allInputs[i].value.search(reg_num);
 	
 					prefix = allInputs[i].value.substr(0, num_prefix);
-// 	alert(prefix);
-// alert(all_prefixes);
-// 	return false;
 					// if no prefixes have been defined anything is allowed!
 					if (allowed_prefixes.length > 0)
 					{

@@ -18,6 +18,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.1"
+    "bootstrap": "~3.3.1",
+    "typeahead.js": "~0.10.5"
   }
 }

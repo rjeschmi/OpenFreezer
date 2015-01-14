@@ -662,7 +662,7 @@ class Location_Well_Class
 				</tr>
 				</table>
 				</form>
-                <script src="js/openfreezer-typeahead.js">
+                <script src="js/openfreezer.js">
                 </script>
 				<?php
 			}
