@@ -1,0 +1,12 @@
+[path]
+url = http://openfreezer/
+cgi_url = http://openfreezer/cgi/
+path = /var/www
+
+[database]
+mysql_user = openfreezer_www
+mysql_pass = <password>
+mysql_db   = my_openfreezer_db
+mysql_host = <mysql_host>
+
+

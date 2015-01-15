@@ -1,5 +1,6 @@
 *.pyc
 *.swp
-DatabaseConn.php
+public/DatabaseConn.php
 cgi/database_conn.py
+config/openfreezer.ini
 bower_components
