@@ -4,6 +4,14 @@ from flask import request
 
 from flask.ext.sqlalchemy import SQLAlchemy
 
+
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_object('config')
+app.config.from_pyfile('config.py')
+
+db = SQLAlchemy(app)
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,8 +24,4 @@ def autocomplete_OFid():
     search = request.args.get('term')
     app.logger.debug(search)
     return jsonify(items=NAMES)
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
 
