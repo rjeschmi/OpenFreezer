@@ -76,7 +76,6 @@ class generalFunc_Class
 		
 		// Replaced April 28/09
 		$testgroup = $_SESSION["ReagentType_ID_Prefix"][$tempType] . $tempGroup;
-        error_log("testgroup: ".var_dump($_SESSION["ReagentType_ID_Prefix"]));
 		return $testgroup;
 	}
 	
