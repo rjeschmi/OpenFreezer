@@ -3186,6 +3186,7 @@ class Reagent_Output_Class
 
 		?><table name="reagent_props" style="vertical-align:middle; padding-right:2px; padding-left:10px;" border="1" frame="box" rules="none" cellspacing="4" class="detailedView_tbl" width="768px"><?php
 
+        error_log("reagentType: ".$reagentType." reagentGroup: ".$reagentGroup);
 		$limsID = $gfunc_obj->getConvertedID($reagentType, $reagentGroup);
 
 		// July 7/09: Get parents here and print Insert ID next to 'cDNA' feature positions for recombination vectors

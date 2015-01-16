@@ -37,6 +37,7 @@ function outputMainHeader()
             <script src="js/jquery.js" ></script>
             <script src="js/bootstrap.js"></script>
             <script src="js/typeahead.bundle.js"></script>
+            <script src="js/handlebars.js"></script>
 		</HEAD>
 
 <!-- removed Oct. 3/07 - doesn't work on Mac OS X	<BODY onLoad="initAll()"> -->

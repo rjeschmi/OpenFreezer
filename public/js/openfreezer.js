@@ -6,7 +6,8 @@ var engine = new Bloodhound ({
        		console.debug("out: "+resp.items);
        		return $.map(resp.items, function (item) {
 			return {
-				value: item
+                id: item.id,
+				value: item.value
 			};
 		});
     	}
@@ -20,10 +21,14 @@ engine.initialize();
 
  
 $('.typeahead').typeahead({
+  highlight:true,
 },
 {
   name: 'OF_ids',
-  highlight: true,
-  source: engine.ttAdapter()
+  displayKey: 'id',
+  source: engine.ttAdapter(),
+  templates: {
+    suggestion: Handlebars.compile('<p>{{id}} - {{value}}</p>')
+  }
 });
 
