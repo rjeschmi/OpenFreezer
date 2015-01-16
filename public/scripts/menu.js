@@ -63,129 +63,16 @@ function cancelReagentCreation()
 	xmlhttp.onreadystatechange = function(){};
 }
 
-
-// Reagent functions
-function showMorphology()
-{
-	var list_id = "morphology_list";
-	var text_id = "morphology_txt";	
-	var listElement = document.getElementById(list_id);
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display = "inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
-}
-
-function showTissueType()
-{
-	var list_id = "tissue_type_list";
-	var text_id = "tissue_type_txt";	
-	var listElement = document.getElementById(list_id);
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display = "inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
-}
-
 function showSpeciesBox()
 {
 	var list_id = "species_list";
 	var text_id = "species_txt";	
-	var listElement = document.getElementById(list_id);
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display = "inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
-}
-
-function showDevStage()
-{
-	var list_id = "dev_stage_list";
-	var text_id = "dev_stage_txt";	
-	var listElement = document.getElementById(list_id);
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display = "inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
-}
-
-function showProtocolBox()
-{
-	var list_id = "protocol_list";
-	var text_id = "protocol_txt";	
-	var listElement = document.getElementById(list_id);
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display="inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
+    showTagTypeBox(list_id, text_id);
 }
 
 // March 3/08: Changing function signature - passing list and text IDs as arguments
+// rjeschmi: prototype for other Boxes
+//
 function showTagTypeBox(list_id, text_id)
 {
 	var listElement = document.getElementById(list_id);
@@ -272,110 +159,18 @@ function showSpecificOtherCheckbox(checkTextboxID)
 // Added April 6/07, Marina: Since the new layout may contain multiple expandable dropdown lists for different reagent types, wrote this function, which takes as input specific IDs that contain the reagent type embedded in them; then there's no confusion
 function showSpecificOtherTextbox(listID, textID)
 {
-// alert(textID + " before");
 
 	textID = unescape(textID);
-
-// alert(textID + " after");
-	var listElement = document.getElementById(listID);
-// alert(listID);
-	var txtElem = document.getElementById(textID);
-// 	alert(textID);
-	var selectedInd = listElement.selectedIndex;
-// alert(selectedInd);
-	var selectedValue = listElement[selectedInd].value;
-// alert(selectedValue);
-	
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display="inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		if (txtElem)
-			txtElem.style.display="none";
-	}
+    showTagTypeBox(listID, textID)
 }
 
-function showExprSystBox()
-{
-	var list_id = "expr_syst_list";
-	var text_id = "expr_syst_list_txt";	
-	var listElement = document.getElementById(list_id);
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display="inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
-}
-
-function showPromoText()
-{
-	var list_id = "promoter_list";
-	var text_id = "promo_txt";	
-	var listElement = document.getElementById(list_id);
-
-	// Check to see if the textbox exists and create it ONLY if it doesn't
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display="inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
-}
 
 function showCMText()
 {
 	var list_id = "cm_list";
 	var text_id = "cm_txt";	
-	var listElement = document.getElementById(list_id);
-
-	// Check to see if the textbox exists and create it ONLY if it doesn't
-	var txtElem = document.getElementById(text_id);
-	var selectedInd = listElement.selectedIndex;
-	var selectedValue = listElement[selectedInd].value;
-
-	if (selectedValue.toLowerCase() == 'other')
-	{
-		// Show the textbox
-		txtElem.style.display="inline";
-
-		// Set the focus to the new textbox (place cursor inside)
-		txtElem.focus();
-	}
-	else
-	{
-		// Hide the textbox
-		txtElem.style.display="none";
-	}
+    showTagTypeBox(list_id, text_id);
+	
 }
 
 // Oct. 15/07: Show/hide restriction enzyme textbox if 'Other' is selected from the dropdown list
@@ -413,15 +208,6 @@ function showHideFivePrimeOther(subtype)
 
 // Oct. 15/07: Show/hide restriction enzyme textbox if 'Other' is selected from the dropdown list
 function showHideThreePrimeOther(subtype)
-{
-//	var allSelect = document.getElementsByTagName("SELECT");
-
-//	for (a in allSelect)
-//	{
-//		tmpList = allSelect[a];
-
-//		if (tmpList.id == "tpcs_list_1")
-//		{
  			var tpList = document.getElementById("tpcs_list_1");
 			var tpText = document.getElementById("tpcs_txt_" + subtype);
 		
@@ -527,12 +313,6 @@ function verifyInsertCreation()
 //		return false;
 
 	return verifyCloningSites("insert");
-}
-
-
-function verifySitesAtCreation()
-{
-	return verifyHybridSites('fpcs', 'fpcs_list') && verifyHybridSites('tpcs', 'fpcs_list');
 }
 
 
@@ -1140,32 +920,13 @@ function showHideCustomSites()
 
 function enableOrDisableSites()
 {
-// 	var sitesTbl = document.getElementById("cloning_sites");
-// 
-// 	if (sitesTbl && (sitesTbl.style.display == "none"))
-// 	{
-// 		sitesTbl.style.display = "inline";
-// 	}
-
 	var radio = document.getElementById("make_hybrid_option");
-	
-// 	var fpcs = document.getElementById("fpcs");
-// 	var tpcs = document.getElementById("tpcs");
 
 	var insert_fpcs = document.getElementById("fpcs_list");
 	var insert_tpcs = document.getElementById("tpcs_list");
 
 	var pv_fpcs = document.getElementById("fpcs_list_1");
 	var pv_tpcs = document.getElementById("tpcs_list_1");
-
-// 	var fpcs_comm = document.getElementById("fpcs_comment");
-// 	var tpcs_comm = document.getElementById("tpcs_comment");
-
-// 	var main_fpcs_captn = document.getElementById("main_5_site_caption");
-// 	var main_tpcs_captn = document.getElementById("main_3_site_caption");
-		
-// 	var alt_fpcs_captn = document.getElementById("alt_5_site_caption");
-// 	var alt_tpcs_captn = document.getElementById("alt_3_site_caption");
 
 	if (radio.checked == true)
 	{
@@ -1175,23 +936,6 @@ function enableOrDisableSites()
 		insert_fpcs.disabled = false;
 		insert_tpcs.disabled = false;
 
-// 		fpcs.style.color = "#FF0000";
-// 		tpcs.style.color = "#FF0000";
-
-// 		fpcs_comm.style.display = "table-row";
-// 		tpcs_comm.style.display = "table-row";
-
-// 		main_fpcs_captn.style.display = "none";
-// 		main_tpcs_captn.style.display = "none";
-
-// 		alt_fpcs_captn.style.display = "table-row";
-// 		alt_tpcs_captn.style.display = "table-row";
-
-		// May 14/08: Color cell white
-// 		fpcs.style.backgroundColor = "#FFFFFF";
-// 		tpcs.style.backgroundColor = "#FFFFFF";
-		
-// 		fpcs.focus();
 	}
 	else
 	{
@@ -1201,21 +945,6 @@ function enableOrDisableSites()
 		insert_fpcs.disabled = true;
 		insert_tpcs.disabled = true;
 
-// 		fpcs.style.color = "brown";
-// 		tpcs.style.color = "brown";
-
-// 		fpcs_comm.style.display = "none";
-// 		tpcs_comm.style.display = "none";
-		
-// 		main_fpcs_captn.style.display = "table-row";
-// 		main_tpcs_captn.style.display = "table-row";
-
-// 		alt_fpcs_captn.style.display = "none";
-// 		alt_tpcs_captn.style.display = "none";
-
-		// May 14/08: Color cell gray to emphasize that it's disabled
-// 		fpcs.style.backgroundColor = "#E8E8E8";
-// 		tpcs.style.backgroundColor = "#E8E8E8";
 	}
 }
 
@@ -1319,8 +1048,6 @@ function showReagentSubtype()
 			vectorSubtypeBox.style.display = "table-row";
 			vectorDiagm.style.display = "table-row";
 			insertGeneralProps.style.display = "none";
-// 			oligoGeneralProps.style.display = "none";
-// 			addReagentTypeTable.style.display = "none";
 			vector_heading.style.display = "inline";
 			cell_line_heading.style.display = "none";
 
@@ -1433,16 +1160,13 @@ function showReagentSubtype()
 // 		break;
 	
 		case 'Other':
-// alert("1");
 			// New reagent type addition
 			vectorSubtypeBox.style.display = "none";
 			cellLineSubtypeBox.style.display = "none";
 			cellLineGeneralProps.style.display = "none";
 			vectorGeneralProps.style.display = "none";
-// 			vectorBackgroundProps.style.display = "none";
 			cellLineDiagm.style.display = "none";
 			vectorDiagm.style.display = "none";
-// 			oligoGeneralProps.style.display = "none";
 			insertGeneralProps.style.display = "none";
 
 			vector_heading.style.display = "none";
@@ -1453,7 +1177,6 @@ function showReagentSubtype()
 				reagentTypeCreateOther[i].style.display="none";
 			}
 
-// 			addReagentTypeTable.style.display = "inline";
 
 			if (document.getElementById("customizeReagentPropsTbl"))
 				document.getElementById("customizeReagentPropsTbl").style.display = "inline";
@@ -1474,8 +1197,6 @@ function showReagentSubtype()
 			if (cellLineSubtypeBox)
 				cellLineSubtypeBox.style.display = "none";
 
-// 			if (oligoGeneralProps)
-// 				oligoGeneralProps.style.display = "none";
 
 			if (insertGeneralProps)
 				insertGeneralProps.style.display = "none";
@@ -1489,8 +1210,6 @@ function showReagentSubtype()
 			if (vectorDiagm)
 				vectorDiagm.style.display = "none";
 
-// 			if (addReagentTypeTable)
-// 				addReagentTypeTable.style.display = "none";
 
 			if (vector_heading)
 				vector_heading.style.display = "none";
@@ -1615,14 +1334,12 @@ function showParents(listID)
 				cellLineParents.style.display = "none";
 			}
 
-// 			preload.style.display = "table-row";
 
 			if (vectorGeneralProps)
 			{
 				vectorGeneralProps.style.display = "none";
 			}
 
-// 			vectorBackgroundProps.style.display = "none";
 			
 			if (cellLineGeneralProps)
 			{
@@ -1718,9 +1435,7 @@ function showParents(listID)
 			nonRecombParents.style.display = "none";
 			recombParents.style.display = "table-row";
 			cellLineParents.style.display = "none";
-// 			preload.style.display = "table-row";
 			vectorGeneralProps.style.display = "none";
-// 			vectorBackgroundProps.style.display = "none";
 			cellLineGeneralProps.style.display = "none";
 			
 			// Sept. 8/08
@@ -2090,89 +1805,6 @@ function getReagentSubtype(reagentType)
 		default:
 			return "";
 		break;
-	}
-}
-
-// Written May 11/08
-function verifyReagentIntroCreation(rType, subtype)
-{
-	if (document.getElementById("cancel_set"))
-	{
-		var cancelSet = document.getElementById("cancel_set").value;
-	}
-	else
-	{
-		var cancelSet = 0;
-	}
-
-	if (cancelSet != 1)
-	{
-		if (rType == 'Insert')
-		{
-			subtype = "";
-	
-			// Type of Insert can never be empty
-// 			var itype_list = document.getElementById("itype_list");
-			var itype_list = document.getElementById("Insert_Type of insert_prop");
-			var itype_selectedInd = itype_list.selectedIndex;
-		
-// 			var oc_list = document.getElementById("oc_list");
-			var oc_list = document.getElementById("Insert_Open/Closed_prop");
-			var oc_selectedInd = oc_list.selectedIndex;
-		
-// 			var oc_warning = document.getElementById("oc_warning");
-			var oc_warning = document.getElementById("Insert_Open/Closed_warning");
-// 			var it_warning = document.getElementById("it_warning");
-			var it_warning = document.getElementById("Insert_Type of insert_warning");
-			
-			if (verifyReagentName(rType, subtype) && verifyStatus(rType) && verifyPacket(rType))
-			{
-				// No Insert Type selected
-				if ((itype_selectedInd == 0) && (itype_list[itype_selectedInd].value == ""))
-				{
-					alert("You must select a Type of Insert to continue");
-					itype_list.focus();
-					it_warning.style.display = "inline";
-					oc_warning.style.display = "none";
-		
-					return false;
-				}
-				else
-				{
-					it_warning.style.display = "none";
-		
-					// If insert type is filled in, check open/closed
-					var itype_selectedValue = itype_list[itype_selectedInd].value;
-		
-					if ((itype_selectedValue != "cDNA with UTRs") && (itype_selectedValue != "DNA Fragment") && (itype_selectedValue != "None"))
-					{
-						// must have an open/closed value
-						oc_sel_val = oc_list[oc_selectedInd].value;
-		
-						if (oc_sel_val == "")
-						{
-							alert("You must select an Open/Closed value to continue");
-							oc_list.focus();
-							oc_warning.style.display = "inline";
-							return false;
-						}
-					}
-					else 	// added May 28/07 to hide warning if showing from previous error
-					{
-						if (oc_warning.style.display == "inline")
-						{
-							oc_warning.style.display = "none";
-						}
-					}
-		
-					return checkMandatoryProps(rType);
-				}
-			}
-	
-			return false;
-		}
-
-		return (verifyReagentName(rType, subtype) && verifyStatus(rType) && verifyPacket(rType) && checkMandatoryProps(rType));
 	}
 }
 
@@ -2587,23 +2219,6 @@ function verifyOligoSequence()
 	return true;
 }
 
-/* Function defined twice!!  removed Oct. 19/09
-function inArray(myChar, myArray)
-{
-    for (var i = 0; i < myArray.length; i++)
-    {
-        //alert(myArray[i]);
-        //alert(myChar == myArray[i]);
-
-        if (myChar == myArray[i])
-            return true;
-    }
-
-    return false;
-}*/
-
-
-
 function verifySequence(rTypeName, seqType)
 {
 	var seq_container = document.getElementById(seqType + "_sequence_" + rTypeName);
@@ -2781,15 +2396,6 @@ function changeParentValues(clonMeth)
 			targetPV.value = srcPV.value;
 			targetCL.value = srcCL.value;
 
-// 			srcChange_PV_Flag = document.getElementById("assoc_pv_change");
-// 			targetChange_PV_Flag = document.getElementById("change_pv");
-// 
-// 			targetChange_PV_Flag.value = srcChange_PV_Flag.value;
-// 
-// 			srcChange_CL_Flag = document.getElementById("assoc_cl_change");
-// 			targetChange_CL_Flag = document.getElementById("change_cl");
-// 
-// 			targetChange_CL_Flag.value = srcChange_CL_Flag.value;
 	}
 }
 
@@ -2918,9 +2524,7 @@ function verifyParentFormat(subtype)
 // updated April 18/08
 function checkSave(scriptPath)
 {
-//	alert('in checksave');
 	var vType = document.getElementById("vector_cloning_method").value;
-// alert(vType);
 	if (vType != '3')
 	{
 		if (verifyVectorParents(vType) && verifyCloningSites(vType))
@@ -2928,27 +2532,14 @@ function checkSave(scriptPath)
 			changeParentValues(vType);
 			verifySequenceAndRestrictionSites(scriptPath, vType);
 		}
-		else
-		{
-	//		alert ('verification failed');
-		}
 	}
-// Removed April 21/08
-// 	else	// Nov. 27/11 - novel vectors, no parents
-// 	{
-// 		document.getElementById("change_state_id").value = "Save";
-// 		document.vectorDetailForm.submit();
-// 	}
 }
 
 function verifyVectorParents(vType)
 {
-// 	alert('in verify parents');
 
 	if (document.pressed == 'Save')
 	{
-//		var vType = document.getElementById("vector_cloning_method").value;
-
 		if (verifyParentFormat(vType))
 		{
 			var vpChange = document.getElementById("change_pv").value;
@@ -2976,13 +2567,11 @@ function confirmSequenceChange()
 {
 	// Determine if parents were changed (i.e. old value != new value)
 	var pvOld = document.getElementById("parent_vector_old_id").value;
-	//alert("pvOld " + pvOld);
 
 	if (document.getElementById("parent_vector_id_txt"))
 	{
 		var pvNew = document.getElementById("parent_vector_id_txt").value;
 	}
-// 	alert("pvNew " + pvNew);
 	var secondParentChange = false;
 
 	// Insert or IPV?
@@ -3245,9 +2834,7 @@ function verifyPacket(rType)
 
 	if (cancelSet != 1)
 	{
-// alert(rType);
 		var temp_id = "packetList_" + rType;
-// alert(temp_id);
 		var packetList = document.getElementById(temp_id);
 
 		if (packetList)		// could just be another creation step, OK
@@ -3298,35 +2885,22 @@ function verifyReagentName(rType, subtype)
 
 	if (cancelSet != 1)
 	{
-// 		var nameField = document.getElementById("reagent_name_prop_" + subtype);
 		var nameField = document.getElementById(rType + "_Name_prop");
-// 		var name_warning = document.getElementById(subtype + "_name_warning");
 		var name_warning = document.getElementById(rType + "_Name_warning");
 	
 		if (nameField.value == "")
 		{
 			// hide all other warnings - Different for each reagent type, so check first if exists
-// 			if (document.getElementById("fp_warning"))
 			if (document.getElementById(rType + "_5' Cloning Site_warning"))
-// 				document.getElementById("fp_warning").style.display = "none";
 				document.getElementById(rType + "_5' Cloning Site_warning").style.display = "none";
 	
-// 			if (document.getElementById("tp_warning"))
-// 				document.getElementById("tp_warning").style.display = "none";
 	
 			if (document.getElementById(rType + "_3' Cloning Site_warning"))
-// 				document.getElementById("fp_warning").style.display = "none";
 				document.getElementById(rType + "_3' Cloning Site_warning").style.display = "none";
-/*
-			if (document.getElementById("oc_warning"))
-				document.getElementById("oc_warning").style.display = "none";*/
 
 			if (document.getElementById(rType + "_Open/Closed_warning"))
 				document.getElementById(rType + "_Open/Closed_warning").style.display = "none";
 		
-// 			if (document.getElementById("it_warning"))
-// 				document.getElementById("it_warning").style.display = "none";
-	
 			if (document.getElementById(rType + "_Type of Insert_warning"))
 				document.getElementById(rType + "_Type of Insert_warning").style.display = "none";
 		
@@ -3393,10 +2967,8 @@ function verifyCDNA(isLinear)
 {
 	var cdnaStart = document.getElementById("cdna_insert_start");
 	var cdnaEnd =  document.getElementById("cdna_insert_end");
-// 	var cdnaWarning = document.getElementById("cdna_warning");	// removed May 11/08
 	var cdnaUnknown = document.getElementById("cdna_unknown");
 
-// 	var dna_sequence = document.getElementById("dna_sequence").value;
 	
 	// Check start and end filled in - May 14/08: Make mandatory for Insert, optional for Vectors
 	if (isLinear)
@@ -3423,7 +2995,6 @@ function verifyCDNA(isLinear)
 			{
 				alert("Please indicate both cDNA start and end positions, or select \"N/A\" if the sequence does not contain a cDNA.");
 				cdnaEnd.focus();
-	// 			cdnaWarning.style.display = "table-row";
 		
 				return false;
 			}
@@ -3457,59 +3028,10 @@ if (cdnaStart && cdnaEnd)
 		return false;
 	}
 
-/*
-	// REDUNDANT!!! (a minus sign would be captured by above check)
-	// 	// Check start and end > 0
-	// 	if (parseInt(cdnaStart.value) < 0)
-	// 	{
-	// 		alert("cDNA start value must be an integer value greater than or equal to 0.  Please verify your input.");
-	// 		cdnaStart.focus();
-	// 		return false;
-	// 	}
-	// 
-	// 	if (parseInt(cdnaEnd.value) < 0)
-	// 	{
-	// 		alert("cDNA end value must be an integer value greater than or equal to 0.  Please verify your input.");
-	// 		cdnaEnd.focus();
-	// 		return false;
-	// 	}
-*/
-	// Check start and end <= sequence length
-/*
-	if (parseInt(cdnaEnd.value) > parseInt(dna_sequence.length))
-	{
-		alert("cDNA end value cannot exceed the length of the DNA sequence.  Please verify your input.");
-		cdnaEnd.focus();
-		return false;
-	}
-
-	if (parseInt(cdnaStart.value) > parseInt(dna_sequence.length))
-	{
-		alert("cDNA start value cannot exceed the length of the DNA sequence.  Please verify your input.");
-		cdnaStart.focus();
-		return false;
-	}
-*/
 }
 // 	cdnaWarning.style.display = "none";
 	return true;
 
-/*
-	// Removed April 11/08
-	// 	// cDNA positions MAY be left at 0, but it's a good idea to remind the user that they can be changed
-	// 	var response = true;
-	// 
-	// 	if ( (parseInt(trimAll(cdnaStart.value)) == 0) && (parseInt(trimAll(cdnaEnd.value)) == 0) )
-	// 	{
-	// 		response = confirm("cDNA start and end positions are set to 0.  Save anyway?");
-	// 	
-	// 		// the response here would be the opposite of the function's return value; an affirmative response means the user does not want to save but wants to change cDNA values, in which case the function should return 'false', and vice versa
-	// 		if (!response)
-	// 			cdnaStart.focus();
-	// 	}
-	// 
-	// 	return response;
-*/
 }
 
 // March 18/08: Check property positions
@@ -3541,7 +3063,6 @@ function verifyPositions(isLinear)
 		var tmpOptn;
 	
 		var allFields = document.getElementsByTagName("INPUT");
-// 		var dna_sequence = filterSeq(document.getElementById("dna_sequence").value).toLowerCase();
 	
 		var tmpStart;
 		var tmpStartInput;
@@ -3557,56 +3078,40 @@ function verifyPositions(isLinear)
 		var startInd;
 		var endInd;
 	
-	// 	alert(allFields.length);
 	
 		for (i = 0; i < allFields.length; i++)
 		{
-// 			alert(i);
 	
 			tmpInput = allFields[i];
 	
 			if (tmpInput.type == "hidden")
 			{
 				tmpID = tmpInput.id;
-// 				alert(tmpID);
 			
 				startInd = tmpID.indexOf(startPrefix + propPostfix);
 				endInd = tmpID.indexOf(endPrefix + propPostfix);
 	
 				if (startInd > 0)
 				{
-	// 				alert(tmpID);
 					propName = tmpID.substring(0, startInd);
-// 					alert("Prop " + propName);
 	
 					tmpStart = tmpInput.value;
-// 					alert("Start " + tmpStart);
 	
 					tmpStartID = propPrefix + propName + startPrefix + propPostfix;
-	// 				alert(tmpStartID);
 	
 					// Get numerical index to distinguish b/w multiple feature values
 					propCount = tmpID.substr(startInd+((startPrefix + propPostfix).length), tmpID.length);
-	// 				alert(propCount);
 	
 					tmpStartInput = document.getElementById(propName + propCount + startPrefix + "_id");
 	
 					if (trimAll(propCount).length > 0)
 					{
-						// Try to find end input
 						tmpEndID = propName + endPrefix + propPostfix + propCount;
-		// 				alert(tmpEndID);
 		
 						tmpEndInput = document.getElementById(tmpEndID);
 						tmpEnd = tmpEndInput.value;
-	// 					alert("End " + tmpEnd);
 	
 						tmpEndField = document.getElementById(propName + propCount + endPrefix + "_id");
-	// 					alert(propName + propCount + endPrefix + "_id");
-					}
-					else
-					{
-						// do anything??
 					}
 	
 					// Check start numeric
@@ -3635,24 +3140,6 @@ function verifyPositions(isLinear)
 						}
 					}
 			
-	// 				alert("DNA length " + parseInt(dna_sequence.length));
-	
-					// Check start and end <= sequence length
-/*
-					if (parseInt(tmpEnd) > parseInt(dna_sequence.length))
-					{
-						alert("Feature end value cannot exceed the length of the DNA sequence.  Please verify your input.");
-						tmpEndField.focus();
-						return false;
-					}
-				
-					if (parseInt(tmpStart) > parseInt(dna_sequence.length))
-					{
-						alert("Feature start value cannot exceed the length of the DNA sequence.  Please verify your input.");
-						tmpStartInput.focus();
-						return false;
-					}
-*/
 			
 					// Check start < end
 					if (!isLinear && (parseInt(tmpStart) > parseInt(tmpEnd)))
@@ -3666,12 +3153,8 @@ function verifyPositions(isLinear)
 			else if (tmpInput.type.toLowerCase() == "text")
 			{
 				// Single-value features don't have a numeric identifier
-// 				alert(tmpInput.id);
-	// 			alert(tmpInput.name);
 	
 				tmpID = tmpInput.id;
-	//			alert(tmpID);
-	//			alert(startPrefix + propPostfix);
 	
 				startInd = tmpID.indexOf(startPrefix + propPostfix);
 				endInd = tmpID.indexOf(endPrefix + propPostfix);
@@ -3679,24 +3162,20 @@ function verifyPositions(isLinear)
 				if (startInd > 0)
 				{
 					propName = tmpID.substring(0, startInd);
-// 					alert("CURRENT FEATURE: " + propName);
 			
 					tmpStart = tmpInput.value;
 	
-// 					alert("Start " + tmpStart);
 			
 					tmpStartInput = tmpInput;
 	
 					// Try to find end input
 					tmpEndID = propName + endPrefix + propPostfix
-	// 				alert(tmpEndID);
 	
 					tmpEndInput = document.getElementById(tmpEndID);
 	
 					if (tmpEndInput)	// might not exist if this is not a feature
 					{
 						tmpEnd = tmpEndInput.value;
-	// 					alert("End " + tmpEnd);
 	
 						// Check start & end numeric
 						for (k = 0; k < trimAll(tmpStart).length; k++)
@@ -3723,24 +3202,7 @@ function verifyPositions(isLinear)
 							}
 						}
 			
-	// 					alert("DNA length " + parseInt(dna_sequence.length));
 	
-						// Check start and end <= sequence length
-/*
-						if (parseInt(tmpStart) > parseInt(dna_sequence.length))
-						{
-							alert("Feature start value cannot exceed the length of the DNA sequence.  Please verify your input.");
-							tmpStartInput.focus();
-							return false;
-						}
-		
-						if (parseInt(tmpEnd) > parseInt(dna_sequence.length))
-						{
-							alert("Feature end value cannot exceed the length of the DNA sequence.  Please verify your input.");
-							tmpEndInput.focus();
-							return false;
-						}
-*/				
 			
 						// Check start < end
 						if (!isLinear && (parseInt(tmpStart) > parseInt(tmpEnd)))
@@ -3819,44 +3281,6 @@ function verifyPositions(isLinear)
 							return false;
 						}
 	
-	// 				// Only linker filled in, positions empty -- OK, ALLOW
-	// 				else if ( (fpl_length > 0) && (parseInt(fpl_start) == 0) && (parseInt(fpl_end) == 0) )
-	// 				{
-	// 					return confirm("Position values for the 5' linker value are not filled in.  Are you sure you want to continue (linker will be saved without start/stop values)");
-	// 				}
-	
-	// 				// Only start filled in
-	// 				else if ( (fpl_length == 0) && (parseInt(fpl_start) > 0) && (parseInt(fpl_end) == 0) )
-	// 				{
-	// 					alert("You have provided the start position for the 5' linker but not the actual linker value or its end position.  Please verify your input.");
-	// 					fpl_input.focus();
-	// 					return false;
-	// 				}
-	// 
-	// 				// Only end filled in
-	// 				else if ( (fpl_length == 0) && (parseInt(fpl_end) > 0) && ( (parseInt(fpl_start) == 0) || trimAll(fpl_start).length == 0) )
-	// 				{
-	// 					alert("You have provided the end position for the 5' linker but not the actual linker value or its start position.  Please verify your input.");
-	// 					fpl_input.focus();
-	// 					return false;
-	// 				}
-	// 
-	// 				// start empty, linker and end filled in
-	// 				else if ( (fpl_length > 0) && (parseInt(fpl_start) == 0) && (parseInt(fpl_end) > 0) )
-	// 				{
-	// 					alert("You have not provided the 5' linker start position.  Please verify your input.");
-	// 					fpl_input.focus();
-	// 					return false;
-	// 				}
-	// 
-	// 				// end empty, linker and end filled in
-	// 				else if ( (fpl_length > 0) && (parseInt(fpl_start) > 0) && (parseInt(fpl_end) == 0) )
-	// 				{
-	// 					alert("You have not provided the 5' linker end position.  Please verify your input.");
-	// 					fpl_input.focus();
-	// 					return false;
-	// 				}
-	
 						// Ditto for 3' linker
 						// linker empty, positions filled in
 						if ((tpl_length == 0) && (parseInt(tpl_start) > 0) && (parseInt(tpl_end) > 0))
@@ -3866,43 +3290,6 @@ function verifyPositions(isLinear)
 							return false;
 						}
 	
-	// 				// Only linker filled in, positions empty -- OK, ALLOW
-	// 				else if ( (fpl_length > 0) && (parseInt(fpl_start) == 0) && (parseInt(fpl_end) == 0) )
-	// 				{
-	// 					return confirm("Position values for the 5' linker value are not filled in.  Are you sure you want to continue (linker will be saved without start/stop values)");
-	// 				}
-	
-	// 				// Only start filled in
-	// 				else if ( (tpl_length == 0) && (parseInt(tpl_start) > 0) && (parseInt(tpl_end) == 0) )
-	// 				{
-	// 					alert("You have provided the start position for the 3' linker but not the actual linker value or its end position.  Please verify your input.");
-	// 					tpl_input.focus();
-	// 					return false;
-	// 				}
-	// 
-	// 				// Only end filled in
-	// 				else if ( (tpl_length == 0) && (parseInt(tpl_start) == 0) && (parseInt(tpl_end) > 0) )
-	// 				{
-	// 					alert("You have provided the end position for the 3' linker but not the actual linker value or its start position.  Please verify your input.");
-	// 					tpl_input.focus();
-	// 					return false;
-	// 				}
-	// 
-	// 				// start empty, linker and end filled in
-	// 				else if ( (tpl_length > 0) && (parseInt(tpl_start) == 0) && (parseInt(tpl_end) > 0) )
-	// 				{
-	// 					alert("You have not provided the 3' linker start position.  Please verify your input.");
-	// 					tpl_input.focus();
-	// 					return false;
-	// 				}
-	// 
-	// 				// end empty, linker and end filled in
-	// 				else if ( (tpl_length > 0) && (parseInt(tpl_start) > 0) && (parseInt(tpl_end) == 0) )
-	// 				{
-	// 					alert("You have not provided the 3' linker end position.  Please verify your input.");
-	// 					tpl_input.focus();
-	// 					return false;
-	// 				}
 	
 						// Check that linkers only contain ACGT (not a position validation but still)
 						for (l = 0; l < fpl_length; l++)
@@ -3929,22 +3316,6 @@ function verifyPositions(isLinear)
 							}
 						}
 		
-						// Last but not least, check that the linker value provided is found on the actual sequence where indicated
-/*
-						if ((parseInt(fpl_start) != 0) && (parseInt(fpl_end) != 0) && (dna_sequence.substring(parseInt(fpl_start)-1, fpl_end) != five_linker) )
-						{
-							alert("5' linker could not be found on sequence at the specified positions.  Please verify your input.");
-							fpl_input.focus();
-							return false;
-						}
-		
-						if ( (parseInt(tpl_start) != 0) && (parseInt(tpl_end) != 0) && (dna_sequence.substring(parseInt(tpl_start)-1, tpl_end) != three_linker) )
-						{
-							alert("3' linker could not be found on sequence at the specified positions.  Please verify your input.");
-							tpl_input.focus();
-							return false;
-						}
-*/
 					}
 				}
 			}
@@ -4043,7 +3414,6 @@ function verifyInsertSaveSequence()
 
 	// Feb. 5/08: Make Name a mandatory field
 	// Feb. 12/08: Make Status mandatory too
-// 	if (verifySequence() && verifyCDNA())		// April 18/08: Don't verify cDNA here, get error on sequence deletion
 	if (verifySequence())
 	{
 		// No Insert Type selected
@@ -4415,36 +3785,17 @@ function exportRNASeqToFasta(fastaCont)
 // Initialization - June 15, 2007, Marina
 function initAll()
 {
-// 	document.getElementById('header_table').style.width = screen.width-40;
-// 	document.getElementById('warning_div').style.width = screen.width-40;
-	
-	//if ((window.location.href.indexOf("Location.php?View=") >= 0) && (window.location.href.indexOf("&Mod=") >= 0))
-	//{
-		// make sure we're on the plate's detailed view
 		if (document.getElementById("changeAttributeSelect"))
 		{
 			document.getElementById("changeAttributeSelect").selectedIndex = 0;
 			clearAllWells(window.location.href.substr((hostName+"Location.php?View=").length+"&Mod=".length+1, window.location.href.length));
 		}
-	//}
 
 	initSearch();
 	prepareVectorMap(cgiPath);
 	prepareOligoMap(cgiPath);
 }
 
-
-// function setSessionVariables()
-// {
-// 	enableCheckboxes();
-// 	document.addReagentTypeForm.submit();
-// 
-// 	if (verifyNewReagentTypeName() && verifyNewReagentTypePrefix())
-// 	{
-// 		document.addReagentTypeForm.action = cgiPath + "reagent_type_request_handler.py";
-// 		document.addReagentTypeForm.submit();	
-// 	}
-// }
 
 // Jan. 3, 2010
 function deleteContainer(contID)
@@ -4592,7 +3943,6 @@ function showLabMembersList()
 // Resulting array is a list of OPTION elements
 function getSelectedOptions(myList)
 {
-// 	myList = myList.replace("'", "\\'");	// NO!!!!!!!
 	myList = unescape(myList);
 
 	var fromList = document.getElementById(myList);
@@ -4759,9 +4109,7 @@ function addElementToListFromInput(inputID, listID)
 {
 	// ATTENTION: PHP escapes quotation marks!  The actual field name contains a slash before a quote.  Must, therefore, append a slash here, for the input name to be recognized1
 
-// 	inputID = inputID.replace("'", "\\'");	// maybe need replaceAll??
 	inputID = unescape(inputID);
-// 	listID = listID.replace("'", "\\'");	// maybe need replaceAll??
 	listID = unescape(listID);
 
 	var fIn = document.getElementById(inputID);
@@ -4807,34 +4155,25 @@ function addElementToListFromInput(inputID, listID)
 function removePropertyListValue(pAlias)
 {
 	// ATTENTION: PHP escapes quotation marks!  The actual field name contains a slash before a quote.  Must, therefore, append a slash here, for the input name to be recognized1
-// 	pAlias = pAlias.replace("'", "\\'");	// KEEP!!! maybe need replaceAll??
 	pAlias = unescape(pAlias);
 
 	var pList = document.getElementById("propertyValuesInputList_" + pAlias);
 	var pVal;
 	var listLen = pList.options.length;
-// 	alert(listLen);
 
 	for (i = listLen-1; i >= 0; i--)
 	{
 		if (pList.options[i].selected == true)
 		{
-// 			alert(pList.options[i].value);
-
-// 			pVal = pList[pList.selectedIndex].value;
 			pVal = pList.options[i].value;
-// 			alert(i);
-// 			alert(pVal);
 			removeListElement(pList, pVal);
 
 			// # options has decreased by 1 - update!!
 			listLen = pList.options.length;
 			i = listLen;
-// 			alert(listLen);
 		}
 	}
 
-// 	removeListElement(pList, pVal);
 }
 
 // myList: object (e.g. SELECT)
@@ -4870,13 +4209,11 @@ function removeListElement(myList, myElem)
 function existsListElement(targetListID, optValue)
 {
 	var tList = document.getElementById(targetListID);
-// alert(optValue);
 	var result = false;
 
 	for (i=0; i < tList.options.length; i++)
 	{
 		tmpOptn = tList.options[i];
-// alert(tmpOptn.value);
 		if (tmpOptn.value == optValue)
 			return true;
 	}
@@ -4888,14 +4225,9 @@ function existsListElement(targetListID, optValue)
 // Used on Project, User and Lab Views to add/remove members to/from projects/labs, or modify member project lists
 function moveListElements(fromListID, targetListID, numeric, check_case)
 {
-// alert("in moveListElements");
-// 	fromListID = fromListID.replace("'", "\\'");	// maybe need replaceAll??
 	fromListID = unescape(fromListID);
-// 	targetListID = targetListID.replace("'", "\\'");	// maybe need replaceAll??
 	targetListID = unescape(targetListID);
-// alert(targetListID);
 	var toList = document.getElementById(targetListID);
-// 	var labID = getSelectedLab();
 	var fromList = document.getElementById(fromListID);
 	var selOpts = getSelectedOptions(fromListID);
 	
@@ -4906,7 +4238,6 @@ function moveListElements(fromListID, targetListID, numeric, check_case)
 	{
 		currOptn = selOpts[m];
 
-// 	alert(currOptn.value);
 
 		// Oct. 8, 2010: move IFF doesn't exist
 		if (!existsListElement(targetListID, currOptn.value))
@@ -5157,23 +4488,13 @@ function checkPasswordReminder()
 // position - initial start position @ start of recursion
 function addElement(mylist, listSize, myOptn, check_case)
 {
-// 	alert("List size " + listSize);
-	
 	myPos = listSize - 1;
 
-	// alert(check_case);
 	addElementError = false;	// reset globally
-
-// alert(check_case);
 
 	// May 26, 2010: Disallow duplicate values
 	if (check_case)
 	{
-// 	alert("checking case");
-// 	alert(myPos);
-// 	alert(">>>" + mylist.options[myPos].text + "<<<");
-// 	alert(">>>" + myOptn.text + "<<<");
-
 		if (mylist.options[myPos])	// added June 3
 		{
 			if (trimAll(mylist.options[myPos].text).toLowerCase() == trimAll(myOptn.text).toLowerCase())
@@ -5193,26 +4514,20 @@ function addElement(mylist, listSize, myOptn, check_case)
 		newOptn.value = myOptn.value;
 		newOptn.id = myOptn.id;		// june 28/07
 
-		// Sept. 25/08: Try to use case-insensitive comparison
-// 		if (mylist.options[myPos].text < myOptn.text)
 		if (mylist.options[myPos] && (mylist.options[myPos].text.toLowerCase() < myOptn.text.toLowerCase()))
 		{
-			//alert(mylist.options[myPos].value + " comes BEFORE " + myOptn.value);
 			mylist.options.add(newOptn, myPos+1);		
 		}
 		else
 		{
-			//alert(mylist.options[myPos].value + " comes AFTER " + myOptn.value);
 			mylist.options.add(newOptn, 0);
 		}
 	}	
 	else
 	{
 		// Sept. 25/08: Try to use case-insensitive comparison
-// 		if (mylist.options[myPos].text < myOptn.text)
 		if (mylist.options[myPos].text.toLowerCase() < myOptn.text.toLowerCase())
 		{
-			//alert(mylist.options[myPos].value + " comes BEFORE " + myOptn.value);
 			
 			var newOptn = document.createElement("OPTION");
 
@@ -5224,7 +4539,6 @@ function addElement(mylist, listSize, myOptn, check_case)
 		}
 		else
 		{
-			//alert(mylist.options[myPos].value + " comes AFTER " + myOptn.value);
 			addElement(mylist, listSize-1, myOptn, check_case);
 		}
 	}
@@ -5246,12 +4560,10 @@ function addNumElement(mylist, listSize, myOptn)
 
 		if (parseInt(mylist.options[myPos].value) < parseInt(myOptn.value))
 		{
-			//alert(mylist.options[myPos].value + " comes BEFORE " + myOptn.value);
 			mylist.options.add(newOptn, myPos+1);		
 		}
 		else
 		{
-			//alert(mylist.options[myPos].value + " comes AFTER " + myOptn.value);
 			mylist.options.add(newOptn, 0);
 		}
 	}	
@@ -5259,7 +4571,6 @@ function addNumElement(mylist, listSize, myOptn)
 	{
 		if (parseInt(mylist.options[myPos].value) < parseInt(myOptn.value))
 		{
-			//alert(mylist.options[myPos].value + " comes BEFORE " + myOptn.value);
 			
 			var newOptn = document.createElement("OPTION");
 
@@ -5271,7 +4582,6 @@ function addNumElement(mylist, listSize, myOptn)
 		}
 		else
 		{
-			//alert(mylist.options[myPos].value + " comes AFTER " + myOptn.value);
 			addNumElement(mylist, listSize-1, myOptn);
 		}
 	}
@@ -5281,12 +4591,9 @@ function addNumElement(mylist, listSize, myOptn)
 // Added Oct. 5, 2010
 function showLabProjects(labListID)
 {
-// alert(labListID);
 	var labsList = document.getElementById(labListID);
-// 	alert(labsList.selectedIndex);
 	var labSelInd = labsList.selectedIndex;
 	var selLabID = labsList[labSelInd].value;
-// 	alert(selLab);
 
 	var labProjectList = document.getElementById("lab_projects_" + selLabID);
 
@@ -5345,10 +4652,8 @@ function hideLabProjects()
 {
 	// get the selected labID and hide the corresponding project list
 	var labsList = document.getElementById("projectLabID");
-// 	alert(labsList.selectedIndex);
 	var labSelInd = labsList.selectedIndex;
 	var selLabID = labsList[labSelInd].value;
-// alert(selLabID);
 
 	var labProjectList = document.getElementById("lab_projects_" + selLabID);
 
@@ -5408,7 +4713,6 @@ function selectAllElements(listName, includeDisabled)
 	for (i = 0; i < myList.options.length; i++)
 	{
 		// Dec. 11/09, exclude disabled options if requested
-// alert(includeDisabled);
 		if (!includeDisabled)
 		{
 			if (myList.options[i].disabled != true)
@@ -5451,27 +4755,6 @@ function clearAllElements(listName)
 		myList.options[i].selected = false;
 	}
 }
-
-// Removed August 24/07 - think it's deprecated
-// Returns true if a value has been selected from the list identified by projectListID; returns false otherwise
-// function verifyProject()
-// {
-// 	var projectList = document.getElementById("packetList");
-// 	var packet_selectedInd = projectList.selectedIndex;
-// 	var projectWarning = document.getElementById("project_warning");
-// 	
-// 	if (packet_selectedInd <= 0)
-// 	{
-// 		alert ("Please select a Project ID to view");
-// 		projectList.focus();
-// 		projectWarning.style.display = "inline";
-// 
-// 		return false;
-// 	}
-// 	
-// 	return true;	
-// }
-
 
 // June 1/07, Marina: Make sure a project ID has been selected from a dropdown list
 // Essentially performs the same action as verifyProject and verifyPacket, except this time the function is being invoked on Project deletion 
@@ -5527,17 +4810,8 @@ function getNumSelected(aList)
 function verifyMembers(memListID)
 {
 	var membersList = document.getElementById(memListID);
-//	var numSel = 0;
 	var numSel = getNumSelected(membersList);	// june 29/27
 	var proceed = true;
-	
-	
-// 	for (i = 0; i < membersList.options.length; i++)
-// 	{
-// 		if (membersList.options[i].selected)
-// 			numSel++;
-// 	}
-	
 	var message;
 	
 	switch (memListID)
@@ -5662,7 +4936,6 @@ function showProject0Details()
 // Called at step 1 to move members from source list to readers, writers or admin list, depending on access level selected
 function addProjects(srcListID, role)
 {
-// alert(srcListID);
 	var targetListID;
 	
 	switch (role)
@@ -5739,10 +5012,6 @@ function moveProjectToLabListSpecific(fromListID)
 function moveProjectToUserListSpecific(fromListID)
 {
 	var fromList = document.getElementById(fromListID);
-// 	var userSearchList = document.getElementById("searchByMembers");
-// 	var selUser = userSearchList[userSearchList.selectedIndex].value;
-// 	var uProjList = document.getElementById("userPackets_" + selUser);
-
 	var selElems = getSelectedOptions(fromListID);
 	var i;
 
@@ -5751,7 +5020,6 @@ function moveProjectToUserListSpecific(fromListID)
 		tmpOptn = selElems[i];
 
 		optID = tmpOptn.id;
-// alert(optID);
 		if (optID.indexOf("_user_projects_") > 0)
 		{
 			userInd = optID.indexOf("_user_projects_");
@@ -5802,7 +5070,6 @@ function moveProjectToUserListSpecific(fromListID)
 // Oct. 8, 2010
 function showUserProjects(userID)
 {
-// 	alert(userID);
 
 	packetDivID = userID + "_projects";
 	uPackets = document.getElementById(packetDivID);
@@ -5907,10 +5174,8 @@ function hideUserProjects()
 {
 	// get the selected labID and hide the corresponding project list
 	var usersList = document.getElementById("searchByMembers");
-// 	alert(labsList.selectedIndex);
 	var userSelInd = usersList.selectedIndex;
 	var selUserID = usersList[userSelInd].value;
-// alert(selLabID);
 
 	var userProjectList = document.getElementById(selUserID+ "_projects");
 
@@ -5918,8 +5183,6 @@ function hideUserProjects()
 	if (userProjectList)
 		userProjectList.style.display = "none";
 	
-// 	document.getElementById("project_read_checkbox").style.display = "none";
-// 	document.getElementById("projectCaption").style.display = "none";
 }
 
 
@@ -5945,9 +5208,6 @@ function showHidePrivileges()
 	for (r=0; r < radioBtns.length; r++)
 	{
 		tmpInput = radioBtns[r];
-		//alert(tmpInput.type);
-		//alert(tmpInput.name);
-		//alert(tmpInput.value);
 		
 		if ((tmpInput.type == 'radio') && (tmpInput.name == 'privChoiceRadio') && (tmpInput.value == 'override') && (tmpInput.checked))
 		{
@@ -5960,7 +5220,6 @@ function showHidePrivileges()
 
 			// also hide project access level section
 			// Change of heart Aug 12/07 - show project list at all times, regardless of access level
-//			projectAccess.style.display = "none";
 		}
 	}
 }
@@ -5975,10 +5234,6 @@ function showHideWriteProjectAccess()
 	for (r=0; r < radioBtns.length; r++)
 	{
 		tmpInput = radioBtns[r];
-		
-// 		alert("Type " + tmpInput.type);
-// 		alert("Name " + tmpInput.name);
-// 		alert("Value " + tmpInput.value);
 		
 		if ((tmpInput.type == 'radio') && (tmpInput.name == 'system_access_level') && (tmpInput.checked) && (tmpInput.value != 'Reader'))
 		{
@@ -6469,9 +5724,6 @@ function enableSubmit(myListID, submitID)
 	var myList = document.getElementById(myListID);
 	var submitBtn = document.getElementById(submitID);
 	
-	//var numSel = getNumSelected(myList);
-	
-//	if ((numSel > 0) && (myList.options.length > 0))
 	if (myList.options.length > 0)
 	{
 		submitBtn.disabled = false;
@@ -6544,13 +5796,9 @@ function enableSelect()
 	{
 		tmpSelect = allSelects[i];
 
-// alert(tmpSelect.multiple);
-
 		// April 19, 2010: Execute ONLY for MULTIPLE selection lists (at reagent type creation/modification).  Causes problems with normal lists!!!
 
 		// May 25, 2010 - need to enable single lists too though; remove the 'if' temporarily and check
-// 		if (tmpSelect.multiple)
-// 		{
 			tmpSelect.disabled = false;	// Jan. 7, 2010
 	
 			for (j = 0; j < tmpSelect.options.length; j++)
@@ -6558,7 +5806,6 @@ function enableSelect()
 				tmpOptn = tmpSelect.options[j];
 				tmpOptn.disabled = false;
 			}
-// 		}
 	}
 }
 
@@ -6579,11 +5826,7 @@ function checkSelectUser(fromList, toList, actn)
 	{
 		moveListElements(fromList, toList, false);
 		
-		// if candidates list becomes empty, disable Submit button
-		//if (fromList == 'deletion_candidates_list')
-		//{
 			enableSubmit('deletion_candidates_list', 'deleteUserBtn');
-		//}
 		
 		return true;
 	}
@@ -6716,19 +5959,11 @@ function removeLabMembers(labListName)
 // function showMultiple(cbID, listID, textID, btnID)
 function showMultiple(cbID, tblID, listID)
 {
-// alert(cbID);
-// alert(tblID);
-// alert(listID);
-
-// 	checkMult = document.getElementById(cbID);
 	propList = document.getElementById(listID);
-
 	mult_cbLabel = document.getElementById("mult_" + cbID + "_label");
-// alert(mult_cbLabel );
 	one_cbLabel = document.getElementById("one_" + cbID + "_label");
 
 	attrID = cbID.substring(cbID.lastIndexOf("_")+1, cbID.length);
-// alert(attrID);
 	otherTxt = document.getElementById("other_text_" + attrID);
 
 	showMoreImg = document.getElementById("expand_" + cbID);
@@ -6737,17 +5972,14 @@ function showMultiple(cbID, tblID, listID)
 	// May 11, 2010
 	mult_tbl = document.getElementById(tblID);
 
-// 	if (checkMult.checked)
 	if (mult_tbl.style.display == "none")
 	{
 		propList.style.display = "none";
 		mult_tbl.style.display = "inline";
 
-// 		cbLabel.innerHTML = "Remove Multiple";
 		mult_cbLabel.style.display = "none";
 		one_cbLabel.style.display = "inline";
 
-// 		checkMult.checked = false;
 		showMoreImg.style.display = "none";
 		showLessImg.style.display = "inline";
 
@@ -6758,18 +5990,12 @@ function showMultiple(cbID, tblID, listID)
 		propList.style.display = "inline";
 		mult_tbl.style.display = "none";
 
-// 		cbLabel.innerHTML = "Select Multiple";
 		mult_cbLabel.style.display = "inline";
 		one_cbLabel.style.display = "none";
 
-// 		checkMult.checked = false;
 		showMoreImg.style.display = "inline";
 		showLessImg.style.display = "none";
 
-// 		if (otherTxt.innerHTML == "")
-// 			otherTxt.style.display = "none";
-// 		else
-// 			otherTxt.style.display = "inline";
 	}
 }
 
@@ -6778,9 +6004,6 @@ function searchMultipleReagentTypes()
 {
 	checkMult = document.getElementById("searchMultipleReagentTypesCheckbox");
 	rTypesList = document.getElementById("reagentTypesFilterList");
-	
-	// For the search reagents view only
-// 	rTypesList.name = "filter[]";
 	
 	if (checkMult.checked)
 		rTypesList.multiple="multiple";
@@ -7103,7 +6326,6 @@ function printSearchResults(xmlhttp)
 	var resultRow = document.getElementById("result_row");
 	var resultDiv = document.getElementById("prot_search_result_hidden");
 
-// 	alert(xmlhttp.responseText);
 
 	if (xmlhttp.readyState == 4)
 	{
@@ -7133,9 +6355,6 @@ function verifyHybridSites(inputID, enzListID)
 	var gatewayLoxPNoneSites = ['attB1', 'attB2', 'attP1', 'attP2', 'attL1', 'attL2', 'attR1', 'attR2', 'LoxP', 'None'];
 
 	enzList = document.getElementById(enzListID);
-// 	enzList = ['AscI','PacI', 'EcoRI', 'BamHI', 'BglII'];	// debugging
-// alert(enzList.id);
-// return false;
 		
 	var siteField = document.getElementById(inputID);
 	var site = siteField.value;	// always a text field
@@ -7228,9 +6447,6 @@ function printEnzymeList(xmlhttp)
 	var selectedFivePrime_Insert = document.getElementById("fpcs_val_insert");
 	var selectedThreePrime_Insert = document.getElementById("tpcs_val_insert");
 
-// Dec. 9/09: ?????
-// 	var selectedRestrictionSite = document.getElementById("restriction_sites");
-
 	// oct 28/08
 	var prefix = "reagent_detailedview_";
 	var postfix = "_prop";
@@ -7270,11 +6486,6 @@ function printEnzymeList(xmlhttp)
 						attB_1_optn.text = "attB1";
 						addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attB_1_optn);
 		
-		// 				// attB2
-		// 				attB_2_optn = document.createElement("OPTION");
-		// 				attB_2_optn.value = "attB2";
-		// 				attB_2_optn.text = "attB2";
-		// 				addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attB_2_optn);
 		
 						// attL1
 						attL_1_optn = document.createElement("OPTION");
@@ -7282,23 +6493,11 @@ function printEnzymeList(xmlhttp)
 						attL_1_optn.text = "attL1";
 						addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attL_1_optn);
 		
-		// 				// attL2
-		// 				attL_2_optn = document.createElement("OPTION");
-		// 				attL_2_optn.value = "attL2";
-		// 				attL_2_optn.text = "attL2";
-		// 				addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attL_2_optn);
-		
 						// attP1
 						attP_1_optn = document.createElement("OPTION");
 						attP_1_optn.value = "attP1";
 						attP_1_optn.text = "attP1";
 						addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attP_1_optn);
-		
-		// 				// attP2
-		// 				attP_2_optn = document.createElement("OPTION");
-		// 				attP_2_optn.value = "attP2";
-		// 				attP_2_optn.text = "attP2";
-		// 				addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attP_2_optn);
 		
 						// attR1
 						attR_1_optn = document.createElement("OPTION");
@@ -7306,11 +6505,6 @@ function printEnzymeList(xmlhttp)
 						attR_1_optn.text = "attR1";
 						addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attR_1_optn);
 		
-		// 				// attR2
-		// 				attR_2_optn = document.createElement("OPTION");
-		// 				attR_2_optn.value = "attR2";
-		// 				attR_2_optn.text = "attR2";
-		// 				addElement(fivePrimeSelect, fivePrimeSelect.options.length-1, attR_2_optn);
 		
 						// LoxP
 						loxp_optn = document.createElement("OPTION");
@@ -7481,7 +6675,6 @@ function printEnzymeList(xmlhttp)
 							// Oct. 28/08: Use the same strategy as with other feature lists - fetch the selected value from the field name
 							if (selectedRestrictionSite)
 							{
-		// oct 28/08					if (selectedRestrictionSite.value == aOptn)
 								if (selectedRestrictionSite.toLowerCase() == aOptn.toLowerCase())
 								{
 									restrSiteSelect.selectedIndex = j;
@@ -7489,36 +6682,6 @@ function printEnzymeList(xmlhttp)
 								}
 							}
 						}
-		// Removed Jan. 16/08 b/c was interfering with 3' Cloning Site list. Should not have 'other' restriction sites for now, see if problems arise. 
-		// 				if (!rsInList)
-		// 				{
-		// 					// Enzyme not found (prob. hybrid); select 'Other' and show textbox
-		// 
-		// 					// add option 'Other' first - moved here Dec. 1/08
-		// 					otherOpt = document.createElement("OPTION");
-		// 					otherOpt.text = 'Other';
-		// 					otherOpt.value = 'Other';
-		// 					addElement(restrSiteSelect, restrSiteSelect.options.length-1, otherOpt);
-		// 					otherIndex = restrSiteSelect.options.length-1;
-		// 	
-		// 					for (k = 0; k < restrSiteSelect.options.length; k++)
-		// 					{
-		// 						if (restrSiteSelect.options[k].value == 'Other')
-		// 						{
-		// 							restrSiteSelect.selectedIndex = k;
-		// 
-		// 							allText = document.getElementsByTagName("INPUT");
-		// 
-		// 							for (at in allText)
-		// 							{
-		// 								if (allText[at].name == "3_prime_cloning_site_name_txt")
-		// 								{
-		// 									allText[at].style.display = "inline";
-		// 								}
-		// 							}
-		// 						}
-		// 					}
-		// 				}
 					}
 					
 					// 3' site
@@ -7537,25 +6700,12 @@ function printEnzymeList(xmlhttp)
 							threePrimeSelect.options[i] = enzOpt;
 						}
 		
-						// Add recombination and gateway sites - attB, attL, attP, LoxP
-		
-		// 				// attB1
-		// 				attB_1_optn = document.createElement("OPTION");
-		// 				attB_1_optn.value = 'attB1';
-		// 				attB_1_optn.text = 'attB1';
-		// 				addElement(threePrimeSelect, threePrimeSelect.options.length-1, attB_1_optn);
-		
 						// attB2
 						attB_2_optn = document.createElement("OPTION");
 						attB_2_optn.value = 'attB2';
 						attB_2_optn.text = 'attB2';
 						addElement(threePrimeSelect, threePrimeSelect.options.length-1, attB_2_optn);
 		
-		// 				// attL1
-		// 				attL_1_optn = document.createElement("OPTION");
-		// 				attL_1_optn.value = 'attL1';
-		// 				attL_1_optn.text = 'attL1';
-		// 				addElement(threePrimeSelect, threePrimeSelect.options.length-1, attL_1_optn);
 		
 						// attL2
 						attL_2_optn = document.createElement("OPTION");
@@ -7563,23 +6713,12 @@ function printEnzymeList(xmlhttp)
 						attL_2_optn.text = 'attL2';
 						addElement(threePrimeSelect, threePrimeSelect.options.length-1, attL_2_optn);
 		
-		// 				// attP1
-		// 				attP_1_optn = document.createElement("OPTION");
-		// 				attP_1_optn.value = 'attP1';
-		// 				attP_1_optn.text = 'attP1';
-		// 				addElement(threePrimeSelect, threePrimeSelect.options.length-1, attP_1_optn);
-		
 						// attP2
 						attP_2_optn = document.createElement("OPTION");
 						attP_2_optn.value = 'attP2';
 						attP_2_optn.text = 'attP2';
 						addElement(threePrimeSelect, threePrimeSelect.options.length-1, attP_2_optn);
 		
-		// 				// attR1
-		// 				attR_1_optn = document.createElement("OPTION");
-		// 				attR_1_optn.value = 'attR1';
-		// 				attR_1_optn.text = 'attR1';
-		// 				addElement(threePrimeSelect, threePrimeSelect.options.length-1, attR_1_optn);
 		
 						// attR2
 						attR_2_optn = document.createElement("OPTION");
@@ -7706,13 +6845,6 @@ function verifySequenceAndRestrictionSites(scriptPath, vType)
 	if (document.getElementById(vType + "_name_warning"))
 		document.getElementById(vType + "_name_warning").style.display = "none";
 
-// 	document.getElementById("oc_warning").style.display = "none";
-// 	document.getElementById("it_warning").style.display = "none";
-
-// 	document.getElementById("change_state_id").value = "Save";
-
-//	if ((fpcs != fpcs_orig) || (tpcs != tpcs_orig))
-//	{
 		url = scriptPath + "vector_sequence.py";
 		xmlhttp1 = createXML();
 		xmlhttp1.open("POST", url, false);
@@ -7739,7 +6871,6 @@ function verifySequenceAndRestrictionSites(scriptPath, vType)
 			default:
 			break;
 		}
-//	}
 
 	document.getElementById("saveBtn").style.cursor = 'auto';
 }
@@ -7877,10 +7008,6 @@ function previewVector(scriptPath)
 			}
 		}
 
-		// Cloning sites - Keep latest values
-		// 	fpList.options[fpSelInd].selected = true;
-		// 	tpList.options[tpSelInd].selected = true;
-
 	}
 	
 	document.getElementById("changeParentsBtn").style.cursor = 'auto';
@@ -7888,21 +7015,16 @@ function previewVector(scriptPath)
 
 function preloadSequence(xmlhttp, scriptPath)
 {
-//	alert("Loading sequence");
-//	alert(xmlhttp.readyState);
 
 	var fpList = document.getElementById("fpcs_list");
 	var tpList = document.getElementById("tpcs_list");
 
 	if (xmlhttp.readyState == 4)
 	{
-//		alert(xmlhttp.status);
-//		alert(xmlhttp.responseText);
 	
 		if (xmlhttp.status == 200)
 		{
 			response = trimAll(xmlhttp.responseText);	// tab-separated
-//			alert(response);
 			if (response == 1)
 			{
 				alert("Unable to generate sequence: Unknown sites on Insert. Please verify your input values before saving.")
@@ -8307,15 +7429,6 @@ function preloadSequence(xmlhttp, scriptPath)
 				// Status OK - show new sequence, REGARDLESS of whether it's identical to original
 				document.getElementById("dna_sequence").value = response;
 
-//				// NOW preload simple properties from PV IFF in preview mode
-//				srcPV = document.getElementById("parent_vector_id_txt").value;
-//
-//				// prepare xmlhttprequest
-//				url = scriptPath + "preview.py";
-//				xmlhttp = createXML();
-//				xmlhttp.open("POST", url, false);
-//				xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-//			
 				if (document.pressed == 'Change')
 				{
 					// NOW preload simple properties from PV -- IFF in preview mode
@@ -8388,14 +7501,11 @@ function preloadSequence(xmlhttp, scriptPath)
 
 function preloadTagType(xmlhttp)
 {
-// 	alert("Tag type");
 	if (xmlhttp.readyState == 4)
 	{
-//		alert(xmlhttp.status);
 		if (xmlhttp.status == 200)
 		{
 			response = trimAll(xmlhttp.responseText);	// tab-separated, MUST BE TRIMMED (has extraneous carriage return)
-// 			alert(response);
 	
 			if (document.pressed == 'Change')
 				document.getElementById("tag_list").style.color = "#0000FF";
@@ -8407,13 +7517,11 @@ function preloadTagType(xmlhttp)
 
 function preloadTagPosition(xmlhttp)
 {
-// 	alert("Tag position");
 	if (xmlhttp.readyState == 4)
 	{
 		if (xmlhttp.status == 200)
 		{
 			response = trimAll(xmlhttp.responseText);	// tab-separated
-// 			alert(response);
 
 			if (document.pressed == 'Change')
 				document.getElementById("tag_position_list").style.color = "#0000FF";
@@ -8426,16 +7534,11 @@ function preloadTagPosition(xmlhttp)
 
 function preloadExpressionSystem(xmlhttp)
 {
-// 	alert("Exp sys");
 	if (xmlhttp.readyState == 4)
 	{
-// 		alert(xmlhttp.status);
-// 		alert(xmlhttp.responseText);
-	
 		if (xmlhttp.status == 200)
 		{
 			response = trimAll(xmlhttp.responseText);	// tab-separated
-// 			alert(response);
 			
 			if (document.pressed == 'Change')
 				document.getElementById("expr_syst_list").style.color = "#0000FF";
@@ -8448,13 +7551,11 @@ function preloadExpressionSystem(xmlhttp)
 
 function preloadPromoter(xmlhttp)
 {
-// 	alert("Promoter");
 	if (xmlhttp.readyState == 4)
 	{
 		if (xmlhttp.status == 200)
 		{
 			response = trimAll(xmlhttp.responseText);	// tab-separated
-// 			alert(response);
 
 			if (document.pressed == 'Change')
 				document.getElementById("promoter_list").style.color = "#0000FF";
@@ -8645,15 +7746,7 @@ function addslashes(str)
 
 function deleteTableRow(tableID, rowID)
 {
-// alert(tableID);
 	var aTable = document.getElementById(tableID);
-// alert(rowID);
-
-	// updated Oct. 27/08
-// 	var tmpRow = document.getElementById(rowID);
-// 	var tmpRow = document.getElementById(rowID.replace("\'", "'"));	// miscellaneous 5' and 3' PCMV LTR values
-
-// alert(aTable.rows.length);
 	// change Feb. 12/10
 	for (i=0; i < aTable.rows.length; i++)
 	{
@@ -8662,24 +7755,11 @@ function deleteTableRow(tableID, rowID)
 		if (tmpRow.id == rowID)
 		{
 			var rIndex = tmpRow.rowIndex;
-// alert(rIndex);
 			aTable.deleteRow(rIndex);
 			return;
 		}
 	}
 
-// 	var tmpRow = document.getElementById(stripslashes(rowID));
-// // alert(tmpRow);
-// 	if (tmpRow)
-// 	{
-// 		var rIndex = tmpRow.rowIndex;
-// // 		alert(rIndex);
-// 
-// // if (aTable.rows.length > 1)
-// // 		aTable.deleteRow(rIndex-1);
-// // else
-// 		aTable.deleteRow(rIndex);
-// 	}
 }
 
 
@@ -9087,16 +8167,6 @@ function selectLinkers()
 // Added Nov. 7/06 by Marina - Make sure Tm > 0 and length >= linker size + 10
 function verifyTmAndLength()
 {
-	/*const MIN_PRIMER_LENGTH = 10;
-
-	// length form input fields
-	var fwdLengthFormField = document.getElementById("fwd_length_id");
-	var revLengthFormField = document.getElementById("rev_length_id");
-
-	// length input values
-	var fwdLength = fwdLengthFormField.value;
-	var revLength = revLengthFormField.value;*/
-
 	// Tm form input fields
 	var fwdTmFormField = document.getElementById("fwd_tm_id");
 	var revTmFormField = document.getElementById("rev_tm_id");
@@ -9104,178 +8174,6 @@ function verifyTmAndLength()
 	// Tm input values
 	var fwdTm = fwdTmFormField.value;
 	var revTm = revTmFormField.value;
-
-	/*// linker values
-	var fwdLinker = document.getElementById("fp_linker").value;
-	var revLinker = document.getElementById("tp_linker").value;
-
-	var numbers = "0123456789";
-
-	// If 5' linker is added, check fwd_length >= fwd_linker + 10
-	if (fwdLinker)
-	{
-		var minLength = fwdLinker.length + MIN_PRIMER_LENGTH;
-
-		// CHECK THE LENGTH IS AN INTEGER!!!!
-		if (fwdLength)
-		{
-			for (var x = 0; x < fwdLength.length; x++)
-			{
-				if (!inArray(fwdLength.charAt(x), numbers))
-				{
-					alert("Length of the 5' primer must be an integer value greater than 0.  Please verify your input.");
-
-					revLengthFormField.style.color = "000000";
-					revLengthFormField.style.fontWeight = "normal";
-
-					fwdLengthFormField.style.color = "FF0000";
-					fwdLengthFormField.style.fontWeight = "bold";
-
-					fwdLengthFormField.focus();
-
-					return false;
-				}
-			}
-
-			if (fwdLength < minLength)
-			{
-				alert("Invalid input: length of the 5' primer must be at least 10 bp greater than the size of the 5' linker");
-
-				revLengthFormField.style.color = "000000";
-				revLengthFormField.style.fontWeight = "normal";
-
-				fwdLengthFormField.style.color = "FF0000";
-				fwdLengthFormField.style.fontWeight = "bold";
-
-				fwdLengthFormField.focus();
-
-				return false;
-			}
-		}
-	}
-	else
-	{
-		// Linker is not added; in that case, just verify that length > 10
-		if (fwdLength)
-		{
-			// just check it's an integer first
-			for (var x = 0; x < fwdLength.length; x++)
-			{
-				if (!inArray(fwdLength.charAt(x), numbers))
-				{
-					alert("Length of the 5' primer must be an integer value greater than 0.  Please verify your input.");
-
-					revLengthFormField.style.color = "000000";
-					revLengthFormField.style.fontWeight = "normal";
-
-					fwdLengthFormField.style.color = "FF0000";
-					fwdLengthFormField.style.fontWeight = "bold";
-
-					fwdLengthFormField.focus();
-					return false;
-				}
-			}
-
-			if (fwdLength < MIN_PRIMER_LENGTH)
-			{
-				alert("Invalid input: length of the 5' primer must be at least 10 bp");
-
-				revLengthFormField.style.color = "000000";
-				revLengthFormField.style.fontWeight = "normal";
-
-				fwdLengthFormField.style.color = "FF0000";
-				fwdLengthFormField.style.fontWeight = "bold";
-
-				fwdLengthFormField.focus();
-
-				return false;
-			}
-		}
-	}
-
-	// Same for reverse length
-	if (revLinker)
-	{
-		var minLength = revLinker.length + MIN_PRIMER_LENGTH;
-
-		if (revLength)
-		{
-			// check it's an integer
-			for (var x = 0; x < revLength.length; x++)
-			{
-				if (!inArray(revLength.charAt(x), numbers))
-				{
-					alert("Length of the 3' primer must be an integer value greater than 0.  Please verify your input.");
-
-					fwdLengthFormField.style.color = "000000";
-					fwdLengthFormField.style.fontWeight = "normal";
-
-					revLengthFormField.style.color = "FF0000";
-					revLengthFormField.style.fontWeight = "bold";
-
-					revLengthFormField.focus();
-
-					return false;
-				}
-			}
-
-			if (revLength < minLength)
-			{
-				alert("Invalid input: length of the 3' primer must be at least 10 bp greater than the size of the 3' linker");
-
-				fwdLengthFormField.style.color = "000000";
-				fwdLengthFormField.style.fontWeight = "normal";
-
-				revLengthFormField.style.color = "FF0000";
-				revLengthFormField.style.fontWeight = "bold";
-
-				revLengthFormField.focus();
-
-				return false;
-			}
-		}
-	}
-	else
-	{
-		// Linker is not added; in that case, just verify that length > 10
-		if (revLength)
-		{
-			// check it's an integer
-			for (var x = 0; x < revLength.length; x++)
-			{
-				if (!inArray(revLength.charAt(x), numbers))
-				{
-					alert("Length of the 3' primer must be an integer value greater than 0.  Please verify your input.");
-
-					fwdLengthFormField.style.color = "000000";
-					fwdLengthFormField.style.fontWeight = "normal";
-
-					revLengthFormField.style.color = "FF0000";
-					revLengthFormField.style.fontWeight = "bold";
-
-
-					revLengthFormField.focus();
-
-					return false;
-				}
-			}
-
-			if (revLength < MIN_PRIMER_LENGTH)
-			{
-				alert("Invalid input: length of the 3' primer must be at least 10 bp");
-
-				fwdLengthFormField.style.color = "000000";
-				fwdLengthFormField.style.fontWeight = "normal";
-
-				revLengthFormField.style.color = "FF0000";
-				revLengthFormField.style.fontWeight = "bold";
-
-				revLengthFormField.focus();
-
-				return false;
-			}
-		}
-	}*/
 
 	// Now check Tm
 	// First, verify that the values are non-empty
@@ -9398,26 +8296,20 @@ function removeFormElements(aForm, elemList)
 
 	for (i = 0; i < elemList.length; i++)
 	{
-// 		alert("Removing " + elemList[i].id);
 		aForm.removeChild(elemList[i]);
 	}
 
-// alert(propsTbl.rows.length);
 }
 
 // March 28/08: Identical to removeFormElements, except the parameters are not objects but IDs
 function deleteElements(formID, elemIDList)
 {
 	var aForm = document.getElementById(formID);
-// 	alert(aForm);
 
 	for (i = 0; i < elemIDList.length; i++)
 	{
 		tmpElID = elemIDList[i];
-// 		alert(tmpElID);
 		tmpElem = document.getElementById(tmpElID);
-// 		alert(tmpElem.value);
-
 		aForm.removeChild(tmpElem);
 	}
 }
@@ -9435,7 +8327,6 @@ function popup(mylink, windowname, a_width, a_height, scrollbars)
 	else
 		a_href=mylink.href;
 
-// 	alert(href);
 
 	window.open(a_href, windowname, "width=" + a_width + ", height=" + a_height + ", scrollbars=" + scrollbars);
 	return false;
@@ -9454,7 +8345,6 @@ function showPropertyValues(listID, tblID)
 	if (!tblID)
 		tblID = "modifyReagentPropsTbl";
 
-// 	var propsTbl = document.getElementById("modifyReagentPropsTbl");
 	var propsTbl = document.getElementById(tblID);
 
 	var prefix = "reagent_detailedview_";
@@ -9462,7 +8352,6 @@ function showPropertyValues(listID, tblID)
 
 	// March 3/08: Since there could be multiple property values (e.g. tag type or expression system), instead of unhiding the corresponding row, append another row to the table and make it identical to the hidden row (so the hidden row serves as a template)
 
-//  	alert(propName);
 
 	switch (propName)
 	{
@@ -9488,10 +8377,6 @@ function showPropertyValues(listID, tblID)
 			
 			// Generate the list on the fly
 			var tmpTagTypeList = document.getElementById("tag_list");
-
-// removed March 20/08 - needed??
-// 			var tagTypeSelectedInd = tmpTagTypeList.selectedIndex;
-// 			var tagTypeSelectedValue = tmpTagTypeList[tagTypeSelectedInd].value;
 
 			var newTagTypeList = document.createElement("SELECT");
 			var newTagTypeTxt =  document.createElement("INPUT");
@@ -9520,17 +8405,9 @@ function showPropertyValues(listID, tblID)
 					addElement(newTagTypeList, newTagTypeList.options.length, newOptn);
 			}
 
-// 			newTagTypeList.onchange = function() {showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);}
-// {showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id)};
-
 			propValueCell.appendChild(newTagTypeList);
 			propValueCell.appendChild(newTagTypeTxt);
 
-			// Adjust border height to stretch to bottom of page
-// 			mainBorder = document.getElementById("mainBorder");
-// 			mainBorder.height = document.height;
-// 			mainBorder.rowSpan = propsTbl.rows.length;
-		
 			// For each tag type, show tag position
 			// Modified March 17/08: Instead of showing a hidden row, create a new element and append to form (as done for all other elements; won't save otherwise)
 			var newTagPosRow = propsTbl.insertRow(propRow.rowIndex+1);
@@ -9646,7 +8523,6 @@ function showPropertyValues(listID, tblID)
 			divCell.innerHTML = "<HR>";
 
 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// 			var tblID = "modifyReagentPropsTbl";
 			var tagTypeRowID = propRow.id;
 			var tagPosRowID = newTagPosRow.id;
 			var divRowID = divRow.id;
@@ -9704,7 +8580,6 @@ function showPropertyValues(listID, tblID)
 			propValueCell.className = "detailedView_value";
 			propValueCell.setAttribute("white-space", "nowrap");
 			propValueCell.style.fontSize = "9pt";
-// 			propValueCell.style.fontWeight = "normal";
 			propValueCell.colSpan = 5;
 			
 			propValueCell.style.paddingLeft = "5px";
@@ -9715,8 +8590,6 @@ function showPropertyValues(listID, tblID)
 			var newPromoterTxt =  document.createElement("INPUT");
 
 			newPromoterList.setAttribute('id', propName + "_proplist_" + propRow.rowIndex);
-// 			newPromoterList.setAttribute('name', "reagent_detailedview_" + propName + "_prop");
-
 			propRow.setAttribute('id', "promoter_row_" + propRow.rowIndex + "_id");
 
 			newPromoterTxt.type = "TEXT";
@@ -9741,10 +8614,6 @@ function showPropertyValues(listID, tblID)
 			propValueCell.appendChild(newPromoterList);
 			propValueCell.appendChild(newPromoterTxt);
 
-			// Adjust border height to stretch to bottom of page
-// 			mainBorder = document.getElementById("mainBorder");
-// 			mainBorder.height = document.height;
-// 			mainBorder.rowSpan = propsTbl.rows.length;
 		
 			// Show expression system too
 			var newExpSysRow = propsTbl.insertRow(propRow.rowIndex+1);
@@ -9864,7 +8733,6 @@ function showPropertyValues(listID, tblID)
 			divCell.innerHTML = "<HR>";
 
 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// 			var tblID = "modifyReagentPropsTbl";
 			var promRowID = propRow.id;
 			var expRowID = newExpSysRow.id;
 			var divRowID = divRow.id;
@@ -10025,11 +8893,6 @@ function showPropertyValues(listID, tblID)
 		
 			smPosCell.appendChild(removeLink);
 
-			// Adjust border height to stretch to bottom of page
-// 			mainBorder = document.getElementById("mainBorder");
-// 			mainBorder.height = document.height;
-// 			mainBorder.rowSpan = propsTbl.rows.length;
-		
 			// Add a separator row
 			var divRow = propsTbl.insertRow(smPosRow.rowIndex + 1);
 			var divCell = divRow.insertCell(0);
@@ -10039,7 +8902,6 @@ function showPropertyValues(listID, tblID)
 			divCell.innerHTML = "<HR>";
 
 			// 'Remove' link
-// 			var tblID = "modifyReagentPropsTbl";
 			var markerRowID = propRow.id;
 			var divRowID = divRow.id;
 		
@@ -10048,7 +8910,6 @@ function showPropertyValues(listID, tblID)
 
 			var hiddenMarker = document.createElement("INPUT");
 			hiddenMarker.setAttribute("type", "hidden");
-// 			hiddenMarker.setAttribute("name", newMarkerList.name);
 			myForm.appendChild(hiddenMarker);
 
 			var hiddenMarkerStart = document.createElement("INPUT");
@@ -10197,11 +9058,6 @@ function showPropertyValues(listID, tblID)
 		
 			polyPosCell.appendChild(removeLink);
 
-			// Adjust border height to stretch to bottom of page
-// 			mainBorder = document.getElementById("mainBorder");
-// 			mainBorder.height = document.height;
-// 			mainBorder.rowSpan = propsTbl.rows.length;
-		
 			// Add a separator row
 			var divRow = propsTbl.insertRow(tmpPolyPosRow.rowIndex + 1);
 			var divCell = divRow.insertCell(0);
@@ -10211,7 +9067,6 @@ function showPropertyValues(listID, tblID)
 			divCell.innerHTML = "<HR>";
 
 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// 			var tblID = "modifyReagentPropsTbl";
 			var polyARowID = propRow.id;
 			var divRowID = divRow.id;
 		
@@ -10368,11 +9223,6 @@ function showPropertyValues(listID, tblID)
 		
 			originPosCell.appendChild(removeLink);
 
-			// Adjust border height to stretch to bottom of page
-// 			mainBorder = document.getElementById("mainBorder");
-// 			mainBorder.height = document.height;
-// 			mainBorder.rowSpan = propsTbl.rows.length;
-		
 			// Add a separator row
 			var divRow = propsTbl.insertRow(tmpOriginPosRow.rowIndex + 1);
 			var divCell = divRow.insertCell(0);
@@ -11025,7 +9875,6 @@ function showPropertyValues2(listID, form_name, tblID, rType, createNew)
 		}
 	}
 
-// 	alert(myForm);
 
 	if (!tblID)
 		tblID = "modifyReagentPropsTbl";
@@ -11033,2501 +9882,16 @@ function showPropertyValues2(listID, form_name, tblID, rType, createNew)
 	var propNamesList = document.getElementById(listID);
 	var selectedInd = propNamesList.selectedIndex;
 	var propName = propNamesList[selectedInd].value;
-// alert(propName);
-
-// alert(tblID);
-
 	var propList = document.getElementById("addlPropsListRow_" + rType);
 	
-	// Modified March 3/08
-// 	var propsTbl = document.getElementById("modifyReagentPropsTbl");
 	var propsTbl = document.getElementById(tblID);
 
-// alert(propList.rowIndex);
-	
 	var prefix = "reagent_detailedview_";
 	var postfix = "_prop";
 
 	// March 3/08: Since there could be multiple property values (e.g. tag type or expression system), instead of unhiding the corresponding property row, append another row to the table and make it identical to the hidden row (so the hidden row serves as a template)
 	switch (propName)
 	{
-// 		case 'tag_type':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 
-// 			// Need a few cells in the row
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";		// nov. 12/08
-// 		
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 
-// 			propDirCell.style.textAlign = "left";
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 
-// 			// Set cell content and formatting as required by template	
-// 			propNameCell.innerHTML = "Tag";
-// 			propValueCell.setAttribute("white-space", "nowrap");
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpTagTypeList = document.getElementById(propNamePrefix + "tag_type_list");
-// 
-// 			var newTagTypeList = document.createElement("SELECT");
-// 			var newTagTypeTxt =  document.createElement("INPUT");
-// 
-// 			newTagTypeList.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "tag_type_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "tag_type_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "tag_type_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "tag_type_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "tag_type_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// // 			newTagTypeList.setAttribute('name', prefix + propName + postfix);
-// 			newTagTypeList.setAttribute('id', propNamePrefix + propName + "_proplist_" + rowIndex);
-// 
-// 			newTagTypeTxt.type = "TEXT";
-// 			newTagTypeTxt.id = propNamePrefix + "tag_type_txt_" + rowIndex;
-// 
-// 			newTagTypeTxt.style.display = "none";
-// 			newTagTypeTxt.style.fontSize = "9pt";
-// 
-// 			for (i = 0; i < tmpTagTypeList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpTagTypeList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newTagTypeList.options.length == 0)
-// 					newTagTypeList.options.add(newOptn);
-// 				else
-// 					addElement(newTagTypeList, newTagTypeList.options.length, newOptn);
-// 			}
-// 
-// // 			newTagTypeList.onchange = showTagTypeBox;
-// 
-// 			newTagTypeList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);};
-// 
-// 			propValueCell.appendChild(newTagTypeList);
-// 			propValueCell.appendChild(newTagTypeTxt);
-// 
-// 			// March 17/08: Generate Tag Position option list
-// 			var oldTagPosList = document.getElementById(propNamePrefix + "tag_position_list");
-// // alert(oldTagPosList);
-// 			if (oldTagPosList)
-// 			{
-// 				var newTagPosList = document.createElement("SELECT");
-// 	
-// 				newTagPosList.setAttribute('id', propNamePrefix + "tag_position_proplist_" + rowIndex);
-// // 	alert(newTagPosList.id);
-// 				newTagPosList.style.fontSize = "7pt";		// Nov. 12/08
-// 	
-// 				for (i = 0; i < oldTagPosList.options.length; i++)
-// 				{
-// 					tmpOptn = oldTagPosList.options[i];
-// 					newOptn = document.createElement("OPTION");
-// 	
-// 					newOptn.value = tmpOptn.value;
-// 					newOptn.name = tmpOptn.name;
-// 					newOptn.text = tmpOptn.text;
-// 	
-// 					if (newTagPosList.options.length == 0)
-// 						newTagPosList.options.add(newOptn);
-// 					else
-// 						addElement(newTagPosList, newTagPosList.options.length, newOptn);
-// 				}
-// 	
-// 				propDescrCell.appendChild(newTagPosList);
-// 			}
-// 
-// 			var newTagTypeStart = document.createElement("INPUT");
-// 			newTagTypeStart.setAttribute("type", 'TEXT');
-// 			newTagTypeStart.setAttribute("size", 5);
-// 			newTagTypeStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newTagTypeStart.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			propStartCell.appendChild(newTagTypeStart);
-// 
-// 			var newTagTypeEnd = document.createElement("INPUT");
-// 			newTagTypeEnd.setAttribute("type", 'TEXT');
-// 			newTagTypeEnd.setAttribute("size", 5);
-// 			newTagTypeEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newTagTypeEnd.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			propEndCell.appendChild(newTagTypeEnd);
-// 
-// 			// Orientation
-// 			propDirCell.style.fontSize = "7pt";		// Nov. 12/08
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 			
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// //  			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			fwdDir.setAttribute("checked", true);
-// 
-// 			propDirCell.appendChild(fwdDir);
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-//  			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var tagTypeRowID = propRow.id;
-// 
-// 			var hiddenTagType = document.createElement("INPUT");
-// 			hiddenTagType.setAttribute("type", "hidden");
-// 			hiddenTagType.setAttribute("id", propNamePrefix + "tag_type_prop" + rowIndex);
-// 			myForm.appendChild(hiddenTagType);
-// 
-// 			var hiddenTagTypeStart = document.createElement("INPUT");
-// 			hiddenTagTypeStart.setAttribute("type", "hidden");
-// 			hiddenTagTypeStart.setAttribute("id", propNamePrefix + "tag_type_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenTagTypeStart);
-// 
-// 			var hiddenTagTypeEnd = document.createElement("INPUT");
-// 			hiddenTagTypeEnd.setAttribute("type", "hidden");
-// 			hiddenTagTypeEnd.setAttribute("id", propNamePrefix + "tag_type_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenTagTypeEnd);
-// 
-// 			// Tag position
-// 			var hiddenTagPosField = document.createElement("INPUT");
-// 			hiddenTagPosField.setAttribute('type', 'hidden');
-// 			hiddenTagPosField.setAttribute("id", propNamePrefix + "tag_position_prop_" + rowIndex);
-// // alert(hiddenTagPosField.id);
-// 			myForm.appendChild(hiddenTagPosField);
-// 
-// 			// Orientation
-// 			var hiddenTagTypeDir = document.createElement("INPUT");
-// 			hiddenTagTypeDir.setAttribute('type', 'hidden');
-// 			hiddenTagTypeDir.setAttribute("id", propNamePrefix + "tag_type_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenTagTypeDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenTagType);
-// 			elemList.push(hiddenTagTypeStart);
-// 			elemList.push(hiddenTagTypeEnd);
-// 			elemList.push(hiddenTagTypeDir);
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, tagTypeRowID); removeFormElements(myForm, elemList)};
-// 
-// 		break;
-// 
-// 		case 'promoter':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			// Need a few cells in the row
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";		// nov. 12/08
-// 		
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 			propDescrCell.style.fontSize = "7pt";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 			propNameCell.innerHTML = "Promoter";
-// 
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpPromoterList = document.getElementById(propNamePrefix + "promoter_list");
-// 			var newPromoterList = document.createElement("SELECT");
-// 			var newPromoterTxt =  document.createElement("INPUT");
-// 			var newExpSysTxt =  document.createElement("INPUT");
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "promoter_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "promoter_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "promoter_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "promoter_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "promoter_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newPromoterList.setAttribute('id', propNamePrefix + propName + "_proplist_" + rowIndex);
-// 			newPromoterList.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			newPromoterTxt.type = "TEXT";
-// 			newPromoterTxt.id = propNamePrefix + "promoter_txt_" + rowIndex;
-// 			newPromoterTxt.style.display = "none";
-// 
-// 			newExpSysTxt.type = "TEXT";
-// 			newExpSysTxt.id = propNamePrefix + "expression_system_txt_" + rowIndex;
-// 			newExpSysTxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpPromoterList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpPromoterList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newPromoterList.options.length == 0)
-// 					newPromoterList.options.add(newOptn);
-// 				else
-// 					addElement(newPromoterList, newPromoterList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newPromoterList);
-// 			propValueCell.appendChild(newPromoterTxt);
-// 
-// 			var oldExpSystList = document.getElementById(propNamePrefix + "expression_system_list");
-// 			var newExpSystList = document.createElement("SELECT");
-// 
-// 			newExpSystList.setAttribute('id', propNamePrefix + "expression_system_prop_list_" + rowIndex);
-// 			newExpSystList.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			for (i = 0; i < oldExpSystList.options.length; i++)
-// 			{
-// 				tmpOptn = oldExpSystList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newExpSystList.options.length == 0)
-// 					newExpSystList.options.add(newOptn);
-// 				else
-// 					addElement(newExpSystList, newExpSystList.options.length, newOptn);
-// 			}
-// 
-// 			propDescrCell.appendChild(newExpSystList);
-// 			propDescrCell.appendChild(newExpSysTxt);
-// 
-// 			var newPromStart = document.createElement("INPUT");
-// 			newPromStart.setAttribute("type", 'TEXT');
-// 			newPromStart.setAttribute("size", 5);
-// 			newPromStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newPromStart.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			propStartCell.appendChild(newPromStart);
-// 			
-// 			var newPromEnd = document.createElement("INPUT");
-// 			newPromEnd.setAttribute("type", 'TEXT');
-// 			newPromEnd.setAttribute("size", 5);
-// 			newPromEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newPromEnd.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			propEndCell.appendChild(newPromEnd);
-// 
-// 			newPromoterList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showSpecificOtherTextbox(newPromoterList.id, newPromoterTxt.id);};
-// 
-// 			newExpSystList.onchange = function(){showSpecificOtherTextbox(newExpSystList.id, newExpSysTxt.id);};
-// 
-// 			// Orientation - March 14/08: Make 'forward' checked by default
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 			fwdDir.setAttribute("checked", true);
-// 
-// 			propDirCell.appendChild(fwdDir);
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.style.fontSize = "7pt";		// Nov. 12/08
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var promRowID = propRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenPromoter = document.createElement("INPUT");
-// 			hiddenPromoter.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenPromoter);
-// 
-// 			var hiddenPromStart = document.createElement("INPUT");
-// 			hiddenPromStart.setAttribute("type", "hidden");
-// 			hiddenPromStart.setAttribute("id", propNamePrefix + "promoter_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenPromStart);
-// 
-// 			var hiddenPromEnd = document.createElement("INPUT");
-// 			hiddenPromEnd.setAttribute("type", "hidden");
-// 			hiddenPromEnd.setAttribute("id", propNamePrefix + "promoter_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenPromEnd);
-// 
-// 			var hiddenExprSyst = document.createElement("INPUT");
-// 			hiddenExprSyst.setAttribute("type", "hidden");
-// 			hiddenExprSyst.setAttribute("id", propNamePrefix + "expression_system_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenExprSyst);
-// 
-// 			// Orientation
-// 			var hiddenPromoDir = document.createElement("INPUT");
-// 			hiddenPromoDir.setAttribute('type', 'hidden');
-// 			hiddenPromoDir.setAttribute("id", propNamePrefix + "promoter_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenPromoDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenPromoter);
-// 			elemList.push(hiddenPromStart);
-// 			elemList.push(hiddenPromEnd);
-// 			elemList.push(hiddenExprSyst);
-// 			elemList.push(hiddenPromoDir);
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, promRowID); removeFormElements(myForm, elemList)};
-// 
-// 		break;
-//  
-// 		case 'selectable_marker':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			// Need a few cells in the row
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 		
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 			propDescrCell.style.fontSize = "7pt";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 			propNameCell.innerHTML = "Selectable Marker";
-// 
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// // alert(createNew);
-// // alert(propNamePrefix);
-// // alert(propNamePrefix + "selectable_marker_list")
-// 
-// 			var tmpMarkerList = document.getElementById(propNamePrefix + "selectable_marker_list");
-// 			var markerSelectedInd = tmpMarkerList.selectedIndex;
-// 			var markerSelectedValue = tmpMarkerList[markerSelectedInd].value;
-// 
-// 			var newMarkerList = document.createElement("SELECT");
-// 			var newMarkerTxt =  document.createElement("INPUT");
-// 
-// 			newMarkerList.style.fontSize = "7pt";
-// 
-// // oct 27/08		newMarkerList.setAttribute("name", prefix + propName + postfix);
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "selectable_marker_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "selectable_marker_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "selectable_marker_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "selectable_marker_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "selectable_marker_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newMarkerList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 
-// 			newMarkerTxt.type = "TEXT";
-// 			newMarkerTxt.id = propNamePrefix + "selectable_marker_txt_" + rowIndex;
-// 			newMarkerTxt.style.display = "none";
-// 
-// 			newMarkerList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showSpecificOtherTextbox(newMarkerList.id, newMarkerTxt.id);};	// oct 27/08
-// 
-// 			for (i = 0; i < tmpMarkerList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpMarkerList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newMarkerList.options.length == 0)
-// 					newMarkerList.options.add(newOptn);
-// 				else
-// 					addElement(newMarkerList, newMarkerList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newMarkerList);
-// 			propValueCell.appendChild(newMarkerTxt);
-// 
-// 			var newMarkerStart = document.createElement("INPUT");
-// 			newMarkerStart.setAttribute("type", 'TEXT');
-// 			newMarkerStart.setAttribute("size", 5);
-// 			newMarkerStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 
-// 			newMarkerStart.style.fontSize = "7pt";
-// 			propStartCell.appendChild(newMarkerStart);
-// 			
-// 			var newMarkerEnd = document.createElement("INPUT");
-// 			newMarkerEnd.setAttribute("type", 'TEXT');
-// 			newMarkerEnd.setAttribute("size", 5);
-// 			newMarkerEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newMarkerEnd.style.fontSize = "7pt";
-// 			propEndCell.appendChild(newMarkerEnd);
-// 
-// // 			newMarkerList.onchange = function()
-// // 			{
-// // 				showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);
-// // 			};
-// 
-// 			// Orientation - March 14/08: Make 'forward' checked by default
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 			fwdDir.setAttribute("checked", true);
-// 
-// 			propDirCell.appendChild(fwdDir);
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// 			rmvCell.appendChild(removeLink);
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var markerRowID = propRow.id;
-// 
-// 			var hiddenMarker = document.createElement("INPUT");
-// 			hiddenMarker.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenMarker);
-// 
-// 			var hiddenMarkerStart = document.createElement("INPUT");
-// 			hiddenMarkerStart.setAttribute("type", "hidden");
-// 			hiddenMarkerStart.setAttribute("id", propNamePrefix + "selectable_marker_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMarkerStart);
-// 
-// 			var hiddenMarkerEnd = document.createElement("INPUT");
-// 			hiddenMarkerEnd.setAttribute("type", "hidden");
-// 			hiddenMarkerEnd.setAttribute("id", propNamePrefix + "selectable_marker_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMarkerEnd);
-// 
-// 			// Orientation
-// 			var hiddenMarkerDir = document.createElement("INPUT");
-// 			hiddenMarkerDir.setAttribute('type', 'hidden');
-// 			hiddenMarkerDir.setAttribute("id", propNamePrefix + "selectable_marker_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMarkerDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenMarker);
-// 			elemList.push(hiddenMarkerStart);
-// 			elemList.push(hiddenMarkerEnd);
-// 			elemList.push(hiddenMarkerDir);
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, markerRowID); removeFormElements(myForm, elemList)};
-// 		break;
-// 
-// 		case 'polya':
-// 		case 'polyA':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			// Need a few cells in the row
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 		
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 			propDescrCell.style.fontSize = "7pt";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 			propName = "polyA";
-// 
-// 			// Set cell content and formatting as required by template
-// 			propNameCell.innerHTML = "PolyA Tail";
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpPolyAList = document.getElementById(propNamePrefix + "polyA_list");
-// 			var polyASelectedInd = tmpPolyAList.selectedIndex;
-// 			var polyASelectedValue = tmpPolyAList[polyASelectedInd].value;
-// 
-// 			var newPolyAList = document.createElement("SELECT");
-// 			var newPolyATxt =  document.createElement("INPUT");
-// 
-// 			newPolyAList.style.fontSize = "7pt";
-// // 			newPolyAList.setAttribute("name", prefix + propName + postfix);
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "polyA_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "polyA_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "polyA_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "polyA_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "polyA_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newPolyAList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 
-// 			newPolyATxt.type = "TEXT";
-// 			newPolyATxt.id = propNamePrefix + "polyA_txt_" + rowIndex;
-// 			newPolyATxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpPolyAList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpPolyAList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newPolyAList.options.length == 0)
-// 					newPolyAList.options.add(newOptn);
-// 				else
-// 					addElement(newPolyAList, newPolyAList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newPolyAList);
-// 			propValueCell.appendChild(newPolyATxt);
-// 
-// 			// Start & stop positions
-// 			var newPolyAStart = document.createElement("INPUT");
-// 			newPolyAStart.setAttribute("type", 'TEXT');
-// 			newPolyAStart.setAttribute("size", 5);
-// 			newPolyAStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newPolyAStart.style.fontSize = "7pt";
-// 
-// 			propStartCell.appendChild(newPolyAStart);
-// 
-// 			var newPolyAEnd = document.createElement("INPUT");
-// 			newPolyAEnd.setAttribute("type", 'TEXT');
-// 			newPolyAEnd.setAttribute("size", 5);
-// 			newPolyAEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newPolyAEnd.style.fontSize = "7pt";
-// 
-// 			propEndCell.appendChild(newPolyAEnd);
-// 
-// 			newPolyAList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showSpecificOtherTextbox(newPolyAList.id, newPolyATxt.id);};
-// 
-// 			// Orientation
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			fwdDir.setAttribute("checked", true);
-// 
-// 			propDirCell.appendChild(fwdDir);
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.style.fontSize = "7pt";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Adjust border height to stretch to bottom of page
-// // 			mainBorder = document.getElementById("mainBorder");
-// // 			mainBorder.height = document.height;
-// // 			mainBorder.rowSpan = propsTbl.rows.length;
-// 		
-// 			// Add a separator row
-// // 			var divRow = propsTbl.insertRow(tmpPolyPosRow.rowIndex + 1);
-// // 			var divCell = divRow.insertCell(0);
-// // 
-// // 			divRow.setAttribute('id', "div_row" + divRow.rowIndex + "_id");
-// // 			divCell.colSpan = 6;
-// // 			divCell.innerHTML = "<HR>";
-// 
-// 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var polyARowID = propRow.id;
-// // 			var divRowID = divRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenPolyA = document.createElement("INPUT");
-// 			hiddenPolyA.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenPolyA);
-// 
-// 			var hiddenPolyAStart = document.createElement("INPUT");
-// 			hiddenPolyAStart.setAttribute("type", "hidden");
-// 			hiddenPolyAStart.setAttribute("id", propNamePrefix + "polyA_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenPolyAStart);
-// 
-// 			var hiddenPolyAEnd = document.createElement("INPUT");
-// 			hiddenPolyAEnd.setAttribute("type", "hidden");
-// 			hiddenPolyAEnd.setAttribute("id", propNamePrefix + "polyA_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenPolyAEnd);
-// 
-// 			// Orientation
-// 			var hiddenPolyADir = document.createElement("INPUT");
-// 			hiddenPolyADir.setAttribute('type', 'hidden');
-// 			hiddenPolyADir.setAttribute("id", propNamePrefix + "polyA_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenPolyADir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenPolyA);
-// 			elemList.push(hiddenPolyAStart);
-// 			elemList.push(hiddenPolyAEnd);
-// 			elemList.push(hiddenPolyADir);
-// 
-// // 			removeLink.onclick = function(){deleteRow(tblID, polyARowID); deleteRow(tblID, tmpPolyPosRowID); deleteRow(tblID, divRowID); removeFormElements(myForm, elemList)};
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, polyARowID); removeFormElements(myForm, elemList)};
-// 		break;
-// 	
-// 		case 'origin_of_replication':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			// Need a few cells in the row
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 			propDescrCell.style.fontSize = "7pt";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// // 			var propRow = propsTbl.insertRow(propList.rowIndex - 1);
-// 		
-// 			// Need a few cells in the row
-// // 			var propNameCell = propRow.insertCell(0);
-// // 			var propValueCell = propRow.insertCell(1);
-// 
-// 			// Set cell content and formatting as required by template
-// // 			propNameCell.className = "detailedView_colName";
-// 			propNameCell.innerHTML = "Origin of Replication";
-// 		
-// // 			propValueCell.className = "detailedView_value";
-// // 			propValueCell.setAttribute("white-space", "nowrap");
-// // 			propValueCell.style.fontSize = "9pt";
-// // 			propValueCell.colSpan = 5;
-// // 			propValueCell.style.paddingLeft = "5px";
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpOriginList = document.getElementById(propNamePrefix + "origin_of_replication_list");
-// 			var originSelectedInd = tmpOriginList.selectedIndex;
-// 			var originSelectedValue = tmpOriginList[originSelectedInd].value;
-// 
-// 			var newOriginList = document.createElement("SELECT");
-// 			var newOriginTxt =  document.createElement("INPUT");
-// 			newOriginList.style.fontSize = "7pt";
-// 
-// // 			newOriginList.setAttribute("name", prefix + propName + postfix);
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "origin_of_replication_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "origin_of_replication_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "origin_of_replication_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "origin_of_replication_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "origin_of_replication_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newOriginList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 
-// // 			propRow.setAttribute('id', "origin_row_" + propRow.rowIndex + "_id");
-// 
-// 			newOriginTxt.type = "TEXT";
-// 			newOriginTxt.id = propNamePrefix + "origin_of_replication_txt_" + rowIndex;
-// 			newOriginTxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpOriginList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpOriginList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newOriginList.options.length == 0)
-// 					newOriginList.options.add(newOptn);
-// 				else
-// 					addElement(newOriginList, newOriginList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newOriginList);
-// 			propValueCell.appendChild(newOriginTxt);
-// 
-// 			// Start & stop positions
-// 			// April 2/08: Karen asked to show positions and orientation on a new line for ALL features
-// // 			var tmpOriginPosRow = propsTbl.insertRow(propRow.rowIndex+1);
-// // 			tmpOriginPosRow.setAttribute('id', "origin_pos_row" + tmpOriginPosRow.rowIndex + "_id");
-// // 			var tmpOriginPosRowID = tmpOriginPosRow.id;
-// // 
-// // 			var c1 = tmpOriginPosRow.insertCell(0);
-// // 			var originPosCell = tmpOriginPosRow.insertCell(1);
-// // 
-// // 			originPosCell.className = "detailedView_value";
-// // 			originPosCell.style.paddingLeft = "5px";
-// // 			originPosCell.setAttribute("white-space", "nowrap");
-// // 			originPosCell.colSpan = 5;
-// // 
-// // 			originPosCell.innerHTML += "Start:&nbsp;";
-// 
-// // 			propValueCell.innerHTML += "<SPAN style=\"margin-left:8px;\"></span>Start:&nbsp;";
-// 			
-// 			var newOriginStart = document.createElement("INPUT");
-// 			newOriginStart.setAttribute("type", 'TEXT');
-// 			newOriginStart.setAttribute("size", 5);
-// 			newOriginStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newOriginStart.style.fontSize = "7pt";
-// // 			originPosCell.appendChild(newOriginStart);
-// 			propStartCell.appendChild(newOriginStart);
-// 
-// // 			originPosCell.innerHTML += "&nbsp;&nbsp;End:&nbsp;";
-// 			
-// 			var newOriginEnd = document.createElement("INPUT");
-// 			newOriginEnd.setAttribute("type", 'TEXT');
-// 			newOriginEnd.setAttribute("size", 5);
-// 			newOriginEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newOriginEnd.style.fontSize = "7pt";
-// // 			originPosCell.appendChild(newOriginEnd);
-// 			propEndCell.appendChild(newOriginEnd);
-// 
-// 			newOriginList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showSpecificOtherTextbox(newOriginList.id, newOriginTxt.id);};
-// 			{
-// // 				showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);
-// 			};
-// 
-// 			// Orientation - March 14/08: Make 'forward' checked by default
-// // 			originPosCell.innerHTML += "<SPAN style=\"margin-left:10px;\"></span>";
-// 
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("checked", true);
-// 
-// // 			originPosCell.appendChild(fwdDir);
-// // 			originPosCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.appendChild(fwdDir);
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_radio_" + rowIndex);
-// 
-// // 			originPosCell.appendChild(revDir);
-// // 			originPosCell.innerHTML += "Reverse";
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// // 			originPosCell.appendChild(removeLink);
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Adjust border height to stretch to bottom of page
-// // 			mainBorder = document.getElementById("mainBorder");
-// // 			mainBorder.height = document.height;
-// // 			mainBorder.rowSpan = propsTbl.rows.length;
-// 		
-// 			// Add a separator row
-// // 			var divRow = propsTbl.insertRow(tmpOriginPosRow.rowIndex + 1);
-// // 			var divCell = divRow.insertCell(0);
-// 
-// // 			divRow.setAttribute('id', "div_row" + divRow.rowIndex + "_id");
-// // 			divCell.colSpan = 6;
-// // 			divCell.innerHTML = "<HR>";
-// 
-// 			// 'Remove' link
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var originRowID = propRow.id;
-// // 			var divRowID = divRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenOrigin = document.createElement("INPUT");
-// 			hiddenOrigin.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenOrigin);
-// 
-// 			var hiddenOriginStart = document.createElement("INPUT");
-// 			hiddenOriginStart.setAttribute("type", "hidden");
-// 			hiddenOriginStart.setAttribute("id", propNamePrefix + "origin_of_replication_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenOriginStart);
-// 
-// 			var hiddenOriginEnd = document.createElement("INPUT");
-// 			hiddenOriginEnd.setAttribute("type", "hidden");
-// 			hiddenOriginEnd.setAttribute("id", propNamePrefix + "origin_of_replication_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenOriginEnd);
-// 
-// 			// Orientation
-// 			var hiddenOriginDir = document.createElement("INPUT");
-// 			hiddenOriginDir.setAttribute('type', 'hidden');
-// 			hiddenOriginDir.setAttribute("id", propNamePrefix + "origin_of_replication_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenOriginDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenOrigin);
-// 			elemList.push(hiddenOriginStart);
-// 			elemList.push(hiddenOriginEnd);
-// 			elemList.push(hiddenOriginDir);
-// 
-// // 			removeLink.onclick = function(){deleteRow(tblID, originRowID); deleteRow(tblID, tmpOriginPosRowID); deleteRow(tblID, divRowID); removeFormElements(myForm, elemList)};
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, originRowID); removeFormElements(myForm, elemList)};
-// 		break;
-// 
-// 		case 'miscellaneous':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 			propDescrCell.style.fontSize = "7pt";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 
-// 			propNameCell.innerHTML = "Miscellaneous";
-// 
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpMiscList = document.getElementById(propNamePrefix + "miscellaneous_list");
-// 			var miscSelectedInd = tmpMiscList.selectedIndex;
-// 			var miscSelectedValue = tmpMiscList[miscSelectedInd].value;
-// 
-// 			var newMiscList = document.createElement("SELECT");
-// 			var newMiscTxt =  document.createElement("INPUT");
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix+ "miscellaneous_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "miscellaneous_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "miscellaneous_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "miscellaneous_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "miscellaneous_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newMiscList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 			newMiscList.style.fontSize = "7pt";
-// 
-// 			newMiscTxt.type = "TEXT";
-// 			newMiscTxt.id = propNamePrefix + "miscellaneous_txt_" + rowIndex;
-// 			newMiscTxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpMiscList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpMiscList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newMiscList.options.length == 0)
-// 					newMiscList.options.add(newOptn);
-// 				else
-// 					addElement(newMiscList, newMiscList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newMiscList);
-// 			propValueCell.appendChild(newMiscTxt);
-// 
-// 			var newMiscStart = document.createElement("INPUT");
-// 			newMiscStart.setAttribute("type", 'TEXT');
-// 			newMiscStart.setAttribute("size", 5);
-// 			newMiscStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newMiscStart.style.fontSize = "7pt";
-// 			propStartCell.appendChild(newMiscStart);
-// 			
-// 			var newMiscEnd = document.createElement("INPUT");
-// 			newMiscEnd.setAttribute("type", 'TEXT');
-// 			newMiscEnd.setAttribute("size", 5);
-// 			newMiscEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newMiscEnd.style.fontSize = "7pt";
-// 			propEndCell.appendChild(newMiscEnd);
-// 
-// 			newMiscList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showSpecificOtherTextbox(newMiscList.id, newMiscTxt.id);};
-// 
-// 			// Orientation
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 			fwdDir.setAttribute("checked", true);
-// 
-// // 			miscPosCell.appendChild(fwdDir);
-// 			propDirCell.appendChild(fwdDir);
-// // 			miscPosCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// // 			miscPosCell.appendChild(revDir);
-// // 			miscPosCell.innerHTML += "Reverse";
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// // 			miscPosCell.appendChild(removeLink);
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Adjust border height to stretch to bottom of page
-// // 			mainBorder = document.getElementById("mainBorder");
-// // 			mainBorder.height = document.height;
-// // 			mainBorder.rowSpan = propsTbl.rows.length;
-// 		
-// 			// Add a separator row
-// // 			var divRow = propsTbl.insertRow(rowIndex + 1);
-// // 			var divCell = divRow.insertCell(0);
-// 
-// // 			divRow.setAttribute('id', "div_row" + divRow.rowIndex + "_id");
-// // 			divCell.colSpan = 6;
-// // 			divCell.innerHTML = "<HR>";
-// 
-// 			// 'Remove' link
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var miscRowID = propRow.id;
-// // 			var divRowID = divRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenMisc = document.createElement("INPUT");
-// 			hiddenMisc.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenMisc);
-// 
-// 			var hiddenMiscStart = document.createElement("INPUT");
-// 			hiddenMiscStart.setAttribute("type", "hidden");
-// 			hiddenMiscStart.setAttribute("id", propNamePrefix + "miscellaneous_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscStart);
-// 
-// 			var hiddenMiscEnd = document.createElement("INPUT");
-// 			hiddenMiscEnd.setAttribute("type", "hidden");
-// 			hiddenMiscEnd.setAttribute("id", propNamePrefix + "miscellaneous_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscEnd);
-// 
-// 			// Orientation
-// 			var hiddenMiscDir = document.createElement("INPUT");
-// 			hiddenMiscDir.setAttribute('type', 'hidden');
-// 			hiddenMiscDir.setAttribute("id", propNamePrefix + "miscellaneous_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenMisc);
-// 			elemList.push(hiddenMiscStart);
-// 			elemList.push(hiddenMiscEnd);
-// 			elemList.push(hiddenMiscDir);
-// 
-// // 			removeLink.onclick = function(){deleteRow(tblID, miscRowID); deleteRow(tblID, miscPosRowID); deleteRow(tblID, divRowID); removeFormElements(myForm, elemList)};
-// 			removeLink.onclick = function(){deleteTableRow(tblID, miscRowID); removeFormElements(myForm, elemList)};
-// 
-// 		break;
-// 
-// 		case 'cleavage_site':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// // 			// Need a few cells in the row
-// // 			var propNameCell = propRow.insertCell(0);
-// // 			var propValueCell = propRow.insertCell(1);
-// // 
-// // 			// Set cell content and formatting as required by template
-// // 			propNameCell.className = "detailedView_colName";
-// 
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 			propDescrCell.style.fontSize = "7pt";
-// 			propStartCell.style.textAlign = "left";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 
-// 			propNameCell.innerHTML = "Cleavage Site";
-// // 		
-// // 			propValueCell.className = "detailedView_value";
-// // 			propValueCell.setAttribute("white-space", "nowrap");
-// // 			propValueCell.style.fontSize = "9pt";
-// // 			propValueCell.colSpan = 5;
-// // 			propValueCell.style.paddingLeft = "5px";
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpMiscList = document.getElementById(propNamePrefix + "cleavage_site_list");
-// 			var miscSelectedInd = tmpMiscList.selectedIndex;
-// 			var miscSelectedValue = tmpMiscList[miscSelectedInd].value;
-// 
-// 			var newMiscList = document.createElement("SELECT");
-// 			var newMiscTxt =  document.createElement("INPUT");
-// 			
-// // 			newMiscList.setAttribute("name", prefix + propName + postfix);
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "cleavage_site_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "cleavage_site_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "cleavage_site_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "cleavage_site_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', "cleavage_site_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newMiscList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 			newMiscList.style.fontSize = "7pt";
-// 
-// // 			propRow.setAttribute('id', "miscellaneous_row_" + propRow.rowIndex + "_id");
-// 
-// 			newMiscTxt.type = "TEXT";
-// 			newMiscTxt.id = propNamePrefix + "cleavage_site_txt_" + (rowIndex - 1);
-// 			newMiscTxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpMiscList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpMiscList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newMiscList.options.length == 0)
-// 					newMiscList.options.add(newOptn);
-// 				else
-// 					addElement(newMiscList, newMiscList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newMiscList);
-// 			propValueCell.appendChild(newMiscTxt);
-// 
-// 			// Start & stop positions
-// 			// April 1, 2008: Show in a new row
-// // 			var miscPosRow = propsTbl.insertRow(rowIndex+1);
-// // 			miscPosRow.setAttribute('id', "miscellaneous_pos_row" + rowIndex + "_id");
-// // 			var miscPosRowID = miscPosRow.id;
-// // 
-// // 			var c1 = miscPosRow.insertCell(0);
-// // 			var miscPosCell = miscPosRow.insertCell(1);
-// // 
-// // 			miscPosCell.className = "detailedView_value";
-// // 			miscPosCell.style.paddingLeft = "5px";
-// // 			miscPosCell.colSpan = 5;
-// // 			miscPosCell.setAttribute("white-space", "nowrap");
-// 
-// // 			miscPosCell.innerHTML = "Start:&nbsp;";
-// 
-// 			var newMiscStart = document.createElement("INPUT");
-// 			newMiscStart.setAttribute("type", 'TEXT');
-// 			newMiscStart.setAttribute("size", 5);
-// 			newMiscStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newMiscStart.style.fontSize = "7pt";
-// 
-// // 			miscPosCell.appendChild(newMiscStart);
-// 			propStartCell.appendChild(newMiscStart);
-// 
-// // 			miscPosCell.innerHTML += "&nbsp;&nbsp;End:&nbsp;";
-// 			
-// 			var newMiscEnd = document.createElement("INPUT");
-// 			newMiscEnd.setAttribute("type", 'TEXT');
-// 			newMiscEnd.setAttribute("size", 5);
-// 			newMiscEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newMiscEnd.style.fontSize = "7pt";
-// 
-// // 			miscPosCell.appendChild(newMiscEnd);
-// 			propEndCell.appendChild(newMiscEnd);
-// 
-// // 			newMiscList.onchange = function()
-// // 			{
-// // // 				showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);
-// // 			};
-// 			newMiscList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex);};
-// 
-// 			// Orientation - March 14/08: Make 'forward' checked by default
-// // 			miscPosCell.innerHTML += "<SPAN style=\"margin-left:10px;\"></span>";
-// 
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 			fwdDir.setAttribute("checked", true);
-// 
-// // 			miscPosCell.appendChild(fwdDir);
-// 			propDirCell.appendChild(fwdDir);
-// // 			miscPosCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// // 			miscPosCell.appendChild(revDir);
-// // 			miscPosCell.innerHTML += "Reverse";
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// // 			miscPosCell.appendChild(removeLink);
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Adjust border height to stretch to bottom of page
-// // 			mainBorder = document.getElementById("mainBorder");
-// // 			mainBorder.height = document.height;
-// // 			mainBorder.rowSpan = propsTbl.rows.length;
-// 		
-// 			// Add a separator row
-// // 			var divRow = propsTbl.insertRow(rowIndex + 1);
-// // 			var divCell = divRow.insertCell(0);
-// 
-// // 			divRow.setAttribute('id', "div_row" + divRow.rowIndex + "_id");
-// // 			divCell.colSpan = 6;
-// // 			divCell.innerHTML = "<HR>";
-// 
-// 			// 'Remove' link
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var miscRowID = propRow.id;
-// // 			var divRowID = divRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenMisc = document.createElement("INPUT");
-// 			hiddenMisc.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenMisc);
-// 
-// 			var hiddenMiscStart = document.createElement("INPUT");
-// 			hiddenMiscStart.setAttribute("type", "hidden");
-// 			hiddenMiscStart.setAttribute("id", propNamePrefix + "cleavage_site_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscStart);
-// 
-// 			var hiddenMiscEnd = document.createElement("INPUT");
-// 			hiddenMiscEnd.setAttribute("type", "hidden");
-// 			hiddenMiscEnd.setAttribute("id", propNamePrefix + "cleavage_site_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscEnd);
-// 
-// 			// Orientation
-// 			var hiddenMiscDir = document.createElement("INPUT");
-// 			hiddenMiscDir.setAttribute('type', 'hidden');
-// 			hiddenMiscDir.setAttribute("id", propNamePrefix + "cleavage_site_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenMisc);
-// 			elemList.push(hiddenMiscStart);
-// 			elemList.push(hiddenMiscEnd);
-// 			elemList.push(hiddenMiscDir);
-// 
-// // 			removeLink.onclick = function(){deleteRow(tblID, miscRowID); deleteRow(tblID, miscPosRowID); deleteRow(tblID, divRowID); removeFormElements(myForm, elemList)};
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, miscRowID); removeFormElements(myForm, elemList)};
-// 		break;
-// 
-// 		case 'transcription_terminator':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// // 			// Need a few cells in the row
-// // 			var propNameCell = propRow.insertCell(0);
-// // 			var propValueCell = propRow.insertCell(1);
-// // 
-// // 			// Set cell content and formatting as required by template
-// // 			propNameCell.className = "detailedView_colName";
-// 
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 		
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 
-// 			propNameCell.innerHTML = "Transcription Terminator";
-// // 		
-// // 			propValueCell.className = "detailedView_value";
-// // 			propValueCell.setAttribute("white-space", "nowrap");
-// // 			propValueCell.style.fontSize = "9pt";
-// // 			propValueCell.colSpan = 5;
-// // 			propValueCell.style.paddingLeft = "5px";
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpMiscList = document.getElementById(propNamePrefix + "transcription_terminator_list");
-// 			var miscSelectedInd = tmpMiscList.selectedIndex;
-// 			var miscSelectedValue = tmpMiscList[miscSelectedInd].value;
-// 
-// 			var newMiscList = document.createElement("SELECT");
-// 			var newMiscTxt =  document.createElement("INPUT");
-// 
-// 			newMiscList.style.fontSize = "7pt";
-// 
-// // 			newMiscList.setAttribute("name", prefix + propName + postfix);
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "transcription_terminator_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "transcription_terminator_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "transcription_terminator_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "transcription_terminator_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "transcription_terminator_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newMiscList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 
-// // 			propRow.setAttribute('id', "miscellaneous_row_" + propRow.rowIndex + "_id");
-// 
-// 			newMiscTxt.type = "TEXT";
-// 			newMiscTxt.id = propNamePrefix + "transcription_terminator_txt_" + (rowIndex - 1);
-// 			newMiscTxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpMiscList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpMiscList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newMiscList.options.length == 0)
-// 					newMiscList.options.add(newOptn);
-// 				else
-// 					addElement(newMiscList, newMiscList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newMiscList);
-// 			propValueCell.appendChild(newMiscTxt);
-// 
-// 			// Start & stop positions
-// 			// April 1, 2008: Show in a new row
-// // 			var miscPosRow = propsTbl.insertRow(rowIndex+1);
-// // 			miscPosRow.setAttribute('id', "miscellaneous_pos_row" + rowIndex + "_id");
-// // 			var miscPosRowID = miscPosRow.id;
-// // 
-// // 			var c1 = miscPosRow.insertCell(0);
-// // 			var miscPosCell = miscPosRow.insertCell(1);
-// // 
-// // 			miscPosCell.className = "detailedView_value";
-// // 			miscPosCell.style.paddingLeft = "5px";
-// // 			miscPosCell.colSpan = 5;
-// // 			miscPosCell.setAttribute("white-space", "nowrap");
-// 
-// // 			miscPosCell.innerHTML = "Start:&nbsp;";
-// 
-// 			var newMiscStart = document.createElement("INPUT");
-// 			newMiscStart.setAttribute("type", 'TEXT');
-// 			newMiscStart.setAttribute("size", 5);
-// 			newMiscStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newMiscStart.style.fontSize = "7pt";
-// 
-// // 			miscPosCell.appendChild(newMiscStart);
-// 			propStartCell.appendChild(newMiscStart);
-// 
-// // 			miscPosCell.innerHTML += "&nbsp;&nbsp;End:&nbsp;";
-// 			
-// 			var newMiscEnd = document.createElement("INPUT");
-// 			newMiscEnd.setAttribute("type", 'TEXT');
-// 			newMiscEnd.setAttribute("size", 5);
-// 			newMiscEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newMiscEnd.style.fontSize = "7pt";
-// 
-// // 			miscPosCell.appendChild(newMiscEnd);
-// 			propEndCell.appendChild(newMiscEnd);
-// 
-// // 			newMiscList.onchange = function()
-// // 			{
-// // // 				showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);
-// // 			};
-// 			newMiscList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex);};
-// 
-// 			// Orientation - March 14/08: Make 'forward' checked by default
-// // 			miscPosCell.innerHTML += "<SPAN style=\"margin-left:10px;\"></span>";
-// 
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			fwdDir.setAttribute("checked", true);
-// 
-// // 			miscPosCell.appendChild(fwdDir);
-// 			propDirCell.appendChild(fwdDir);
-// // 			miscPosCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// // 			miscPosCell.appendChild(revDir);
-// // 			miscPosCell.innerHTML += "Reverse";
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// // 			miscPosCell.appendChild(removeLink);
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Adjust border height to stretch to bottom of page
-// // 			mainBorder = document.getElementById("mainBorder");
-// // 			mainBorder.height = document.height;
-// // 			mainBorder.rowSpan = propsTbl.rows.length;
-// 		
-// 			// Add a separator row
-// // 			var divRow = propsTbl.insertRow(rowIndex + 1);
-// // 			var divCell = divRow.insertCell(0);
-// 
-// // 			divRow.setAttribute('id', "div_row" + divRow.rowIndex + "_id");
-// // 			divCell.colSpan = 6;
-// // 			divCell.innerHTML = "<HR>";
-// 
-// 			// 'Remove' link
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var miscRowID = propRow.id;
-// // 			var divRowID = divRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenMisc = document.createElement("INPUT");
-// 			hiddenMisc.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenMisc);
-// 
-// 			var hiddenMiscStart = document.createElement("INPUT");
-// 			hiddenMiscStart.setAttribute("type", "hidden");
-// 			hiddenMiscStart.setAttribute("id", propNamePrefix + "transcription_terminator_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscStart);
-// 
-// 			var hiddenMiscEnd = document.createElement("INPUT");
-// 			hiddenMiscEnd.setAttribute("type", "hidden");
-// 			hiddenMiscEnd.setAttribute("id", propNamePrefix + "transcription_terminator_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscEnd);
-// 
-// 			// Orientation
-// 			var hiddenMiscDir = document.createElement("INPUT");
-// 			hiddenMiscDir.setAttribute('type', 'hidden');
-// 			hiddenMiscDir.setAttribute("id", propNamePrefix + "transcription_terminator_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenMisc);
-// 			elemList.push(hiddenMiscStart);
-// 			elemList.push(hiddenMiscEnd);
-// 			elemList.push(hiddenMiscDir);
-// 
-// // 			removeLink.onclick = function(){deleteRow(tblID, miscRowID); deleteRow(tblID, miscPosRowID); deleteRow(tblID, divRowID); removeFormElements(myForm, elemList)};
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, miscRowID); removeFormElements(myForm, elemList)};
-// 		break;
-// 
-// 		case 'restriction_site':
-// 
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";
-// 
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 		
-// 			propDirCell.style.textAlign = "left";
-// 
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 
-// 			propNameCell.innerHTML = "Restriction Site";
-// // 		
-// // 			propValueCell.className = "detailedView_value";
-// // 			propValueCell.setAttribute("white-space", "nowrap");
-// // 			propValueCell.style.fontSize = "9pt";
-// // 			propValueCell.colSpan = 5;
-// // 			propValueCell.style.paddingLeft = "5px";
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 			
-// 			var tmpMiscList = document.getElementById(propNamePrefix + "restriction_site_list");
-// 			var miscSelectedInd = tmpMiscList.selectedIndex;
-// 			var miscSelectedValue = tmpMiscList[miscSelectedInd].value;
-// 
-// 			var newMiscList = document.createElement("SELECT");
-// 			var newMiscTxt =  document.createElement("INPUT");
-// 
-// // 			newMiscList.setAttribute("name", prefix + propName + postfix);
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "restriction_site_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "restriction_site_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "restriction_site_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "restriction_site_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "restriction_site_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// 			newMiscList.setAttribute("id", propNamePrefix + propName + "_proplist_" + rowIndex);
-// 			newMiscList.style.fontSize = "7pt";
-// 
-// // 			propRow.setAttribute('id', "miscellaneous_row_" + propRow.rowIndex + "_id");
-// 
-// 			newMiscTxt.type = "TEXT";
-// 			newMiscTxt.id = propNamePrefix + "restriction_site_txt_" + (rowIndex - 1);
-// 			newMiscTxt.style.display = "none";
-// 
-// 			for (i = 0; i < tmpMiscList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpMiscList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newMiscList.options.length == 0)
-// 					newMiscList.options.add(newOptn);
-// 				else
-// 					addElement(newMiscList, newMiscList.options.length, newOptn);
-// 			}
-// 
-// 			propValueCell.appendChild(newMiscList);
-// 			propValueCell.appendChild(newMiscTxt);
-// 
-// 			// Start & stop positions
-// 			// April 1, 2008: Show in a new row
-// // 			var miscPosRow = propsTbl.insertRow(rowIndex+1);
-// // 			miscPosRow.setAttribute('id', "miscellaneous_pos_row" + rowIndex + "_id");
-// // 			var miscPosRowID = miscPosRow.id;
-// // 
-// // 			var c1 = miscPosRow.insertCell(0);
-// // 			var miscPosCell = miscPosRow.insertCell(1);
-// // 
-// // 			miscPosCell.className = "detailedView_value";
-// // 			miscPosCell.style.paddingLeft = "5px";
-// // 			miscPosCell.colSpan = 5;
-// // 			miscPosCell.setAttribute("white-space", "nowrap");
-// 
-// // 			miscPosCell.innerHTML = "Start:&nbsp;";
-// 
-// 			var newMiscStart = document.createElement("INPUT");
-// 			newMiscStart.setAttribute("type", 'TEXT');
-// 			newMiscStart.setAttribute("size", 5);
-// 			newMiscStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newMiscStart.style.fontSize = "7pt";
-// 
-// // 			miscPosCell.appendChild(newMiscStart);
-// 			propStartCell.appendChild(newMiscStart);
-// 
-// // 			miscPosCell.innerHTML += "&nbsp;&nbsp;End:&nbsp;";
-// 			
-// 			var newMiscEnd = document.createElement("INPUT");
-// 			newMiscEnd.setAttribute("type", 'TEXT');
-// 			newMiscEnd.setAttribute("size", 5);
-// 			newMiscEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newMiscEnd.style.fontSize = "7pt";
-// 
-// // 			miscPosCell.appendChild(newMiscEnd);
-// 			propEndCell.appendChild(newMiscEnd);
-// 
-// // 			newMiscList.onchange = function()
-// // 			{
-// // // 				showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);
-// // 			};
-// 			newMiscList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex);};
-// 
-// 			// Orientation - March 14/08: Make 'forward' checked by default
-// // 			miscPosCell.innerHTML += "<SPAN style=\"margin-left:10px;\"></span>";
-// 
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// // 			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 			fwdDir.setAttribute("checked", true);
-// 
-// // 			miscPosCell.appendChild(fwdDir);
-// 			propDirCell.appendChild(fwdDir);
-// // 			miscPosCell.innerHTML += "Forward&nbsp;";
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// // 			miscPosCell.appendChild(revDir);
-// // 			miscPosCell.innerHTML += "Reverse";
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 
-// 			propDirCell.style.fontSize = "7pt";
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 		
-// // 			miscPosCell.appendChild(removeLink);
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Adjust border height to stretch to bottom of page
-// // 			mainBorder = document.getElementById("mainBorder");
-// // 			mainBorder.height = document.height;
-// // 			mainBorder.rowSpan = propsTbl.rows.length;
-// 		
-// 			// Add a separator row
-// // 			var divRow = propsTbl.insertRow(rowIndex + 1);
-// // 			var divCell = divRow.insertCell(0);
-// 
-// // 			divRow.setAttribute('id', "div_row" + divRow.rowIndex + "_id");
-// // 			divCell.colSpan = 6;
-// // 			divCell.innerHTML = "<HR>";
-// 
-// 			// 'Remove' link
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var miscRowID = propRow.id;
-// // 			var divRowID = divRow.id;
-// 		
-// // 			// Add list to form
-// // 			if (form_name == "")
-// // 				var myForm = document.reagentDetailForm;
-// // 			else
-// // 			{
-// // 				var myForm;
-// // 			
-// // 				docForms = document.forms;
-// // 			
-// // 				for (i = 0; i < docForms.length; i++)
-// // 				{
-// // 					aForm = docForms[i];
-// // 			
-// // 					if (aForm.name == form_name)
-// // 					{
-// // 						myForm = aForm;
-// // 						break;
-// // 					}
-// // 				}
-// // 			}
-// 
-// 			var hiddenMisc = document.createElement("INPUT");
-// 			hiddenMisc.setAttribute("type", "hidden");
-// 			myForm.appendChild(hiddenMisc);
-// 
-// 			var hiddenMiscStart = document.createElement("INPUT");
-// 			hiddenMiscStart.setAttribute("type", "hidden");
-// 			hiddenMiscStart.setAttribute("id", propNamePrefix + "restriction_site_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscStart);
-// 
-// 			var hiddenMiscEnd = document.createElement("INPUT");
-// 			hiddenMiscEnd.setAttribute("type", "hidden");
-// 			hiddenMiscEnd.setAttribute("id", propNamePrefix + "restriction_site_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscEnd);
-// 
-// 			// Orientation
-// 			var hiddenMiscDir = document.createElement("INPUT");
-// 			hiddenMiscDir.setAttribute('type', 'hidden');
-// 			hiddenMiscDir.setAttribute("id", propNamePrefix + "restriction_site_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenMiscDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenMisc);
-// 			elemList.push(hiddenMiscStart);
-// 			elemList.push(hiddenMiscEnd);
-// 			elemList.push(hiddenMiscDir);
-// 
-// // 			removeLink.onclick = function(){deleteRow(tblID, miscRowID); deleteRow(tblID, miscPosRowID); deleteRow(tblID, divRowID); removeFormElements(myForm, elemList)};
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, miscRowID); removeFormElements(myForm, elemList)};
-// 		break;
-// 
-// 		case 'intron':
-// 			var propRow = propsTbl.insertRow(propList.rowIndex - 2);
-// 		
-// 			// Need a few cells in the row
-// 			var propNameCell = propRow.insertCell(0);
-// 			var propValueCell = propRow.insertCell(1);
-// 			var propDescrCell = propRow.insertCell(2);
-// 			var propStartCell = propRow.insertCell(3);
-// 			var propEndCell = propRow.insertCell(4);
-// 			var propDirCell = propRow.insertCell(5);
-// 			var rmvCell = propRow.insertCell(6);
-// 		
-// 			// Format cells	
-// 			propNameCell.style.paddingLeft = "7px";
-// 			propNameCell.style.backgroundColor = "#F5F5DC";
-// 			propNameCell.style.fontSize = "7pt";		// nov. 12/08
-// 		
-// 			propValueCell.style.paddingLeft = "7px";
-// 			propValueCell.style.paddingRight = "5px";
-// 			propValueCell.style.paddingTop = "1px";
-// 			propValueCell.style.paddingBottom = "1px";
-// 			propValueCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propDescrCell.style.paddingLeft = "7px";
-// 			propDescrCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propStartCell.style.textAlign = "left";
-// 			propStartCell.style.paddingLeft = "7px";
-// 			propStartCell.style.paddingRight = "2px";
-// 			propStartCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			propEndCell.style.textAlign = "left";
-// 			propEndCell.style.backgroundColor = "#F5F5DC";
-// 			propEndCell.style.paddingLeft = "7px";
-// 			propEndCell.style.paddingRight = "2px";
-// 
-// 			propDirCell.style.textAlign = "left";
-// 			propDirCell.style.paddingLeft = "5px";
-// 			propDirCell.style.paddingRight = "5px";
-// 			propDirCell.style.backgroundColor = "#F5F5DC";
-// 		
-// 			rmvCell.style.textAlign = "left";
-// 
-// 			// Set cell content and formatting as required by template	
-// 			propNameCell.innerHTML = "Intron";
-// 			propValueCell.setAttribute("white-space", "nowrap");
-// 			
-// 			// Generate the list on the fly
-// 			if (createNew == "true")
-// 				propNamePrefix = rType + "_"
-// 			else
-// 				propNamePrefix = ""
-// 
-// 			var tmpTagTypeList = document.getElementById(propNamePrefix + "intron_list");
-// 
-// 			var newTagTypeList = document.createElement("SELECT");
-// 			var newTagTypeTxt =  document.createElement("INPUT");
-// 
-// 			newTagTypeList.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			var rowIndex;
-// 
-// 			if (!document.getElementById(propNamePrefix + "intron_row_" + propRow.rowIndex + "_id"))
-// 			{
-// 				propRow.setAttribute('id', propNamePrefix + "intron_row_" + propRow.rowIndex + "_id");
-// 				rowIndex = propRow.rowIndex;
-// 			}
-// 			else
-// 			{
-// 				for (i = 0; i < propsTbl.rows.length; i++)
-// 				{
-// 					if (!document.getElementById(propNamePrefix + "intron_row_" + i + "_id"))
-// 					{
-// 						propRow.setAttribute('id', propNamePrefix + "intron_row_" + i + "_id");
-// 						break;
-// 					}
-// 				}
-// 
-// 				propRow.setAttribute('id', propNamePrefix + "intron_row_" + i + "_id");
-// 				rowIndex = i;
-// 			}
-// 
-// // 			newTagTypeList.setAttribute('name', prefix + propName + postfix);
-// 			newTagTypeList.setAttribute('id', propNamePrefix + propName + "_proplist_" + rowIndex);
-// 
-// 			newTagTypeTxt.type = "TEXT";
-// 			newTagTypeTxt.id = propNamePrefix + "intron_txt_" + rowIndex;
-// 
-// 			newTagTypeTxt.style.display = "none";
-// 			newTagTypeTxt.style.fontSize = "9pt";
-// 
-// 			for (i = 0; i < tmpTagTypeList.options.length; i++)
-// 			{
-// 				tmpOptn = tmpTagTypeList.options[i];
-// 				newOptn = document.createElement("OPTION");
-// 
-// 				newOptn.value = tmpOptn.value;
-// 				newOptn.name = tmpOptn.name;
-// 				newOptn.text = tmpOptn.text;
-// 
-// 				if (newTagTypeList.options.length == 0)
-// 					newTagTypeList.options.add(newOptn);
-// 				else
-// 					addElement(newTagTypeList, newTagTypeList.options.length, newOptn);
-// 			}
-// 
-// // 			newTagTypeList.onchange = showTagTypeBox;
-// 
-// 			newTagTypeList.onchange = function(){this.setAttribute('name', propNamePrefix + propName + "_" + this[this.selectedIndex].value + "_" + rowIndex); showTagTypeBox(newTagTypeList.id, newTagTypeTxt.id);};
-// 
-// 			propValueCell.appendChild(newTagTypeList);
-// 			propValueCell.appendChild(newTagTypeTxt);
-// 
-// 			var newTagTypeStart = document.createElement("INPUT");
-// 			newTagTypeStart.setAttribute("type", 'TEXT');
-// 			newTagTypeStart.setAttribute("size", 5);
-// 			newTagTypeStart.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_startpos_id");
-// 			newTagTypeStart.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			propStartCell.appendChild(newTagTypeStart);
-// 
-// 			var newTagTypeEnd = document.createElement("INPUT");
-// 			newTagTypeEnd.setAttribute("type", 'TEXT');
-// 			newTagTypeEnd.setAttribute("size", 5);
-// 			newTagTypeEnd.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_endpos_id");
-// 			newTagTypeEnd.style.fontSize = "7pt";		// Nov. 12/08
-// 
-// 			propEndCell.appendChild(newTagTypeEnd);
-// 
-// 			// Orientation
-// 			propDirCell.style.fontSize = "7pt";		// Nov. 12/08
-// 			propDirCell.style.whiteSpace = "nowrap";
-// 			
-// 			var fwdDir = document.createElement("INPUT");
-// 			fwdDir.setAttribute("type", "radio");
-// 			fwdDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_fwd_dir");
-// //  			fwdDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-// 			fwdDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			fwdDir.setAttribute("checked", true);
-// 
-// 			propDirCell.appendChild(fwdDir);
-// 			propDirCell.innerHTML += "Forward&nbsp;";
-// 
-// 			var revDir = document.createElement("INPUT");
-// 			revDir.setAttribute("type", "radio");
-// 			revDir.setAttribute("id", propNamePrefix + propName + "_" + rowIndex + "_rev_dir");
-// // 			revDir.setAttribute("name", propName + "_orientation_radio_" + rowIndex);
-//  			revDir.setAttribute("name", propNamePrefix + propName + "_orientation_prop_" + rowIndex);
-// 
-// 			propDirCell.appendChild(revDir);
-// 			propDirCell.innerHTML += "Reverse";
-// 
-// 			// Add 'Remove' link
-// 			var removeLink = document.createElement("SPAN");
-// 			removeLink.className = "linkShow";
-// 			removeLink.style.fontSize = "7pt";
-// 			removeLink.style.fontWeight = "normal";
-// 			removeLink.style.marginLeft = "5px";
-// 			removeLink.innerHTML = "Remove";
-// 
-// 			rmvCell.appendChild(removeLink);
-// 
-// 			// Gather the IDs of all elements in the row to pass to 'deleteRow' function
-// // 			var tblID = "modifyReagentPropsTbl";
-// 			var tagTypeRowID = propRow.id;
-// 
-// 			var hiddenTagType = document.createElement("INPUT");
-// 			hiddenTagType.setAttribute("type", "hidden");
-// 			hiddenTagType.setAttribute("id", propNamePrefix + "intron_prop" + rowIndex);
-// 			myForm.appendChild(hiddenTagType);
-// 
-// 			var hiddenTagTypeStart = document.createElement("INPUT");
-// 			hiddenTagTypeStart.setAttribute("type", "hidden");
-// 			hiddenTagTypeStart.setAttribute("id", propNamePrefix + "intron_startpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenTagTypeStart);
-// 
-// 			var hiddenTagTypeEnd = document.createElement("INPUT");
-// 			hiddenTagTypeEnd.setAttribute("type", "hidden");
-// 			hiddenTagTypeEnd.setAttribute("id", propNamePrefix + "intron_endpos_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenTagTypeEnd);
-// 
-// 			// Orientation
-// 			var hiddenTagTypeDir = document.createElement("INPUT");
-// 			hiddenTagTypeDir.setAttribute('type', 'hidden');
-// 			hiddenTagTypeDir.setAttribute("id", propNamePrefix + "intron_orientation_prop_" + rowIndex);
-// 			myForm.appendChild(hiddenTagTypeDir);
-// 
-// 			var elemList = new Array();
-// 			elemList.push(hiddenTagType);
-// 			elemList.push(hiddenTagTypeStart);
-// 			elemList.push(hiddenTagTypeEnd);
-// 			elemList.push(hiddenTagTypeDir);
-// 
-// 			removeLink.onclick = function(){deleteTableRow(tblID, tagTypeRowID); removeFormElements(myForm, elemList)};
-// 		break;
 
 		case '':
 		break;
@@ -14771,41 +11135,11 @@ function toggleReagentEditModify(actn, categoryAlias, rType)
 				break;
 			}
 
-// 			switch (rType)
-// 			{
-// 				case 'Vector':
-// 					switchVectorSequenceModify();
-// 				break;
-// 				
-// 				case 'Insert':
-// 					var viewInsertSeq = document.getElementById("insert_seq_div_view");
-// 					var modifyInsertSeq = document.getElementById("insert_seq_div_modify");
-// 					var typeOfInsertModify = document.getElementById("itype_modify");
-// 					var openClosedModify = document.getElementById("modifyOpenClosed");
-// 				
-// 					viewInsertSeq.style.display = "none";
-// 					modifyInsertSeq.style.display = "table-row";
-// 					typeOfInsertModify.style.display = "table-row";
-// 					openClosedModify.style.display = "table-row";
-// 				
-// 				break;
-// 
-// 				default:
-// 				break;
-
 				if (verifySequence(rType, seqType))
 				{
 					// July 20/09: document.reagentDetailForm.submit() does NOT work for some reason; use getElementById instead
 					var myForm = document.getElementById("editReagentForm_" + categoryAlias);
 					
-					/*
-					alert(myForm.name);
-					
-		for (i=0; i < myForm.elements.length; i++)
-		{
-			alert(myForm.elements[i].name);
-			alert(myForm.elements[i].value);
-		}*/
 					var tmpAction = document.createElement("INPUT");
 					tmpAction.type = "hidden";
 					tmpAction.name = "change_state";
@@ -14819,11 +11153,6 @@ function toggleReagentEditModify(actn, categoryAlias, rType)
 					myForm.appendChild(sectionToSave);
 		
 		
-		/*for (i=0; i < myForm.elements.length; i++)
-		{
-			alert(myForm.elements[i].name);
-			alert(myForm.elements[i].value);
-		}*/
 					myForm.submit();
 				}
 // 			}
@@ -15001,19 +11330,6 @@ function switchVectorIntroModify()
 // Feb. 28/08: JUST SUBMIT THE FORM!!!!!!!!!!!!!!!!!!!!  DO ***NOT*** CHANGE DISPLAY - Python will redirect back to Detailed view, which would take care of visibility
 function saveGeneralInsertDetails()
 {
-// NO!!!!!!
-// 	var viewInsertIntro = document.getElementById("insert_intro_tbl_view");
-// 	var modifyInsertIntro = document.getElementById("insert_intro_tbl_modify");
-
-// 	var editBtn = document.getElementById("editInsertIntro");
-// 	var saveBtn = document.getElementById("saveInsertIntro");
-
-// 	viewInsertIntro.style.display = "inline";
-// 	modifyInsertIntro.style.display = "none";
-// 
-// 	editBtn.style.display = "inline";
-// 	saveBtn.style.display = "none";
-
 	document.getElementById("changeStateIntro").value = "Save";	// remember to set this for Python
 	document.insertIntroForm.submit();
 }
@@ -15093,8 +11409,6 @@ function switchInsertSequenceModify()
 	var saveBtn = document.getElementById("saveInsertSeq");
 	var cancelBtn = document.getElementById("cancelChangeInsertSeq");
 
-	// Show cDNA start/stop input fields
-// 	cdnaModify.style.display = "table-row";
 
 	// Hide feature descriptions and show form fields
 	viewInsertSeq.style.display = "none";
@@ -15123,8 +11437,6 @@ function switchInsertSequenceModify()
 	if (cDNALengthModify)
 		cDNALengthModify.style.display = "table-row";
 
-// 	exportFasta.style.display = "none";
-// 	viewRestrMap.style.display = "none";
 
 	editBtn.style.display = "none";
 	saveBtn.style.display = "inline";
@@ -15193,26 +11505,11 @@ function switchVectorSequenceModify()
 // Feb. 28/08: JUST SUBMIT THE FORM!!!!!!!!!!!!!!!!!!!!  DO ***NOT*** CHANGE DISPLAY - Python will redirect back to Detailed view, which would take care of visibility
 function saveInsertSequence()
 {
-// 	var exportLinks = document.getElementById("exportLinks");
 
 	if (verifyInsertSaveSequence())
 	{
-		// NO!!!!!!
-		// 	var viewInsertIntro = document.getElementById("insert_intro_tbl_view");
-		// 	var modifyInsertIntro = document.getElementById("insert_intro_tbl_modify");
-		
-		// 	var editBtn = document.getElementById("editInsertIntro");
-		// 	var saveBtn = document.getElementById("saveInsertIntro");
-		
-		// 	viewInsertIntro.style.display = "inline";
-		// 	modifyInsertIntro.style.display = "none";
-		// 
-		// 	editBtn.style.display = "inline";
-		// 	saveBtn.style.display = "none";
-
 		result = confirm("Please note:\n\nAll sequence feature positions will be adjusted upon saving.  You can edit them manually later using the 'Edit Features' function.\n\nAny features directly affected by the change in sequence will be automatically deleted.\n\nAre you sure you wish to proceed?");
 
-// 		exportLinks.style.display = "table-row";
 
 		if (result)
 		{
@@ -15235,8 +11532,6 @@ function showHidePropertyInputValues(cellID)
 	switch (inputFormat)
 	{
 		case "plain_text":
-// 			newEl = document.createElement("INPUT");
-// 			newEl.setAttribute("type", "text");
 		break;
 
 		case "dropdown":
@@ -15262,18 +11557,6 @@ function verifyNovelVectorSequence()
 	var dna_sequence = document.getElementById("dna_sequence_");
 	var sequence_warning = document.getElementById("vector_sequence_warning");
 	var seq = trimAll(dna_sequence.value);
-
-// Removed Dec. 15/08 at Karen's request - do not make Novel vector sequence mandatory
-// 	if (seq == "")
-// 	{
-// 		alert("Please provide a sequence for the Novel Vector");
-// 		dna_sequence.focus();
-// 		sequence_warning.style.display = "inline";
-// 
-// 		return false;
-// 	}
-// 	else
-// 		sequence_warning.style.display = "none";
 
 	for (i = 0; i < seq.length; i++)
 	{
@@ -15318,46 +11601,6 @@ function saveVectorSequence()
 function cancelInsertSequenceModification()
 {
 // Changed again April 10/08 - refreshing the page is not always a good idea; sometimes get a 'POSTDATA' warning
-// 	window.location.reload();	// april 2/08
-
-// 	var viewInsertSeq = document.getElementById("insert_seq_div_view");
-// 	var modifyInsertSeq = document.getElementById("insert_seq_div_modify");
-// 
-// 	var typeOfInsertView = document.getElementById("type_of_insert");
-// 	var typeOfInsertModify = document.getElementById("itype_modify");
-// 
-// 	var openClosedView = document.getElementById("viewOpenClosed");
-// 	var openClosedModify = document.getElementById("modifyOpenClosed");
-// 
-// 	var cdnaModify = document.getElementById("cdnaModify");
-// 
-// 	var dnaLength = document.getElementById("dnaLength");
-// 	var cDNALength = document.getElementById("cDNALength");
-// 
-// 	var editBtn = document.getElementById("editInsertSeq");
-// 	var saveBtn = document.getElementById("saveInsertSeq");
-// 	var cancelBtn = document.getElementById("cancelChangeInsertSeq");
-// 
-// 	viewInsertSeq.style.display = "table-row";
-// 	modifyInsertSeq.style.display = "none";
-// 
-// 	cdnaModify.style.display = "none";
-// 
-// 	dnaLength.style.display = "table-row";
-// 	cDNALength.style.display = "table-row";
-// 
-// 	typeOfInsertView.style.display = "inline";
-// 	typeOfInsertModify.style.display = "none";
-// 
-// 	if (openClosedView)
-// 		openClosedView.style.display = "table-row";
-// 
-// 	openClosedModify.style.display = "none";
-// 
-// 	editBtn.style.display = "inline";
-// 	saveBtn.style.display = "none";
-// 	cancelBtn.style.display = "none";
-
 	// April 10/08: Final, optimal solution
 	document.getElementById("changeStateFeatures").value = "Cancel";	// must set for Python
 	document.reagentDetailForm.submit();
@@ -15434,7 +11677,6 @@ function switchOtherReagentExternalIDsModify()
 	for (i = 0; i < customCategories.length; i++)
 	{
 		tmpCatAlias = customCategories[i].value;
-// 		alert(tmpCatAlias);
 		tmpCatEditBtn = document.getElementById("editOtherReagent_" + tmpCatAlias + "_btn");
 
 		if (tmpCatEditBtn)
@@ -15524,7 +11766,6 @@ function switchOtherReagentPropsModify(propCategoryAlias)
 	for (i = 0; i < customCategories.length; i++)
 	{
 		tmpCatAlias = customCategories[i].value;
-// 		alert(tmpCatAlias);
 
 		if (tmpCatAlias != propCategoryAlias)
 		{
@@ -15589,7 +11830,6 @@ function switchOtherReagentFeaturesModify()
 	for (i = 0; i < customCategories.length; i++)
 	{
 		tmpCatAlias = customCategories[i].value;
-// 		alert(tmpCatAlias);
 		tmpCatEditBtn = document.getElementById("editOtherReagent_" + tmpCatAlias + "_btn");
 
 		if (tmpCatEditBtn)
@@ -15603,7 +11843,6 @@ function switchOtherReagentFeaturesModify()
 function switchInsertSequenceFeaturesModify()
 {
 	var viewInsertSeqFeatures = document.getElementById("insert_features_view");
-//	var modifyInsertSeqFeatures = document.getElementById("modifyReagentPropsTbl");
 	var modifyInsertSeqFeatures = document.getElementById("editFeaturesTbl");
 
 	var editBtn = document.getElementById("editInsertSeqFeatures");
@@ -15743,7 +11982,6 @@ function switchOtherReagentClassifiersModify()
 	for (i = 0; i < customCategories.length; i++)
 	{
 		tmpCatAlias = customCategories[i].value;
-// 		alert(tmpCatAlias);
 		tmpCatEditBtn = document.getElementById("editOtherReagent_" + tmpCatAlias + "_btn");
 
 		if (tmpCatEditBtn)
@@ -15983,18 +12221,6 @@ function switchVectorParentsModify()
 	saveBtn.style.display = "inline";
 	cancelBtn.style.display = "inline";
 
-	// Disable Edit buttons for other sections
-// 	var introEditBtn = document.getElementById("editVectorIntro");
-// 	var seqEditBtn = document.getElementById("editVectorSeq");
-// 	var editFeaturesBtn = document.getElementById("editVectorFeatures");
-// 
-// 	introEditBtn.disabled = true;
-// 
-// 	if (seqEditBtn)
-// 		seqEditBtn.disabled = true;
-// 
-// 	editFeaturesBtn.disabled = true;
-
 	// disable the rest of Edit buttons!
 	var inputs = document.getElementsByTagName("INPUT");
 
@@ -16016,27 +12242,14 @@ function switchCellLineParentsModify()
 	var modifyCLParents = document.getElementById("editCellLineAssoc");
 
 	var editBtn = document.getElementById("editReagentParentsBtn");
-// 	var saveBtn = document.getElementById("saveReagentParentsBtn");
 	var cancelBtn = document.getElementById("cancelChangeReagentParents");
 
 	viewCLParents.style.display = "none";
 	modifyCLParents.style.display = "inline";
 
 	editBtn.style.display = "none";
-// 	saveBtn.style.display = "inline";
 	cancelBtn.style.display = "inline";
 
-	// Disable Edit buttons for other sections
-// 	var introEditBtn = document.getElementById("editVectorIntro");
-// 	var seqEditBtn = document.getElementById("editVectorSeq");
-// 	var editFeaturesBtn = document.getElementById("editVectorFeatures");
-// 
-// 	introEditBtn.disabled = true;
-// 
-// 	if (seqEditBtn)
-// 		seqEditBtn.disabled = true;
-// 
-// 	editFeaturesBtn.disabled = true;
 
 	// disable the rest of Edit buttons!
 	var inputs = document.getElementsByTagName("INPUT");
@@ -16204,7 +12417,6 @@ function setCustomSites()
 
 function changeVectorParents(scriptPath)
 {
-// alert("Changing parents, reverse insert " + reverseInsert);
 
 	var rID = document.getElementById("rID_hidden").value;
 
@@ -16361,7 +12573,6 @@ function changeVectorParents(scriptPath)
 						// different parameters for different properties
 						seqParams = "reagent_id_hidden=" + rID + "&reagent_typeid_hidden=1&PV=" + srcPV + "&I=" + srcInsert + "&curr_username=" + uName + "&cloning_method_hidden=" + vType + "&change_state=Save&save_parents=1&newVectorName=" + newName + "&newVectorType=" + newVectorType + "&newProjectID=" + newProjectID + "&newDescription=" + newDescription + "&newVerification=" + newVerification + "&custom_sites=" + customSites + "&insert_custom_five_prime=" + insert_custom_five_prime + "&insert_custom_three_prime=" + insert_custom_three_prime + "&pv_custom_five_prime=" + pv_custom_five_prime + "&pv_custom_three_prime=" + pv_custom_three_prime + "&reverse_insert=" + reverseInsert;
 
-// 						prompt("", seqParams);
 						
 						xmlhttp1.send(seqParams);
 						xmlhttp1.onreadystatechange = confirmChangeVectorParents(xmlhttp1, url);
@@ -16409,21 +12620,10 @@ function confirmChangeVectorParents(xmlhttp, url)
 {
 	if (xmlhttp.readyState == 4)
 	{
-// 		alert(xmlhttp.status);
-// 		alert(xmlhttp.responseText);
 
 		if (xmlhttp.status == 200)
 		{
 			result = xmlhttp.responseText;
-
-// 			prompt("", xmlhttp.responseText);
-// 			toks = xmlhttp.responseText.split("&");
-
-// 			resTok = "Result=";
-// 			ind1 = toks[1].indexOf(resTok)+resTok.length;
-// 			result = toks[1].substring(ind1);
-
-// 			alert(result);
 
 			switch (parseInt(result))
 			{
@@ -16533,10 +12733,8 @@ function confirmChangeVectorParents(xmlhttp, url)
 			}
 		}
 
-// 		return true;
 	}
 
-// 	return false;
 }
 
 function redirect(url)
@@ -16554,14 +12752,8 @@ function switchReagentParentsModify(rTypeID)
 			switchVectorParentsModify();
 		break;
 
-// 		case 'Insert':
-// 			switchInsertParentsModify();
-// 		break;
-
 		case 'CellLine':
 			// Update Feb. 3/10: show full form after clicking 'Change', not when enetering 'Edit parents' mode
-// 			rID = document.getElementById("rID_hidden").value;
-// 			window.location.href= hostName + "Reagent.php?View=6&rid=" + rID + "&mode=Modify";
 			switchCellLineParentsModify();
 		break;
 
@@ -16602,16 +12794,11 @@ function switchReagentParentsModify(rTypeID)
 function switchInsertParentsModify()
 {
 	// Show parents
-// 	var viewInsertParents = document.getElementById("insert_parents_view");
 	var viewInsertParents = document.getElementById("viewReagentParents");		// update 11/09/09 - common output function
-// 	var modifyInsertParents = document.getElementById("insert_parents_modify");
 	var modifyInsertParents = document.getElementById("category_assoc_section_Insert");	// update 11/09/09
 
-// 	var editBtn = document.getElementById("editInsertParents");
 	var editBtn = document.getElementById("editReagentParentsBtn");
-// 	var saveBtn = document.getElementById("saveInsertParentsBtn");
 	var saveBtn = document.getElementById("saveReagentParentsBtn");
-// 	var cancelBtn = document.getElementById("cancelChangeInsertParents");
 	var cancelBtn = document.getElementById("cancelChangeReagentParents");
 
 	// Hide view parents form and show modification form
@@ -16623,7 +12810,6 @@ function switchInsertParentsModify()
 	cancelBtn.style.display = "inline";
 
 	// Show form - it was hidden initially to save space
-// 	document.insertParentsForm.style.display = "inline";
 	document.reagentParentsForm.style.display = "inline";
 
 	// June 8/08: Disable Edit buttons for other sections
@@ -16648,8 +12834,6 @@ function switchInsertParentsModify()
 
 function saveReagentParents(rType)
 {
-// alert(rType);
-// alert(parentsValid);
 
 	if (parentsValid)
 	{
@@ -16760,7 +12944,6 @@ function switchVectorFeaturesModify()
 
 function saveVectorSeqFeatures(form_name)
 {
-// 	var myForm = document.reagentDetailForm;
 
 	// Need to add start/stop validation here
 	if (verifyPositions(false))
@@ -16815,7 +12998,6 @@ function prepareVectorMap(scriptPath)
 	if (reagentID)
 	{
 		rID = reagentID.value;
-// 		alert(rID);
 
 		url = scriptPath + "vector_map.py";
 		xmlhttp1 = createXML();
@@ -16828,7 +13010,6 @@ function prepareVectorMap(scriptPath)
 		xmlhttp1.onreadystatechange = showVectorMap(xmlhttp1, scriptPath);
 	}
 
-// 	document.show_vector_map_form.submit();		// NO
 }
 
 function showVectorMap(xmlhttp, scriptPath)
@@ -16837,17 +13018,12 @@ function showVectorMap(xmlhttp, scriptPath)
 
 	if (xmlhttp.readyState == 4)
 	{
-// 		alert(xmlhttp.status);
-// 		alert(xmlhttp.responseText);
 
 		mapTab = document.getElementById("vector_map_tab");
 	
 		if (xmlhttp.status == 200)
 		{
 			fName = trimAll(xmlhttp.responseText);
-// 			mapTab.innerHTML = "<IMG SRC=\"" + fName + "\">";
-// 			popup(fName, limsID, 1200, 1200, 'yes');
-// 			return;
 		}
 	}
 }
@@ -16859,7 +13035,6 @@ function prepareOligoMap(scriptPath)
 	if (reagentID)
 	{
 		rID = reagentID.value;
-// 		alert(rID);
 
 		url = scriptPath + "oligos_vector_map.py";
 		xmlhttp1 = createXML();
@@ -16879,17 +13054,12 @@ function showOligoMap(xmlhttp, scriptPath)
 
 	if (xmlhttp.readyState == 4)
 	{
-// 		alert(xmlhttp.status);
-// 		alert(xmlhttp.responseText);
 
 		mapTab = document.getElementById("vector_map_tab");
 	
 		if (xmlhttp.status == 200)
 		{
 			fName = trimAll(xmlhttp.responseText);
-// 			mapTab.innerHTML = "<IMG SRC=\"" + fName + "\">";
-// 			popup(fName, limsID, 1200, 1200, 'yes');
-// 			return;
 		}
 	}
 }
@@ -17120,26 +13290,15 @@ function checkSelected(listID)
 function deleteReagentTypeAttribute(rowID, formID)
 {
 	catAlias = rowID.substr(0, rowID.indexOf("_:_"));
-// alert(catAlias);
 	str_1 = catAlias + "_:_";
-// alert(str_1.length);
-// alert(rowID.indexOf("_prop_row"));
 	propAlias = rowID.substr(str_1.length, rowID.indexOf("_prop_row")-(str_1.length));
-// alert(propAlias);
-// alert(rowID);
 	rowID = unescape(rowID);
-// 	rowID = replaceAll(rowID, "'", "\\'");		// keep this!! - No, removed Nov. 6/09
-// alert(rowID);
-// alert(formID);
 	categoryList = document.getElementsByName(catAlias + "[]");
-// alert(categoryList);
 
 	var cond;
 
-// 	if (rowID.indexOf("tag_position") >= 0)
 	if ((propAlias == "tag_position") || (propAlias == "expression_system"))
 	{
-// alert("removing tag pos");
 		cond = true;
 	}
 	else
@@ -17149,15 +13308,11 @@ function deleteReagentTypeAttribute(rowID, formID)
 	{
 		var myForm = document.getElementById(formID);
 		var propRow = document.getElementById(rowID);
-// alert(propRow);
 		var propTable = propRow.parentNode;
-// alert(propTable);
 		var rIndex = propRow.rowIndex;
-// alert("Row index before: " + rIndex);
 
 		// remove form elements
 		tmp_val = replaceAll((catAlias + "_:_" + propAlias), "'", "\\'");	// keep this
-// 		alert(tmp_val);
 
 		var textInputFormatRadio = document.getElementById("input_format_radio_list_" + tmp_val);
 		var listInputFormatRadio = document.getElementById("input_format_radio_text_" + tmp_val);
@@ -17166,15 +13321,6 @@ function deleteReagentTypeAttribute(rowID, formID)
 
 		// Sept. 4/09: Actually, DON'T delete this element from the form, BUT set flag that it's deleted for Python to process
 		// Nov. 6/09: Do the replacement here!!!!!		
-// 		if (toRemove)
-// 			toRemove.value = "1";
-// 		else
-// {
-// alert("Row index after: " + rIndex);
-
-// 			alert("????????");
-// }
-// 		alert(rIndex);
 		propTable.deleteRow(rIndex);
 
 		// Dec. 9/09: With DNA Sequence, remove the rest of its attributes
@@ -17184,7 +13330,6 @@ function deleteReagentTypeAttribute(rowID, formID)
 
 			while (i >= 0)
 			{
-// alert(i);
 				propTable.deleteRow(i);
 				i = propTable.rows.length - 1;
 			}
@@ -17193,7 +13338,6 @@ function deleteReagentTypeAttribute(rowID, formID)
 		// Ditto if Tag Type or Promoter are removed - remove their descriptors as well
 		else if (propAlias == "tag")
 		{
-// alert("removing tag");
 			deleteReagentTypeAttribute(rowID.replace("tag", "tag_position"), formID);
 		}
 		else if (propAlias == "promoter")
@@ -17272,31 +13416,16 @@ function checkExistingPrepID()
 
 function checkReagentID(xmlhttp, inputs_ar)
 {
-// alert("in checkParents");
-// 	alert(xmlhttp1.readyState);
-// 	prompt("", xmlhttp.responseText);
 	var result;
 
 	if (xmlhttp.readyState == 4)
 	{
-// alert("ready " + xmlhttp1.readyState);
-// alert("status " + xmlhttp.status);
-// alert("response " + xmlhttp.responseText);
 
 		if (xmlhttp.status == 200)
 		{
-// alert("status " + xmlhttp.status);
 			if (xmlhttp.responseText.indexOf("ErrCode") == 0)
 			{
-// 				tmp_ar = xmlhttp.responseText.split("&");
-// 
-// 				for (i=0; i < tmp_ar.length; i++)
-// 				{
 					tmp_set = xmlhttp.responseText.split("=");
-// alert(tmp_set);
-// 					if (tmp_set[0] == 'ErrCode')
-// 					{
-// alert("Setting parents to false");
 						rID = trimAll(tmp_set[tmp_set.length-1]);
 						rInput = inputs_ar[rID];
 						alert("Reagent " + rID + " does not exist in the database.  Please verify your input.");
@@ -17308,13 +13437,9 @@ function checkReagentID(xmlhttp, inputs_ar)
 						rInput.focus();
 						
 						wellResult = false;
-// 						break;
-// 					}
-// 				}
 			}
 			else
 			{
-// alert("Setting parents to true");
 				wellResult = true;
 			}
 		}
@@ -17479,20 +13604,6 @@ function selectAllWells(plateID)
 			}
 		}
 	}
-/*
-	// May 30, 2011: Colour well yellow
-	var allTDs = document.getElementsByTagName("TD");
-
-	for (n = 0; n < allTDs.length; n++)
-	{
-		tmpTD = allTDs[n];
-
-		if (tmpTD.id.indexOf("well_plate_" + plateID) == 0)
-		{
-			tmpTD.style.backgroundColor = "yellow";
-		}
-	}
-	*/
 }
 
 function clearAllWells(plateID)
@@ -17535,20 +13646,6 @@ function clearAllWells(plateID)
 		}
 	}
 
-/*
-	// May 30, 2011: As we're colouring selected wells now, uncolour them
-	var allTDs = document.getElementsByTagName("TD");
-
-	for (n = 0; n < allTDs.length; n++)
-	{
-		tmpTD = allTDs[n];
-
-		if (tmpTD.style.backgroundColor == "yellow")
-		{
-			tmpTD.style.backgroundColor = "#FFFFFF";
-		}
-	}
-	*/
 }
 
 // Aug. 5/09: Disallow submitting empty dropdowns at reagent type creation
@@ -17611,7 +13708,6 @@ function checkEmptyDropdowns(formID)
 					clearAllElements(tmpElem.id);
 			}
 	
-	// 		allSpans = document.getElementsByTagName("SPAN");
 	
 			alert("Please provide a set of values for all empty dropdown lists, or select 'Free Text' as input format, if applicable.");
 			tmpWarn = document.getElementById(tmpName + "_warning");
@@ -17619,14 +13715,6 @@ function checkEmptyDropdowns(formID)
 	
 			expandAllCategories();
 	
-	// 		for (j = 0; j < allSpans.length; j++)
-	// 		{
-	// 			tmpSpan = allSpans[j];
-	// 
-	// 			// hide rest of warnings
-	// 			if ((tmpSpan.id.substr("_warning") > 0) && (tmpSpan != tmpWarn))
-	// 				tmpSpan.style.display = "none";
-	// 		}
 	
 			tmpTxt = document.getElementById("addPropertyValue_" + tmpName + "_txt");
 			tmpTxt.focus();
@@ -17683,28 +13771,20 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 		for (i=0; i < a.length; i++)
 		{
 			tmp_cb = a[i];
-// 			alert(tmp_cb.value);
 			t.push(tmp_cb);
 		}
 
 		for (i=0; i < b.length; i++)
 		{
 			tmp_cb = b[i];
-// 			alert(tmp_cb.value);
 			t.push(tmp_cb);
 
 			if (tmp_cb.checked)
 			{
-// alert(tmp_cb.value + " is used");
-// alert(tmp_cb.id);
-				// tmp_cb.value is an alias.  Get the description
 				propDescrField = document.getElementById(checkboxListID + "_:_" + tmp_cb.value + "_checkbox_desc_hidden");
-// 	alert(propDescrFields);
-// 	alert(tmp_cb.id);
 	
 				if (propDescrField)
 				{
-// alert(propDescrField.value);
 					propDescr = propDescrField.value;
 
 					usedProps.push(propDescr);
@@ -17715,13 +13795,11 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 
 		checkboxList = t;
 
-// alert(checkboxList);
 
 	}
 	else
 	{
 		var checkboxList = document.getElementsByName("createReagentType_" + checkboxListID + "[]");
-// 		var checkDescrList = document.getElementsByName("propCheckboxes[]");
 	}
 
 	var rType = document.getElementById("reagent_type_name");
@@ -17781,8 +13859,6 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 		}
 	}
 
-// alert(usedProps);
-// alert(checkboxList.length);
 
 	// June 14, 2010: Newly added categories
 	if (checkboxList.length == 0)
@@ -17798,35 +13874,23 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 
 	for (i=0; i < checkboxList.length; i++)
 	{
-// alert("Category " + checkboxListID);
 
 		tmpElem = checkboxList[i];
 
 		// Dec. 3/09
-// 		tmpAlias = tmpElem.value.toLowerCase();
 		tmpAlias = tmpElem.value;
 
-// alert(tmpAlias);
-// alert(newCBVal.toLowerCase());
 
-// alert(checkboxListID + "_:_" + tmpAlias + "_checkbox_desc_hidden");
 
 		// Get the actual description next to the checkbox
 		var tmpDescHidden = document.getElementById(checkboxListID + "_:_" + tmpAlias + "_checkbox_desc_hidden");
 
-// 		alert(tmpDescHidden);
-// alert(inArray(usedProps, newCBVal));
 
 		if (tmpDescHidden)
 		{
-// 			alert(tmpDescHidden.value);
 
 			if (inArray(newCBVal.toLowerCase(), reservedPropNames))
 			{
-// alert(checkboxListID);
-// alert(reservedPropCatAlias[newCBVal.toLowerCase()]);
-// alert(checkboxListID == reservedPropCatAlias[newCBVal.toLowerCase()]);
-
 				// For reserved props, check 2 things: whether it's a duplicate and whether it's in the correct category.  Basically, addition of these properties is prohibited, the logic here is just to issue the correct error message.
 
 				// Duplicate in own category??  Project ID is mandatory, but alternate id is not - may be unchecked
@@ -17866,7 +13930,6 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 		{
 			if (isInUseNewCBVal)
 			{
-// alert("??");
 				if (inArray(newCBVal.toLowerCase(), reservedPropNames))
 				{
 					if (checkboxListID != reservedPropCatAlias[newCBVal.toLowerCase()])
@@ -17891,7 +13954,6 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 			}
 			else
 			{
-// alert(newCBVal);
 				// reserved property, e.g. Alternate ID
 				if (inArray(newCBVal.toLowerCase(), reservedPropNames))
 				{
@@ -17909,25 +13971,18 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 						var tmp_cbName_ar = newCBVal.split(" ");
 						var tmp_cbID = tmp_cbName_ar.join("_");
 
-// alert(checkboxList.length);
 
 						// first, check all EXISTING checkboxes in this category
 						for (i=0; i < checkboxList.length; i++)
 						{
 							tmpElem = checkboxList[i];
 							tmpAlias = tmpElem.value;
-// 					alert(tmpElem.name);
-// 					alert(tmpElem.id);
 							// Get the actual description next to the checkbox
 							var tmpDescHidden = document.getElementById(checkboxListID + "_:_" + tmpAlias + "_desc_hidden");
 						
-							// alert(tmpDescHidden);
-							// alert(inArray(usedProps, newCBVal));
 					
 							if (tmpDescHidden)
 							{
-// 								alert(tmpElem.id);
-// 	 							alert(tmpDescHidden.innerHTML);
 
 								if ((tmpElem.checked) && (tmpDescHidden.innerHTML.toLowerCase() == newCBVal.toLowerCase()))
 								{
@@ -17947,7 +14002,6 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 
 							if (new_cb && newDescr && new_cb.checked)
 							{
-// 								alert("Duplicate " + newDescr);
 								alert("You may not add '" + newCBVal + "', since a property named '" + newDescr + "' already exists in this category.  Names entered in different LeTtErCaSe are NOT considered distinct.  If you wish to modify a recent entry, uncheck its checkbox first.\n\nPlease note that properties which already exist in OpenFreezer will not be updated.");
 								textInput.focus();
 								return false;
@@ -18016,17 +14070,9 @@ function verifyAddNewProperty(newCBVal, checkboxListID, textInput)
 function getAllUsed(categoryAlias)
 {
 	categoryAlias = unescape(categoryAlias);
-// alert(categoryAlias);
 	var checkBoxList = document.getElementsByName(categoryAlias + "[]");
-// alert(categoryAlias + "[]");
-// for (c=0; c < checkBoxList.length; c++)
-// 	alert(checkBoxList[c].value);
-// alert(checkBoxList.length);
 
 	var toExclude = document.getElementsByName(categoryAlias + "_exclude[]");	// hidden inputs
-// alert(categoryAlias + "_exclude[]");
-// alert(toExclude);
-// alert(toExclude.length);
 
 	var exclList = Array();
 	var i, j;
@@ -18035,12 +14081,10 @@ function getAllUsed(categoryAlias)
 	for (i=0; i < toExclude.length; i++)
 	{
 		tmpPropAlias = toExclude[i].value;
-// alert(tmpPropAlias);
 		excl_cb = categoryAlias + "_:_" + tmpPropAlias;
 
 		if (document.getElementById(excl_cb))
 		{
-// alert("Excluding " + categoryAlias + "_:_" + tmpPropAlias);
 			exclList.push(excl_cb);
 		}
 	}
@@ -18051,22 +14095,15 @@ function getAllUsed(categoryAlias)
 	for (j=0; j < checkBoxList.length; j++)
 	{
 		tmpCB = checkBoxList[j];
-// alert(tmpCB);
 		// not checking isDisabled here, b/c this would MOST LIKELY be used to select all assigned properties for ORDERING - hence, need the disabled properties too
 		if (!inArray(tmpCB.id, exclList))
 		{
 			propAlias = tmpCB.id.substring(tmpCB.id.indexOf("_:_")+3);
 			propDescrField = document.getElementById(categoryAlias + "_:_" + propAlias + "_desc_hidden");
-// alert(propDescrField);
-// alert(categoryAlias + "_:_" + propAlias + "_desc_hidden");
 
 			if (propDescrField)
 			{
-// alert(categoryAlias + "_:_" + propAlias + "_desc_hidden");
 				propDescr = propDescrField.innerHTML;
-// alert(propDescr);
-// alert(tmpCB.id + " is used");
-// 			tmpCB.checked = true;
 				usedList.push(propDescr);
 			}
 		}
@@ -18119,10 +14156,8 @@ function updateCheckboxListFromInput(inputID, checkboxListID, tableID, formID)
 	// Oct. 29/09: set flag 'new'
 	var tmp_flag = document.createElement("INPUT");
 	tmp_flag.setAttribute("type", "hidden");
-// 	tmp_flag.setAttribute("name", "is_new_" + checkboxListID + "_:_" + tmpCBVal);
 	tmp_flag.setAttribute("name", "is_new_" + checkboxListID + "_:_" + tmp_cbID);
 
-// 	tmp_flag.setAttribute("id", "isNew_" + checkboxListID + "_:_" + tmpCBVal);
 	tmp_flag.setAttribute("id", "isNew_" + checkboxListID + "_:_" + tmp_cbID);
 
 	tmp_flag.setAttribute("value", true);
@@ -18138,10 +14173,7 @@ function updateCheckboxListFromInput(inputID, checkboxListID, tableID, formID)
 		newCB.setAttribute("name", "createReagentType_" + checkboxListID + "[]");
 		
 		// Dec. 3/09: NO, don't use lowercase alias, confuses 'PROMOTER' and 'Promoter'
-// 		newCB.setAttribute("id", "createReagentType_" + checkboxListID + "_:_" + tmpCBVal + "_checkbox_id");
 		newCB.setAttribute("id", "createReagentType_" + checkboxListID + "_:_" + tmp_cbID + "_checkbox_id");
-// alert("createReagentType_" + checkboxListID + "_:_" + tmp_cbID + "_checkbox_id");
-// 		newCB.value = tmpCBVal;
 		newCB.value = tmp_cbID;
 
 		newCB.setAttribute("checked", "true");
@@ -18184,10 +14216,7 @@ function updateCheckboxListFromInput(inputID, checkboxListID, tableID, formID)
 		tmpCell.innerHTML += newCBVal;
 
 		// Dec. 3/09: try to avoid using lowercase
-// 		tmpDescrHidden.setAttribute("id", checkboxListID + "_:_" + tmpCBVal + "_checkbox_desc_hidden");
 		tmpDescrHidden.setAttribute("id", checkboxListID + "_:_" + tmp_cbID + "_checkbox_desc_hidden");
-// alert(checkboxListID + "_:_" + tmp_cbID + "_checkbox_desc_hidden");
-// 		tmpDescrHidden.setAttribute("name", "createReagentType_" + checkboxListID + "_:_" + tmpCBVal);
 		tmpDescrHidden.setAttribute("name", "createReagentType_" + checkboxListID + "_:_" + tmp_cbID);
 
 		document.body.appendChild(tmpDescrHidden);
@@ -18216,41 +14245,28 @@ function collectReagentTypeProperties(formID)
 		{
 			if (tmpProp.checked == true)
 			{
-// alert("Checkbox name " + tmpProp.id);
 				tmpName = tmpProp.id;	// e.g. "createReagentType_general_properties_:_notes_checkbox_id"
-// 		alert(tmpName);
 				// Extract the category
 				categoryAlias = tmpName.substring("createReagentType_".length, tmpName.indexOf("_:_"));
 	
 				propAlias = tmpName.substring(("createReagentType_" + categoryAlias + "_:_").length, tmpName.indexOf("_checkbox_id"));
-// 		alert(propAlias);
-				// grab the description
 				// Dec. 3/09: DON'T use getElementById - properties that are unchecked and re-entered in different lettercase both receive the same ID (their name is converted to lowercase to generate the alias, e.g. 'promoter' and 'Promoter') - and then get the problem Karen described with 'larger' and 'LARGER' - IDs are assigned at checkbox creation, so when these properties are entered one at a time (one is unchecked and the second entered), their identical IDs remain, one of them is passed to Python, which often ends up being the wrong one (in later versions of Firefox the LAST value is saved while in earlier versions the first one is saved)
 				tmpDescr = document.getElementById(categoryAlias + "_:_" + propAlias + "_checkbox_desc_hidden");
 
-// 				tmpDescr = document.getElementsByName("createReagentType_" + categoryAlias + "_:_" + propAlias)
 
-				/*
-				for (i=0; i < tmpDescrs.length; i++)
-				{
-					tmpDescr = tmpDescrs[i];*/
 
 					if (tmpDescr)
 					{
 						if (tmpDescr.value != "")
 						{
-// 	alert("Saving property " + tmpDescr.value);
 							myForm.appendChild(tmpDescr);
 	
 							// 'isNew' flag
 							tmp_flag = document.getElementById("isNew_" + categoryAlias + "_:_" + propAlias);
 							myForm.appendChild(tmp_flag);
 	
-							// DO **NOT**, UNDER ANY CIRCUMSTANCES, DO THIS!!!!!!!  IT WILL RESULT IN THE VERY LAST CHECKBOX NOT BEING SAVED ISSUE!!!!!!!!!
-	// NO!!!!!!!					myForm.appendChild(tmpProp);
 						}
 					}
-// 				}
 			}
 		}
 	}
@@ -19006,176 +15022,17 @@ function checkParents(xmlhttp, rType, inputs_ar)
 					}
 				}
 
-// 				for (i=0; i < tmp_ar.length; i++)
-// 				{
-// 					tmp_set = tmp_ar[i].split("=");
-// // alert(tmp_set);
-// 
-// 					if (tmp_set[0] == 'ErrCode')
-// 					{
-// // alert("Setting parents to false");
-// // alert(xmlhttp.responseText);
-// 						err_code = tmp_set[1];
-// 
-// 						switch (err_code)
-// 						{
-// 							case '1':
-// 								// non-existing reagent ID (prefix was found in table but numeric portion does not match an existing ID in database)
-// 
-// 								// Error format: ErrCode=1&assoc=" + assocName + "&assocAlias=" + assocAlias + "&" + `assocID` + "=" + parent_id
-// 							break;
-// 							
-// 							case '2':
-// 								// reagent ID exists but the association is wrong, e.g. user entered an Insert ID where a Vector was expected
-// 
-// 								// Error format: ErrCode=2&prefix=" + parent_prefix + "&assoc=" + assocName + "&assocAlias=" + assocAlias
-// 
-// 							break;
-// 							
-// 							case '3':
-// 								// non-existing prefix, not found in database (e.g. 'D' when the only available prefixes are 'V', 'I', 'C', 'O')
-// 
-// 								// Error format: ErrCode=3&parent=" + parent_id
-// 							break;
-// 						}
-// 
-// 						parent_alias = trimAll(tmp_set[0]);
-// 						parent_id = trimAll(tmp_set[1]);
-// 
-// 						alert("Parent " + parent_id + " does not exist in the database.  Please verify your input.");
-// 
-// 						parentInput = document.getElementById(currReagentType +  "_assoc_" + parent_alias + "_input");
-// 
-// 						// Tip gotten from http://geekswithblogs.net/shahedul/archive/2006/08/14/87910.aspx
-// 						// Turn autocomplete off before calling focus(); otherwise get the following error:
-// 						// [Exception... "'Permission denied to set property XULElement.selectedIndex' when calling method: [nsIAutoCompletePopup::selectedIndex]" nsresult: "0x8057001e (NS_ERROR_XPC_JS_THREW_STRING)
-// 						parentInput.setAttribute('autocomplete','off');
-// 
-// 						parentInput.focus();
-// 	
-// 						parentsValid = false;
-// 						break;
-// 					}
-// 				}
 			}
 			else
 			{
-// alert("Setting parents to true");
 				parentsValid = true;
 			}
 		}
 	}
 
-// 	alert(parentsValid);
 }
 
 
-/**
-	Oct. 6/09, Marina: Property name verification at creation of new reagent type:
-
-	A property name CANNOT:
-
-		- be the same as its containing category name (e.g. CANNOT have 'miscellaneous' property under 'miscellaneous' category; OK across different categories - i.e. CAN have 'miscellaneous' sequence feature, a 'Miscellaneous' category and a 'miscellaneous' classifier)
-
-		- be the same as a reagent type name (current or other existing type) - i.e. cannot have a property or category called 'Vector'
-
-		- be the same as a reagent type prefix (current or other existing prefix)
-
-		- be called 'sequence', 'dna', 'protein', 'rna', 'DNA sequence', 'protein sequence', 'rna sequence' (even though these words may be **contained within** the property's name - e.g. 'DNA Sequence Features')
-
-	Some of the above restrictions also apply to category names (if indicated).
-
-// REMOVED COMPLETELY DEC. 2/09: MOVED CHECK TO verifyAddNewProperty()
-function verifyPropertyAndCategoryNames()
-{
-	var rType = document.getElementById("reagent_type_name");
-	var rTypeName = rType.value;
-
-	var rTypePrefixInput = document.getElementById("reagent_type_prefix");
-	var rTypePrefix = rTypePrefixInput.value;
-
-	var reagentTypeNames = document.getElementsByName("reagent_type_names[]");
-	var rTypeNames = new Array();
-
-	for (k=0; k < reagentTypeNames.length; k++)
-	{
-		var tmpName = reagentTypeNames[k].value.toLowerCase();
-		rTypeNames.push(tmpName);
-	}
-
-	var reagentTypePrefixes = document.getElementsByName("reagent_type_prefixes[]");
-	var rTypePrefixes = new Array();
-
-	for (l = 0; l < reagentTypePrefixes.length; l++)
-	{
-		var tmpPrefix = reagentTypePrefixes[l];
-		rTypePrefixes.push(tmpPrefix);
-	}
-
-	// traverse over properties and check each, do sequence separately
-	var allInputs = document.getElementsByTagName("INPUT");
-
-	for (i=0; i < allInputs.length; i++)
-	{
-		var tmpInput = allInputs[i];
-
-		if (tmpInput.type.toLowerCase() == "checkbox")
-		{
-			if (tmpInput.checked == true)
-			{
-				tmpName = tmpInput.id;	// e.g. "createReagentType_general_properties_:_notes_checkbox_id"
-		
-				// Extract the category
-				categoryAlias = tmpName.substring("createReagentType_".length, tmpName.indexOf("_:_"));
-	
-				propAlias = tmpName.substring(("createReagentType_" + categoryAlias + "_:_").length, tmpName.indexOf("_checkbox_id"));
-		
-				// grab the description
-				tmpDescr = document.getElementById(categoryAlias + "_:_" + propAlias + "_checkbox_desc_hidden");
-				
-				if (tmpDescr)
-				{
-					if (tmpDescr.value != "")
-					{
-// 						alert(tmpDescr.value);
-// 						alert(tmpDescr.name);
-
-						if ( (inArray(tmpDescr.value.toLowerCase(), rTypeNames)) || (inArray(tmpDescr.value.toLowerCase(), rTypePrefixes)))
-						{
-							alert("Property names may not be the same as reagent type names or prefixes.  Please verify your input.");
-							tmpDescr.focus();
-							return false;
-						}
-
-						// Now: The words 'DNA Sequence', 'Protein Sequence', 'RNA Sequence' are allowed in the appropriate categories.  BUT 'DNA', 'RNA', 'Protein', or 'Sequence' are not allowed anywhere!!
-						else if ((categoryAlias == "sequence_properties") || (categoryAlias == "protein_sequence_properties") || (categoryAlias == "rna_sequence_properties"))
-						{
-							// Allow 'DNA Sequence', 'RNA Sequence', 'Protein Sequence', disallow the rest
-							if ((tmpDescr.value.toLowerCase() == "dna") || (tmpDescr.value.toLowerCase() == "rna") || (tmpDescr.value.toLowerCase() == "protein") || (tmpDescr.value.toLowerCase() == "sequence"))
-							{
-								alert("'Sequence', 'Protein', 'DNA' or 'RNA' may not be used as reagent type attribute names.  Please verify your input.");
-								tmpDescr.focus();
-								return false;
-							}
-						}
-						else
-						{
-							// Disallow 'DNA Sequence', 'RNA Sequence', 'Protein Sequence', 'DNA', 'RNA', 'Protein', 'Sequence'
-							if ((tmpDescr.value.toLowerCase() == "sequence") || (tmpDescr.value.toLowerCase() == "dna sequence") || (tmpDescr.value.toLowerCase() == "protein sequence") || (tmpDescr.value.toLowerCase() == "rna sequence") || (tmpDescr.value.toLowerCase() == "dna") || (tmpDescr.value.toLowerCase() == "rna") || (tmpDescr.value.toLowerCase() == "protein"))
-							{
-								alert("'Sequence', 'DNA Sequence', 'RNA Sequence', 'Protein Sequence',  'Protein', 'DNA' or 'RNA' may not be used as reagent type attribute names.   Please verify your input.");
-								tmpDescr.focus();
-								return false;
-							}
-						}
-						
-					}
-				}
-			}
-		}
-	}	
-}
-*/
 
 function verifyUniqueReagentTypeName()
 {
@@ -20115,12 +15972,10 @@ function uncheckAll(cbID, exclude)
 	var checkBoxList = document.getElementsByName(cbID+"[]");
 	var tmpCB;
 
-// 	alert(exclude);
 
 	for (i = 0; i < checkBoxList.length; i++)
 	{
 		tmpCB = checkBoxList[i];
-// alert(tmpCB.value);
 		if (/*(exclude.length > 0) && */!inArray(tmpCB.value, exclude))
 			tmpCB.checked = false;
 	}
@@ -20193,8 +16048,6 @@ function formatInput(formID)
 		if (tmpElem.value.indexOf('%') >= 0)
 		{
 			alert("Before: " + tmpElem.value);
-// 			tmpElem.value = tmpElem.value.replace(/%/g,'%25')
-// 			tmpElem.value = escape(tmpElem.value);
 tmpElem.value = tmpElem.value.replace('%', '%25');
 			alert("After: " + tmpElem.value);
 		}
@@ -20203,10 +16056,7 @@ tmpElem.value = tmpElem.value.replace('%', '%25');
 // April 6/09: Show/hide property values input table when defining list of property values for a new reagent type
 function showHideAddPropertyValuesInput(propAlias)
 {
-// alert(propAlias);
 
-	// ATTENTION: PHP escapes quotation marks!  The actual field name contains a slash before a quote.  Must, therefore, append a slash here, for the input name to be recognized1
-// 	propAlias = replaceAll(propAlias, "'", "\\'");		// KEEP replaceAll - DON'T use addslashes, won't work!!!!!!
 	propAlias = unescape(propAlias);
 
 	var inputDiv = document.getElementById("propertyValuesInputDiv_" + propAlias);
@@ -20219,11 +16069,6 @@ function showHideAddPropertyValuesInput(propAlias)
 	var noHL = document.getElementById("no_hl_" + propAlias);
 	var noMult = document.getElementById("no_mult_" + propAlias);
 
-// 	var propsList = document.getElementById("propertyValuesInputList_" + propAlias);
-
-// alert(inputDiv);
-// alert("input_format_radio_list_" + propAlias);
-
 	var inputTypeRadioList = document.getElementById("input_format_radio_list_" + propAlias);
 	var inputTypeRadioText = document.getElementById("input_format_radio_text_" + propAlias);
 
@@ -20231,12 +16076,10 @@ function showHideAddPropertyValuesInput(propAlias)
 	{
 		inputDiv.style.display = "inline";
 
-// 		if (hyperlinkDiv && (hyperlinkDiv.style.display == "inline"))
 
 		if (hyperlinkDiv)
 			hyperlinkDiv.style.display = "none";
 
-// 		if (multipleDiv && (multipleDiv.style.display == "none"))
 
 		if (multipleDiv)
 		{
@@ -20343,17 +16186,7 @@ function verifyBlankTextInput(textID, errorMsg)
 
 function selectAllPropertyValues(includeDisabled)
 {
-// 	var newPropNames = document.getElementsByName("newPropName");
 	var selectLists = document.getElementsByTagName("SELECT");
-
-// alert(selectLists.length);
-
-// // debug
-// for (t=0; t < selectLists.length; t++)
-// {
-// 	alert(selectLists[t].name);
-// 	alert(selectLists[t].id);
-// }
 
 	var i;
 
@@ -20365,11 +16198,6 @@ function selectAllPropertyValues(includeDisabled)
 	{
 		if (tmpInput.style.display != "none")
 		{
-// 		tmpPropAlias = newPropNames[i].value;
-// 		tmpListID = "propertyValuesInputList_" + tmpPropAlias;
-// 		tmpList = document.getElementById(tmpListID);
-
-// 		alert(tmpInput.name);
 
 		// April 19, 2010: think this is also for select-multiples only
 		if (tmpInput.multiple)
@@ -20379,9 +16207,6 @@ function selectAllPropertyValues(includeDisabled)
 				tmpInput.options[ind].selected = true;
 			}
 		}
-// 		if (tmpList && (tmpList.style.display != "none"))
-// 			selectAllElements(tmpListID);
-// 			selectAllElements(tmpInput.id, includeDisabled);
 		}
 	}
 	}
@@ -20536,26 +16361,6 @@ function selectPlateColumn(plateID, colNum)
 			}
 		}
 	}
-/*
-	// Colour the entire well
-	var allTDs = document.getElementsByTagName("TD");
-
-	for (n = 0; n < allTDs.length; n++)
-	{
-		tmpTD = allTDs[n];
-
-		if ((tmpTD.id.indexOf("well_plate_" + plateID) == 0) && tmpTD.id.lastIndexOf("_Col_" + colNum) + ("_Col_" + colNum).length == tmpTD.id.length)
-		{
-			if (checkAll)
-			{
-				tmpTD.style.backgroundColor = "yellow";
-			}
-
-			else 
-				tmpTD.style.backgroundColor = "#FFFFFF";
-		}
-	}
-	*/
 }
 
 function selectPlateRow(plateID, rowNum)
@@ -20668,39 +16473,7 @@ function selectPlateRow(plateID, rowNum)
 		}
 	}
 
-/*
-	// Colour the entire well
-	var allTDs = document.getElementsByTagName("TD");
-
-	for (n = 0; n < allTDs.length; n++)
-	{
-		tmpTD = allTDs[n];
-
-		if ((tmpTD.id.indexOf("well_plate_" + plateID) == 0) && (tmpTD.id.indexOf("_Row_" + rowNum) == ("well_plate_" + plateID).length))
-		{
-			if (checkAll)
-				tmpTD.style.backgroundColor = "yellow";
-
-			else 
-			{
-				tmpTD.style.backgroundColor = "#FFFFFF";
-			}
-		}
-	}
-	*/
 }
-
-/*
-function selectColumn(pname)
-{
-	aCol = document.getElementsByName(pname + "_td[]");
-
-	for (a=0; a < aCol.length; a++)
-	{
-		aTD = aCol[a];
-		aTD.style.backgroundColor = "yellow";
-	}
-}*/
 
 
 // June 3, 2011: VERY IMPORTANT - batch update an attribute column value for all selected wells
